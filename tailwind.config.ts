@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        tegomin: ['"New Tegomin"'],
+        noto: ['"Noto Sans JP"']
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
