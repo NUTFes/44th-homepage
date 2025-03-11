@@ -12,10 +12,38 @@ const config: Config = {
         tegomin: ['"New Tegomin"'],
         noto: ['"Noto Sans JP"']
       },
+      fontSize: {
+        h1: '2.25rem',//36px
+        h2: '1.5rem',//24px
+        body1: '1.125rem',//18px
+        body2: '1rem',//16px
+        body3: '0.875',//14px
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        white: "#ffffff",
+        black: "#000000",
+        base: "#fff9e5",
+        main: "#a08703",
+        second: "#d6ba26",
+        accent: "#b03030",
+        gray: "#8c8982",
+        font_main: "#211c1a",
+        font_khaki: "#6c5c07",
+        logo_color: "#ab1b1b",
+        font_link: "#5995a2",
+        white_back: 'rgba(255,255,255,0.7)',
+        base_back: 'rgba(255,249,229,0.5)',
+        dark_back: 'rgba(76,42,0,0.8)'
+
       },
+      boxShadow: {
+        'shadow_dark': '0 0 0.5rem rgba(0,0,0,0.5)',
+        'shadow_right': '0 0 0.5rem rgba(225,225,225,1)',
+        'shadow_logo': '0.125rem 0.125rem 0 rgba(88,60,35,0.5)',
+        'shadow_button_font': '0 0.25rem 0.025rem rgba(0,0,0,0.25)'
+      }
     },
   },
   plugins: [],
