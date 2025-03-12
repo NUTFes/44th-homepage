@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { PluginAPI } from 'tailwindcss/types/config';
 
 const config: Config = {
   content: [
@@ -37,22 +38,36 @@ const config: Config = {
         base_back: 'rgba(255,249,229,0.5)',
         dark_back: 'rgba(76,42,0,0.8)'
 
-      },
-      textShadow: {
-        'shadow_right': '0 0 0.5rem rgba(225,225,225,1)',
-        'shadow_font': '0 0.25rem 0.025rem rgba(0,0,0,0.25)'
-      },
-      boxShadow: {
-        'shadow_logo': '0.125rem 0.125rem 0 rgba(88,60,35,0.5)',
-        'shadow_dark': '0 0 0.5rem rgba(0,0,0,0.5)',
-        'shadow_button': '0 0.25rem 0.025rem rgba(0,0,0,0.25)'
-
-
       }
-
      
     },
   },
-  plugins: [],
+
+  
+
+  plugins: [
+    function({ addUtilities }: PluginAPI){
+      const newUtilities = {
+       //テキストシャドウ
+        ".shadow_right":{
+          textShadow: "0 0 0.5rem rgba(225,225,225,1)"
+        },
+        ".shadow_font":{
+          textShadow: "0 0.25rem 0.025rem rgba(0,0,0,0.25)"
+        },
+        //ボックスシャドウ
+        ".shadow_logo":{
+          boxShadow: "0.125rem 0.125rem 0.125rem rgba(88,60,35,0.5)"
+        },
+        ".shadow_dark":{
+          boxShadow: "0 0 0.5rem rgba(0,0,0,0.5)"
+        },
+        ".shadow_button":{
+          boxShadow: "0 0.25rem 0.25rem rgba(0,0,0,0.25)"
+        },
+      };
+      addUtilities(newUtilities);
+    }
+  ],
 };
 export default config;

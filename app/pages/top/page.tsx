@@ -24,6 +24,14 @@ export default function TopPage() {
       <div className="bg-white_back">white-back</div>
       <div className="bg-base_back">base-back</div>
       <div className="bg-dark_back">dark-back</div>
+      <div className="shadow_right bg-dark_back text-white">shadow_right</div>
+      <div className="shadow_font">shadow_font</div>
+      <div className="shadow_logo m-4">shadow_logo</div>
+      <div className="shadow_dark m-4">shadow_dark</div>
+      <div className="bg-second shadow_button m-4">shadow_button</div>
+
+
+
 
 
 
