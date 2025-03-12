@@ -26,9 +26,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className=" bg-cover bg-no-repeat" style={{ 
+          backgroundImage: "url('/hero_header/hero_header.svg')",
+          backgroundPosition: 'center bottom',//backgroundpositionがtailwindcssのデフォルトで認識されないため
+           }}
       >
+        <div className="min-h-screen">
         {children}
+        </div>
       </body>
     </html>
   );
