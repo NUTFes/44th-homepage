@@ -18,7 +18,7 @@ const config: Config = {
         h2: '1.5rem',//24px
         body1: '1.125rem',//18px
         body2: '1rem',//16px
-        body3: '0.875',//14px
+        body3: '0.875rem',//14px
       },
       colors: {
         background: "var(--background)",
