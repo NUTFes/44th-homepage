@@ -10,8 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        tegomin: ['"New Tegomin"'],
-        noto: ['"Noto Sans JP"']
+        tegomin: ['var(--font-noto-sans-jp)', 'sans-serif'],
+        noto: ['var(--font-new-tegomin)', 'sans-serif'],
       },
       fontSize: {
         h1: '2.25rem',//36px
