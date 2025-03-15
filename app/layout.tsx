@@ -25,13 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className=" bg-cover bg-no-repeat" style={{ 
-          backgroundImage: "url('/hero_header/hero_header.svg')",
-          backgroundPosition: 'center bottom',//backgroundpositionがtailwindcssのデフォルトで認識されないため
-           }}
-      >
-        <div className="min-h-screen">
+      <body className="bg-[url('/hero_header/hero_header.svg')] bg-cover bg-fixed bg-center min-h-screen">
+        <div>
         {children}
         </div>
       </body>
