@@ -11,7 +11,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         tegomin: ['var(--font-new-tegomin)', 'sans-serif'],
-        noto: ['var(--font-new-tegomin-noto-sans-jp)', 'sans-serif'],
+        noto: ['var(--font-noto-sans-jp)', 'sans-serif'],
       },
       fontSize: {
         h1: '2.25rem',//36px
