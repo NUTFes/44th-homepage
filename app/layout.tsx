@@ -15,9 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={'${notoSansJP.className} ${notoSansJP.variable} ${newTegomin.variable} antialiased'}>
+      <body className="bg-[url('/hero_header/hero_header.svg')] bg-cover bg-fixed bg-center min-h-screen {'${notoSansJP.className} ${notoSansJP.variable} ${newTegomin.variable} antialiased'}">
+        <div>
         {children}
+        </div>
       </body>
     </html>
   );
