@@ -13,9 +13,11 @@ export default function Footer(){
             <div className="text-body2 text-gray text-center whitespace-pre-wrap">協賛企業一覧</div>
             <div className="text-body2 text-gray text-center whitespace-pre-wrap">アンケートリンク</div>
             <div className="text-body2 text-gray text-center whitespace-pre-wrap">長岡技術科学大学ホームページ</div>
+            <div className="p-2">
             <div className="text-body2 text-white text-center whitespace-pre-wrap">〒940-2188</div>
             <div className="text-body2 text-white text-center whitespace-pre-wrap">新潟県長岡市上富岡町1603-1 長岡技術科学大学</div>
             </div>
+          </div>
         </footer>
     );
 }
