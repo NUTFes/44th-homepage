@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { newTegomin, notoSansJP } from "./utils/fonts";
+import Header from "./components/header";
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`bg-[url('/hero_header/hero_header.svg')] bg-cover bg-fixed bg-center min-h-screen  ${notoSansJP.className} ${notoSansJP.variable} ${newTegomin.variable} antialiased`}>
+        <Header />
         {children}
       </body>
     </html>
