@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function Header() {
     return (
-      <header className="fixed top-0 left-0 w-full bg-black flex justify-between p-4">
+      <header className="fixed top-0 left-0 w-full bg-black flex justify-between p-4 shadow_button">
         <div className="flex">
             <Image 
             src="/icon/44thlogo.png"
