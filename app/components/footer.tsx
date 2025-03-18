@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function Footer() {
   return (
-    <footer className="bottom-0 w-full p-4 bg-black ">
+    <footer className="bottom-0 w-full p-4 bg-black min-h-screen">
       <div className="flex justify-center p-4">
         <Image
           src="/icon/44thlogo.png"
