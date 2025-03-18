@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import { newTegomin, notoSansJP } from "./utils/fonts";
 
@@ -15,10 +14,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-[url('/hero_header/hero_header.svg')] bg-cover bg-fixed bg-center min-h-screen {'${notoSansJP.className} ${notoSansJP.variable} ${newTegomin.variable} antialiased'}">
-        <div>
+      <body className={`bg-[url('/hero_header/hero_header.svg')] bg-cover bg-fixed bg-center min-h-screen  ${notoSansJP.className} ${notoSansJP.variable} ${newTegomin.variable} antialiased`}>
         {children}
-        </div>
       </body>
     </html>
   );
