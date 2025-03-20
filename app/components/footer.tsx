@@ -14,12 +14,14 @@ export default function Footer() {
         </Link>
       </div>
       <div className="flex justify-center gap-[30%] md:gap-[30%] lg:gap-[30%] p-4">
-        <Image
-          src="/icon/Instagram_Glyph_White.svg"
-          alt="instagram-link"
-          width={50}
-          height={50}
-        />
+        <a href="https://www.instagram.com/nutfes/" target="_blank" rel="noopener noreferrer">
+          <Image
+            src="/icon/Instagram_Glyph_White.svg"
+            alt="instagram-link"
+            width={50}
+            height={50}
+          />
+        </a>
       </div>
       <div className="flex flex-col justify-center p-4 text-body2 text-gray text-center whitespace-pre-wrap">
         <div>協賛企業一覧</div>
