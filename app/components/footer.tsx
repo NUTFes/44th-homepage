@@ -1,14 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bottom-0 w-full p-4 bg-black min-h-screen">
       <div className="flex justify-center p-4">
-        <Image
-          src="/icon/44thlogo.png"
-          alt="44th-icon"
-          width={64}
-          height={64}
-        />
+        <Link href={"/pages/top"}>
+          <Image
+            src="/icon/44thlogo.png"
+            alt="44th-icon"
+            width={64}
+            height={64}
+          />
+        </Link>
       </div>
       <div className="flex justify-center gap-[30%] md:gap-[30%] lg:gap-[30%] p-4">
         <Image
