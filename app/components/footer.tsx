@@ -35,7 +35,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="text-white underline">長岡技術科学大学ホームページ</div>
+          <div className="text-white hover:underline hover:text-main">長岡技術科学大学ホームページ</div>
         </a>
 
         <div className="p-6 text-white">
