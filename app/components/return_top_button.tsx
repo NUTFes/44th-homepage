@@ -13,9 +13,8 @@ const ReturnTopButton = () => {
       <Image
         src="/icon/return_top_button.svg"
         alt="return_top_button"
-        width={56}
-        height={56}
-        className="shadow_button"
+        width={70}
+        height={70}
       />
     </button>
   );
