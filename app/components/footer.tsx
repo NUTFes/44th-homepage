@@ -14,7 +14,11 @@ export default function Footer() {
         </Link>
       </div>
       <div className="flex justify-center gap-[30%] md:gap-[30%] lg:gap-[30%] p-4">
-        <a href="https://www.instagram.com/nutfes/" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://www.instagram.com/nutfes/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Image
             src="/icon/Instagram_Glyph_White.svg"
             alt="instagram-link"
@@ -26,8 +30,15 @@ export default function Footer() {
       <div className="flex flex-col justify-center p-4 text-body2 text-gray text-center whitespace-pre-wrap">
         <div>協賛企業一覧</div>
         <div>アンケートリンク</div>
-        <div>長岡技術科学大学ホームページ</div>
-        <div className="p-2 text-white">
+        <a
+          href="https://www.nagaokaut.ac.jp/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="text-white underline">長岡技術科学大学ホームページ</div>
+        </a>
+
+        <div className="p-6 text-white">
           <div>〒940-2188</div>
           <div>新潟県長岡市上富岡町1603-1 長岡技術科学大学</div>
         </div>
