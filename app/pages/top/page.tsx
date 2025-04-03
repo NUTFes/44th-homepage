@@ -13,8 +13,68 @@ export default function TopPage() {
 />
 
 <Frame
+    w="big"
     items={[
-      { url: "https://example.com"}
+      
+    ]}
+/>
+
+<Frame
+    w="small"
+    items={[
+      
+    ]}
+/>
+
+<Frame
+    items={[
+      { html:(
+        <div className="bg-accent text-center text-white">
+          <p>自由にHTMLを書けます</p>
+          <ReturnTopButton/>
+        </div>
+      )}
+    ]}
+/>
+
+<Frame
+    pg="none"
+    items={[
+      { html:(
+        <div className="h-20 bg-accent text-center text-white">
+          <p>paddingとgapのないフレームです</p>
+        </div>
+      )}
+    ]}
+/>
+
+
+<Frame
+    items={[
+      { url: "https://example.com"},
+      { html: (
+        <div>
+          <div className="h-20 bg-accent text-center">
+            <p>フレームです</p>
+          </div>
+          <div className="h-20 bg-main text-center">
+            <p>paddiームです</p>
+          </div>
+        </div>
+      )},
+      { html: (
+          <div className="h-20 bg-main text-center">
+            <p>paddiームです</p>
+          </div>
+      )},
+      { html: (
+        <ReturnTopButton/>
+    )},
+    { html: (
+      <div className="h-20 bg-main text-center">
+        <p>paddiームです</p>
+      </div>
+  )}
     ]}
 />
 
@@ -24,44 +84,50 @@ export default function TopPage() {
     ]}
 />
 <Frame/>
-      <Frame 
+
+<Frame 
                 w="big"
                 items={[
-                    { title: "お知らせ"},
+                    { title: "お知らせ",color: "red"},
+                    { inform_time: "2025/03/00",
+                      inform_title: "◆サイトを公開しました！",
+                      content:"<red>ぜひお越しください！</red>ぜひお越しください！ぜひお越しください！ぜひお越しください！ぜひお越しください！ぜひお越しください！"
+                    },
+                    { inform_time: "2025/03/00",
+                      inform_title: "◆サイトを公開しました！",
+                      content:"<b>ぜひお越しください！</b>ぜひお越しください！ぜひお越しください！ぜひお越しください！ぜひお越しください！ぜひお越しください！"
+                    },
                     { inform_time: "2025/03/00",
                       inform_title: "◆サイトを公開しました！",
                       content:"ぜひお越しください！ぜひお越しください！ぜひお越しください！ぜひお越しください！ぜひお越しください！ぜひお越しください！"
-                    },
-                    { inform_time: "2025/03/31"},
+                    }
                 ]}
-            />
+/>
+
 <Frame
     items={[
-      { content: "これはcontentです。これは説明などの文章を書く際に使います。これは文章です。"}
-    ]}>
-  <div className="h-20 bg-accent text-center">
-    <p>paddingとgapのあるフレームです</p>
-  </div>
-  <div className="h-20 bg-main text-center">
-    <p>paddingとgapのあるフレームです</p>
-  </div>
-  <ReturnTopButton/>
-</Frame>
-<Frame>
-  <div className="h-20 bg-accent text-center">
-    <p>paddingとgapのあるフレームです</p>
-  </div>
-  <div className="h-20 bg-main text-center">
-    <p>paddingとgapのあるフレームです</p>
-  </div>
-</Frame>
-<Frame pg="none">
-  <div className="h-20 bg-accent text-center">
+      { center_content: "<b>企業名</b> (画像広告なし)"},
+      { center_content: "<b>企業名 (画像広告なし)"},
+      { center_content: "<red>企業名</red> (画像広告なし)"},
+      { center_content: "<red>企業名 (画像広告なし)"},
+      { center_content: "企業名 (画像広告なし)"},
+      { center_content: "企業名 (画像広告なし)"},
+    ]}
+/>
+
+<Frame pg="none"
+items={[
+  {html: (
+    <div>
+      <div className="h-20 bg-accent text-center">
     <p>paddingとgapのないフレームです</p>
   </div>
   <div className="h-20 bg-main text-center">
     <p>paddingとgapのないフレームです</p>
   </div>
+    </div>
+  )}
+]}>
 </Frame>
       <h1 className="font-tegomin">Top Page tegomin</h1>
       <h1 className="font-noto">Top Page noto sans jp</h1>
