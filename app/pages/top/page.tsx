@@ -2,7 +2,7 @@ import React from "react";
 
 export default function TopPage() {
   return (
-    <div className="flex flex-col items-center gap-6 p-6">
+    <div>
       <h1 className="font-tegomin">Top Page tegomin</h1>
       <h1 className="font-noto">Top Page noto sans jp</h1>
       <div className="font-not text-h1">h1</div>
