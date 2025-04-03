@@ -1,5 +1,7 @@
 "use client";
 import React, { ReactNode } from "react";
+import { StaticImageData } from "next/image";
+import Image from "next/image";
 
 type AttentionItem = {
     title?: string;
@@ -9,11 +11,11 @@ type AttentionItem = {
     content?: ReactNode;
     center_content?: ReactNode;
     url?: string;
-    urlLabel?: string;
-    imageSrc?: string;
-    imageAlt?: string;
+    url_label?: string;
     color?: "red";
     html?: ReactNode;
+    icon?: StaticImageData | string;
+    icon_name?: string;
 };
 
 type AttentionFrameProps = {
@@ -39,7 +41,13 @@ const Frame: React.FC<AttentionFrameProps> = ({ items = [], w = "signboard", pg 
                         <div key={index}>
                             {Object.entries(item).map(([key, value], subIndex) => (
                                 <div key={subIndex}>
-                                    {key === "html" && value}
+                                    {key === "html" && value && (
+                                        typeof value === "object" && "src" in value ? (
+                                        <img src={value.src} alt="画像" />
+                                    ) : (
+                                        value
+                                    )
+                                    )}
                                     {key === "title" && typeof value === "string" && (
                                         <h2
                                             className={`font-tegomin text-h2 text-center drop-shadow ${
@@ -103,22 +111,23 @@ const Frame: React.FC<AttentionFrameProps> = ({ items = [], w = "signboard", pg 
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                             >
-                                                {item.urlLabel || value}
+                                                {item.url_label || value}
                                             </a>
                                         </div>
                                     )}
-                                    {key === "imageSrc" && typeof value === "string" && (
-                                        <div className="flex flex-col items-center mt-2">
-                                            <img
+                                    {key === "icon" && value && typeof value === "object" && "src" in value && (
+                                        <div className="flex items-center gap-1">
+                                            <div className="w-[109px] h-[70px] flex justify-center  overflow-hidden">
+                                            <Image 
                                                 src={value}
-                                                alt={item.imageAlt || "Image"}
-                                                className="max-w-full h-auto rounded-sm"
+                                                alt={item.icon_name || "アイコン"} 
+                                                className="object-contain"
                                             />
-                                            {item.imageAlt && (
-                                                <p className="text-xs text-gray-600 mt-1">{item.imageAlt}</p>
-                                            )}
+                                            </div>
+                                            {item.icon_name && <p className="w-full text-center text-black text-body2">{item.icon_name}</p>}
                                         </div>
                                     )}
+
                                 </div>
                             ))}
                         </div>

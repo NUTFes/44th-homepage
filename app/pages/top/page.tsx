@@ -1,6 +1,8 @@
 import React from "react";
 import Frame from "@/app/components/frame";
 import ReturnTopButton from "@/app/components/return_top_button";
+import Logo from "@/public/icon/44thlogo.png"
+import People from "@/public/assets/illust_people_1.svg"
 
 export default function TopPage() {
   return (
@@ -13,9 +15,36 @@ export default function TopPage() {
 />
 
 <Frame
-    w="big"
     items={[
-      
+      { title: "これは赤いタイトルです",
+        color: "red"
+      }
+    ]}
+/>
+
+<Frame
+    items={[
+      { title: "お知らせ" },
+      { inform_time: "2025/00/00",
+        inform_title: "◆サイトを公開しました！",
+        content: "サイトを公開しました！今年の夏に行われる長岡技術科学大学の文化祭にぜひお越しください！"
+      },
+      { inform_time: "2025/00/00",
+        inform_title: "◆サイトを公開しました！",
+        content: "サイトを公開しました！今年の夏に行われる長岡技術科学大学の文化祭にぜひお越しください！"
+      }
+    ]}
+/>
+
+<Frame
+    items={[
+      { content: "<red>赤色</red>になります。\n<b>黒色</b>になります。"}
+    ]}
+/>
+
+<Frame
+    items={[
+      { center_content: "<red>赤色</red>になります。\n<b>黒色</b>になります。"}
     ]}
 />
 
@@ -80,6 +109,13 @@ export default function TopPage() {
 
 <Frame
     items={[
+      { icon: Logo,
+        icon_name: "ゲスト：〇〇〇〇〇"}
+    ]}
+/>
+
+<Frame
+    items={[
       { content: "これはcontentです。これは説明などの文章を書く際に使います。これは文章です。"}
     ]}
 />
@@ -102,6 +138,28 @@ export default function TopPage() {
                       content:"ぜひお越しください！ぜひお越しください！ぜひお越しください！ぜひお越しください！ぜひお越しください！ぜひお越しください！"
                     }
                 ]}
+/>
+
+<Frame 
+    w="big"
+    items={[
+        { icon: Logo,
+          icon_name: "ゲスト：〇〇〇〇〇" },
+        { 
+            inform_time: "2025/03/00",
+            title: "お知らせ",
+            inform_title: "◆サイトを公開しました！",
+            content: "ぜひお越しください！ぜひお越しください！"
+        },
+        { 
+          icon: People, // 画像パスを渡す
+          icon_name: "ゲスト：〇〇〇〇〇", // アイコンの横に表示する名前
+          inform_time: "2025/03/00",
+          title: "お知らせ",
+          inform_title: "◆サイトを公開しました！",
+          content: "ぜひお越しください！ぜひお越しください！"
+      } 
+    ]}
 />
 
 <Frame
