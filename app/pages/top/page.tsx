@@ -1,4 +1,5 @@
 import React from "react";
+import TextStyle from "@/app/components/text_style";
 
 export default function TopPage() {
   return (
@@ -29,6 +30,7 @@ export default function TopPage() {
       <div className="shadow_logo m-4">shadow_logo</div>
       <div className="shadow_dark m-4">shadow_dark</div>
       <div className="bg-second shadow_button m-4">shadow_button</div>
+      <TextStyle styleType="title">タイトル</TextStyle>
 
 
 
