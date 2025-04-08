@@ -1,9 +1,53 @@
 import React from "react";
 import TextStyle from "@/app/components/text_style";
+import Frame from "@/app/components/frame";
+import Icon from "@/public/icon/44thlogo.png"
+import Image from "next/image";
 
 export default function TopPage() {
   return (
     <div>
+      <Frame>
+        <TextStyle styleType="title">タイトル</TextStyle>
+          <div>
+          <TextStyle styleType="body1">これは本文です。これは本文です。これは本文です。</TextStyle>
+          <TextStyle styleType="body1_bold_khaki">太字＆カーキ色の本文1</TextStyle>
+          <TextStyle styleType="body1">これは本文です。</TextStyle>
+          </div>
+      </Frame>
+
+      <Frame></Frame>
+
+      <Frame pg="none">
+        <div>
+          <Image
+            src={Icon}
+            alt="44th Logo"
+            width={100}
+            height={100} />
+      </div>
+          <TextStyle styleType="title">タイトル</TextStyle>
+          <TextStyle styleType="body1">これはパディングのないフレーム</TextStyle>
+      </Frame>
+
+      <Frame w="big">
+        <TextStyle styleType="title">お知らせ</TextStyle>
+          <div>
+            <p>
+              <TextStyle styleType="body1_khaki">2025/00/00</TextStyle>
+            </p>
+            <TextStyle styleType="body1">これは本文です。これは本文です。これは本文です。これは本文です。これは本文です。</TextStyle>
+          </div>
+          <div>
+            <p>
+              <TextStyle styleType="body1_khaki">2025/00/00</TextStyle>
+            </p>
+            <TextStyle styleType="body1">これは本文です。これは本文です。これは本文です。これは本文です。これは本文です。</TextStyle>
+            <TextStyle styleType="body1_bold_khaki">太字＆カーキ色の本文1</TextStyle>
+            <TextStyle styleType="body1">これは本文です。</TextStyle>
+          </div>
+      </Frame>
+
       <h1 className="font-tegomin">Top Page tegomin</h1>
       <h1 className="font-noto">Top Page noto sans jp</h1>
       <div className="font-not text-h1">h1</div>
