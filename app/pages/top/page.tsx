@@ -1,4 +1,5 @@
 import React from "react";
+import TextStyle from "@/app/components/text_style";
 
 export default function TopPage() {
   return (
@@ -29,25 +30,21 @@ export default function TopPage() {
       <div className="shadow_logo m-4">shadow_logo</div>
       <div className="shadow_dark m-4">shadow_dark</div>
       <div className="bg-second shadow_button m-4">shadow_button</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      <TextStyle styleType="title">タイトル</TextStyle>
+      <TextStyle styleType="section_title">セクションタイトル</TextStyle>
+      <TextStyle styleType="section_title_red">
+        赤いセクションタイトル
+      </TextStyle>
+      <TextStyle styleType="body1">本文1</TextStyle>
+      <TextStyle styleType="body1_bold">太字の本文1</TextStyle>
+      <TextStyle styleType="body1_khaki">カーキ色の本文1</TextStyle>
+      <TextStyle styleType="body1_bold_khaki">太字＆カーキ色の本文1</TextStyle>
+      <TextStyle styleType="body2">本文2</TextStyle>
+      <TextStyle styleType="body2_bold">太字の本文2</TextStyle>
+      <TextStyle styleType="body2_khaki">カーキ色の本文2</TextStyle>
+      <TextStyle styleType="body2_bold_khaki">太字＆カーキ色の本文2</TextStyle>
+      <TextStyle styleType="body3">本文3</TextStyle>
+      <TextStyle styleType="body3_khaki">カーキ色の本文3</TextStyle>
     </div>
   );
 }
