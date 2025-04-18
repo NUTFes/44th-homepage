@@ -1,9 +1,18 @@
 import React from "react";
 import TextStyle from "@/app/components/text_style";
+import BackFrame from "@/app/components/back_frame";
 
 export default function TopPage() {
   return (
     <div>
+      <BackFrame>
+        <div>
+          <TextStyle styleType="body1_bold">TextStyleのみ適用</TextStyle>
+        </div>
+        <div className="text-center">
+          <TextStyle styleType="title">text-centerを適用</TextStyle>
+        </div>
+      </BackFrame>
       <h1 className="font-tegomin">Top Page tegomin</h1>
       <h1 className="font-noto">Top Page noto sans jp</h1>
       <div className="font-not text-h1">h1</div>
