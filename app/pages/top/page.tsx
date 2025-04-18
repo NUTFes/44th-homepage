@@ -1,6 +1,5 @@
 import React from "react";
 import TextStyle from "@/app/components/text_style";
-import BackFrame from "@/app/components/back_frame";
 
 export default function TopPage() {
   return (
