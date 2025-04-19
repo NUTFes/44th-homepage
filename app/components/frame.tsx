@@ -19,7 +19,7 @@ const Frame: React.FC<AttentionFrameProps> = ({
                 ${w === "big" ? "w-[366px]" : ""}
                 ${w === "small" ? "w-[186px]" : "w-[297px]"}`}>
                 <div
-                    className={`w-full bg-base_back border border-main rounded-sm
+                    className={`w-full border border-main rounded-sm
                     ${pg === "none" ? "" : "p-6"}`}>
                     <div className={`flex flex-col ${pg === "none" ? "" : "gap-4"}`}>
                         {children}
