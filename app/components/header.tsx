@@ -4,6 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+// 5月時点の公開用に、一時的にリンクを無効化するためのフラグ
+// 後で有効にする場合は、これをfalseに変更するだけ
+const DISABLE_LINKS_TEMPORARILY = true;
+
 export default function Header() {
   // メニューの開閉状態を管理するための状態
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,54 +62,107 @@ export default function Header() {
 
         {/* メニューリンク */}
         <nav className="flex flex-col text-white px-6 space-y-5">
+          {/* トップページへのリンクは常に有効 */}
           <Link href="/pages/top" onClick={toggleMenu} className="text-lg">
             トップ
           </Link>
-          <Link href="/pages/greeting" onClick={toggleMenu} className="text-lg">
-            代表者挨拶
-          </Link>
-          <Link href="/pages/access" onClick={toggleMenu} className="text-lg">
-            アクセス
-          </Link>
-          <Link href="/pages/map" onClick={toggleMenu} className="text-lg">
-            マップ
-          </Link>
           
-          {/* イベントセクションとサブアイテム */}
-          <div className="space-y-3">
-            <div className="text-lg">
-            <Link href="/pages/event" onClick={toggleMenu} className="flex items-center">
-            イベント
-            </Link>
-            </div>
-            <div className="pl-4 space-y-2">
-              <Link href="/pages/event/guest" onClick={toggleMenu} className="flex items-center">
-                <span className="mr-2">◆</span> ゲスト
+          {/* 他のメニュー項目は条件によって有効/無効を切り替え */}
+          {!DISABLE_LINKS_TEMPORARILY ? (
+            // 通常時の完全なメニュー（すべてのリンクが有効）
+            <>
+              <Link href="/pages/greeting" onClick={toggleMenu} className="text-lg">
+                代表者挨拶
               </Link>
-              <Link href="/pages/event/plan" onClick={toggleMenu} className="flex items-center">
-                <span className="mr-2">◆</span> 企画
+              <Link href="/pages/access" onClick={toggleMenu} className="text-lg">
+                アクセス
               </Link>
-              <Link href="/pages/event/exh_exp" onClick={toggleMenu} className="flex items-center">
-                <span className="mr-2">◆</span> 展示・体験
+              <Link href="/pages/map" onClick={toggleMenu} className="text-lg">
+                マップ
               </Link>
-              <Link href="#" onClick={toggleMenu} className="flex items-center">
-                <span className="mr-2">◆</span> タイムスケジュール
+              
+              <div className="space-y-3">
+                <div className="text-lg">
+                  <Link href="/pages/event" onClick={toggleMenu} className="flex items-center">
+                    イベント
+                  </Link>
+                </div>
+                <div className="pl-4 space-y-2">
+                  <Link href="/pages/event/guest" onClick={toggleMenu} className="flex items-center">
+                    <span className="mr-2">◆</span> ゲスト
+                  </Link>
+                  <Link href="/pages/event/plan" onClick={toggleMenu} className="flex items-center">
+                    <span className="mr-2">◆</span> 企画
+                  </Link>
+                  <Link href="/pages/event/exh_exp" onClick={toggleMenu} className="flex items-center">
+                    <span className="mr-2">◆</span> 展示・体験
+                  </Link>
+                  <Link href="#" onClick={toggleMenu} className="flex items-center">
+                    <span className="mr-2">◆</span> タイムスケジュール
+                  </Link>
+                </div>
+              </div>
+              
+              <Link href="/pages/food" onClick={toggleMenu} className="text-lg">
+                飲食
               </Link>
-            </div>
-          </div>
-          
-          <Link href="/pages/food" onClick={toggleMenu} className="text-lg">
-            飲食
-          </Link>
-          <Link href="/pages/sale" onClick={toggleMenu} className="text-lg">
-            物品販売
-          </Link>
-          <Link href="/pages/corpolate_booth" onClick={toggleMenu} className="text-lg">
-            企業ブース
-          </Link>
-          <Link href="/pages/sponsoring_corpolate" onClick={toggleMenu} className="text-lg">
-            協賛企業一覧
-          </Link>
+              <Link href="/pages/sale" onClick={toggleMenu} className="text-lg">
+                物品販売
+              </Link>
+              <Link href="/pages/corpolate_booth" onClick={toggleMenu} className="text-lg">
+                企業ブース
+              </Link>
+              <Link href="/pages/sponsoring_corpolate" onClick={toggleMenu} className="text-lg">
+                協賛企業一覧
+              </Link>
+            </>
+          ) : (
+            // 5月時点公開用の制限されたメニュー（リンクが無効で灰色表示）
+            <>
+              <div className="text-lg text-gray">
+                代表者挨拶
+              </div>
+              <div className="text-lg text-gray">
+                アクセス
+              </div>
+              <div className="text-lg text-gray">
+                マップ
+              </div>
+              
+              <div className="space-y-3">
+                <div className="text-lg text-gray">
+                  イベント
+                </div>
+                <div className="pl-4 space-y-2 text-gray">
+                  <div className="flex items-center">
+                    <span className="mr-2">◆</span> ゲスト
+                  </div>
+                  <div className="flex items-center">
+                    <span className="mr-2">◆</span> 企画
+                  </div>
+                  <div className="flex items-center">
+                    <span className="mr-2">◆</span> 展示・体験
+                  </div>
+                  <div className="flex items-center">
+                    <span className="mr-2">◆</span> タイムスケジュール
+                  </div>
+                </div>
+              </div>
+              
+              <div className="text-lg text-gray">
+                飲食
+              </div>
+              <div className="text-lg text-gray">
+                物品販売
+              </div>
+              <div className="text-lg text-gray">
+                企業ブース
+              </div>
+              <div className="text-lg text-gray">
+                協賛企業一覧
+              </div>
+            </>
+          )}
         </nav>
       </div>
     </header>
