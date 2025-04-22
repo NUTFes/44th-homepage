@@ -5,5 +5,9 @@ import Icon from "@/public/icon/44thlogo.png";
 import Image from "next/image";
 
 export default function TopPage() {
-  return <div></div>;
+  return (
+    <div>
+      <h1>Top Page</h1>
+    </div>
+  );
 }
