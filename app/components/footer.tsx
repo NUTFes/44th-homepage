@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Footer() {
   return (
-    <footer className="bottom-0 w-full p-4 bg-black min-h-screen">
+    <footer className="bottom-0 w-full p-4 bg-header_footer min-h-screen">
       <div className="flex justify-center p-4">
         <Link href={"/pages/top"}>
           <Image
@@ -35,7 +35,9 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="text-white hover:underline hover:text-main">長岡技術科学大学ホームページ</div>
+          <div className="text-white hover:underline hover:text-main">
+            長岡技術科学大学ホームページ
+          </div>
         </a>
 
         <div className="p-6 text-white">
