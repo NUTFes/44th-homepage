@@ -1,53 +1,74 @@
 import React from "react";
 import TextStyle from "@/app/components/text_style";
 import Frame from "@/app/components/frame";
-import Icon from "@/public/icon/44thlogo.png"
+import Icon from "@/public/icon/44thlogo.png";
 import Image from "next/image";
 import Line from "@/app/components/line";
+import BackFrame from "@/app/components/back_frame";
 
 export default function TopPage() {
   return (
     <div>
+      <BackFrame>
+        <div className="p-2">
+          <Frame>
+            <TextStyle styleType="title">
+              <div className="text-center">見出しがあって</div>
+            </TextStyle>
+            <TextStyle styleType="body2">このような本文などがあるかもしれませんね</TextStyle>
+            <div><TextStyle styleType="body2">このように<TextStyle styleType="body2_bold_khaki">スタイルが変わる</TextStyle>かもしれません</TextStyle></div>
+            <div><TextStyle styleType="body2">このように<b>スタイルを変えても</b> いいかもですね</TextStyle></div>
+          </Frame>
+        </div>
+      </BackFrame>
       <Frame>
         <TextStyle styleType="title">タイトル</TextStyle>
-          <div>
-          <TextStyle styleType="body1">これは本文です。これは本文です。これは本文です。</TextStyle>
-          <TextStyle styleType="body1_bold_khaki">太字＆カーキ色の本文1</TextStyle>
+        <div>
+          <TextStyle styleType="body1">
+            これは本文です。これは本文です。これは本文です。
+          </TextStyle>
+          <TextStyle styleType="body1_bold_khaki">
+            太字＆カーキ色の本文1
+          </TextStyle>
           <TextStyle styleType="body1">これは本文です。</TextStyle>
-          </div>
+        </div>
       </Frame>
 
       <Frame></Frame>
 
       <Frame pg="none">
         <div>
-          <Image
-            src={Icon}
-            alt="44th Logo"
-            width={100}
-            height={100} />
-      </div>
-          <TextStyle styleType="title">タイトル</TextStyle>
-          <TextStyle styleType="body1">これはパディングのないフレーム</TextStyle>
+          <Image src={Icon} alt="44th Logo" width={100} height={100} />
+        </div>
+        <TextStyle styleType="title">タイトル</TextStyle>
+        <TextStyle styleType="body1">これはパディングのないフレーム</TextStyle>
       </Frame>
 
       <Frame w="big">
-        <div className="text-center"><TextStyle styleType="title">お知らせ</TextStyle></div>
-          <Line/>
-          <div>
-            <p>
-              <TextStyle styleType="body1_khaki">2025/00/00</TextStyle>
-            </p>
-            <TextStyle styleType="body1">これは本文です。これは本文です。これは本文です。これは本文です。これは本文です。</TextStyle>
-          </div>
-          <div>
-            <p>
-              <TextStyle styleType="body1_khaki">2025/00/00</TextStyle>
-            </p>
-            <TextStyle styleType="body1">これは本文です。これは本文です。これは本文です。これは本文です。これは本文です。</TextStyle>
-            <TextStyle styleType="body1_bold_khaki">太字＆カーキ色の本文1</TextStyle>
-            <TextStyle styleType="body1">これは本文です。</TextStyle>
-          </div>
+        <div className="text-center">
+          <TextStyle styleType="title">お知らせ</TextStyle>
+        </div>
+        <Line />
+        <div>
+          <p>
+            <TextStyle styleType="body1_khaki">2025/00/00</TextStyle>
+          </p>
+          <TextStyle styleType="body1">
+            これは本文です。これは本文です。これは本文です。これは本文です。これは本文です。
+          </TextStyle>
+        </div>
+        <div>
+          <p>
+            <TextStyle styleType="body1_khaki">2025/00/00</TextStyle>
+          </p>
+          <TextStyle styleType="body1">
+            これは本文です。これは本文です。これは本文です。これは本文です。これは本文です。
+          </TextStyle>
+          <TextStyle styleType="body1_bold_khaki">
+            太字＆カーキ色の本文1
+          </TextStyle>
+          <TextStyle styleType="body1">これは本文です。</TextStyle>
+        </div>
       </Frame>
 
       <h1 className="font-tegomin">Top Page tegomin</h1>
