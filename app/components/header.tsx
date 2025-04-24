@@ -18,7 +18,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-black flex justify-between pb-4 pt-4 pl-[3%] pr-[3%] shadow_button z-50">
+    <header className="fixed top-0 left-0 w-full bg-header_footer flex justify-between pb-4 pt-4 pl-[3%] pr-[3%] shadow_button z-50">
       <div className="flex">
         <Link href={"/pages/top"}>
           <Image
@@ -36,7 +36,7 @@ export default function Header() {
       </div>
 
       {/* メニューが開いた時の背景オーバーレイ */}
-      <div 
+      <div
         className={`fixed top-0 right-0 w-screen h-screen bg-black bg-opacity-50 transform transition-opacity duration-300 ease-in-out ${
           isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
@@ -44,16 +44,16 @@ export default function Header() {
       ></div>
 
       {/* メニューの内容 */}
-      <div 
+      <div
         className={`fixed top-0 right-0 h-screen bg-black w-64 transform transition-transform duration-300 ease-in-out ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         } overflow-y-auto z-50`}
       >
         {/* 閉じるボタン */}
         <div className="flex justify-end p-4">
-          <button 
+          <button
             onClick={toggleMenu}
-            className="text-white text-2xl" 
+            className="text-white text-2xl"
             aria-label="メニューを閉じる"
           >
             ✕
@@ -66,73 +66,101 @@ export default function Header() {
           <Link href="/pages/top" onClick={toggleMenu} className="text-lg">
             トップ
           </Link>
-          
+
           {/* 他のメニュー項目は条件によって有効/無効を切り替え */}
           {!DISABLE_LINKS_TEMPORARILY ? (
             // 通常時の完全なメニュー（すべてのリンクが有効）
             <>
-              <Link href="/pages/greeting" onClick={toggleMenu} className="text-lg">
+              <Link
+                href="/pages/greeting"
+                onClick={toggleMenu}
+                className="text-lg"
+              >
                 代表者挨拶
               </Link>
-              <Link href="/pages/access" onClick={toggleMenu} className="text-lg">
+              <Link
+                href="/pages/access"
+                onClick={toggleMenu}
+                className="text-lg"
+              >
                 アクセス
               </Link>
               <Link href="/pages/map" onClick={toggleMenu} className="text-lg">
                 マップ
               </Link>
-              
+
               <div className="space-y-3">
                 <div className="text-lg">
-                  <Link href="/pages/event" onClick={toggleMenu} className="flex items-center">
+                  <Link
+                    href="/pages/event"
+                    onClick={toggleMenu}
+                    className="flex items-center"
+                  >
                     イベント
                   </Link>
                 </div>
                 <div className="pl-4 space-y-2">
-                  <Link href="/pages/event/guest" onClick={toggleMenu} className="flex items-center">
+                  <Link
+                    href="/pages/event/guest"
+                    onClick={toggleMenu}
+                    className="flex items-center"
+                  >
                     <span className="mr-2">◆</span> ゲスト
                   </Link>
-                  <Link href="/pages/event/plan" onClick={toggleMenu} className="flex items-center">
+                  <Link
+                    href="/pages/event/plan"
+                    onClick={toggleMenu}
+                    className="flex items-center"
+                  >
                     <span className="mr-2">◆</span> 企画
                   </Link>
-                  <Link href="/pages/event/exh_exp" onClick={toggleMenu} className="flex items-center">
+                  <Link
+                    href="/pages/event/exh_exp"
+                    onClick={toggleMenu}
+                    className="flex items-center"
+                  >
                     <span className="mr-2">◆</span> 展示・体験
                   </Link>
-                  <Link href="#" onClick={toggleMenu} className="flex items-center">
+                  <Link
+                    href="#"
+                    onClick={toggleMenu}
+                    className="flex items-center"
+                  >
                     <span className="mr-2">◆</span> タイムスケジュール
                   </Link>
                 </div>
               </div>
-              
+
               <Link href="/pages/food" onClick={toggleMenu} className="text-lg">
                 飲食
               </Link>
               <Link href="/pages/sale" onClick={toggleMenu} className="text-lg">
                 物品販売
               </Link>
-              <Link href="/pages/corpolate_booth" onClick={toggleMenu} className="text-lg">
+              <Link
+                href="/pages/corpolate_booth"
+                onClick={toggleMenu}
+                className="text-lg"
+              >
                 企業ブース
               </Link>
-              <Link href="/pages/sponsoring_corpolate" onClick={toggleMenu} className="text-lg">
+              <Link
+                href="/pages/sponsoring_corpolate"
+                onClick={toggleMenu}
+                className="text-lg"
+              >
                 協賛企業一覧
               </Link>
             </>
           ) : (
             // 5月時点公開用の制限されたメニュー（リンクが無効で灰色表示）
             <>
-              <div className="text-lg text-gray">
-                代表者挨拶
-              </div>
-              <div className="text-lg text-gray">
-                アクセス
-              </div>
-              <div className="text-lg text-gray">
-                マップ
-              </div>
-              
+              <div className="text-lg text-gray">代表者挨拶</div>
+              <div className="text-lg text-gray">アクセス</div>
+              <div className="text-lg text-gray">マップ</div>
+
               <div className="space-y-3">
-                <div className="text-lg text-gray">
-                  イベント
-                </div>
+                <div className="text-lg text-gray">イベント</div>
                 <div className="pl-4 space-y-2 text-gray">
                   <div className="flex items-center">
                     <span className="mr-2">◆</span> ゲスト
@@ -148,19 +176,11 @@ export default function Header() {
                   </div>
                 </div>
               </div>
-              
-              <div className="text-lg text-gray">
-                飲食
-              </div>
-              <div className="text-lg text-gray">
-                物品販売
-              </div>
-              <div className="text-lg text-gray">
-                企業ブース
-              </div>
-              <div className="text-lg text-gray">
-                協賛企業一覧
-              </div>
+
+              <div className="text-lg text-gray">飲食</div>
+              <div className="text-lg text-gray">物品販売</div>
+              <div className="text-lg text-gray">企業ブース</div>
+              <div className="text-lg text-gray">協賛企業一覧</div>
             </>
           )}
         </nav>
