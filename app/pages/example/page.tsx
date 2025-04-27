@@ -14,7 +14,7 @@ export default function TopPage() {
       <BackFrame>
         <div className="py-2 space-y-8">
           <Frame>
-            <TextStyle styleType="title">
+            <TextStyle styleType="section_title">
               <div className="text-center">見出しがあって</div>
             </TextStyle>
             <TextStyle styleType="body2">
@@ -63,8 +63,8 @@ export default function TopPage() {
           </LinkButton>
           <LinkButton
             isExternal={true}
-            href="mailto:yumeshinanting2@gmail.com"
-            className="https://www.nagaokaut.ac.jp/index.html"
+            href="https://www.nagaokaut.ac.jp/index.html"
+            className="flex items-center space-x-2 bg-font_link mailtoui"
           >
             <span>
               <MdMailOutline size={24} />

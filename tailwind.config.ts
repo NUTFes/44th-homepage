@@ -51,7 +51,7 @@ const config: Config = {
           textShadow: "0 0 0.5rem rgba(225,225,225,1)",
         },
         ".shadow_font": {
-          textShadow: "0 0.25rem 0.025rem rgba(0,0,0,0.25)",
+          textShadow: "0 0.20rem 0.020rem rgba(0,0,0,0.25)",
         },
         //ボックスシャドウ
         ".shadow_logo": {
