@@ -5,6 +5,7 @@ import Icon from "@/public/icon/44thlogo.png";
 import Image from "next/image";
 import Line from "@/app/components/line";
 import BackFrame from "@/app/components/back_frame";
+import Carousel from "@/app/components/carousel";
 
 export default function TopPage() {
   return (
@@ -15,10 +16,31 @@ export default function TopPage() {
             <TextStyle styleType="title">
               <div className="text-center">見出しがあって</div>
             </TextStyle>
-            <TextStyle styleType="body2">このような本文などがあるかもしれませんね</TextStyle>
-            <div><TextStyle styleType="body2">このように<TextStyle styleType="body2_bold_khaki">スタイルが変わる</TextStyle>かもしれません</TextStyle></div>
-            <div><TextStyle styleType="body2">このように<b>スタイルを変えても</b> いいかもですね</TextStyle></div>
+            <TextStyle styleType="body2">
+              このような本文などがあるかもしれませんね
+            </TextStyle>
+            <div>
+              <TextStyle styleType="body2">
+                このように
+                <TextStyle styleType="body2_bold_khaki">
+                  スタイルが変わる
+                </TextStyle>
+                かもしれません
+              </TextStyle>
+            </div>
+            <div>
+              <TextStyle styleType="body2">
+                このように<b>スタイルを変えても</b> いいかもですね
+              </TextStyle>
+            </div>
           </Frame>
+        </div>
+        <div className="relative overflow-hidden w-full">
+        <Carousel>
+        <div className="bg-main w-full h-[120px]"></div>
+        <div className="bg-second w-full h-full">あ</div>
+        <div className="bg-font_link w-full h-full">あ</div>
+      </Carousel>
         </div>
       </BackFrame>
       <Frame>
