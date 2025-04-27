@@ -1,5 +1,7 @@
 "use client";
 import React, { ReactNode, useState } from "react";
+import { FaAngleRight } from "react-icons/fa6";
+import { FaAngleLeft} from "react-icons/fa6";
 
 interface CaroucelProps {
   children: ReactNode[];
@@ -34,15 +36,15 @@ const Carousel: React.FC<CaroucelProps> = ({ children, className }) => {
       </div>
       <button
         onClick={prevSlide}
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-dark_back rounded-sm text-white p-1 ml-2"
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-dark_back rounded-sm text-white p-1 py-2 ml-2"
       >
-        ＜
+        <FaAngleLeft />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-dark_back rounded-sm text-white p-1 mr-2"
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-dark_back rounded-sm text-white p-1 py-2 mr-2"
       >
-        ＞
+        <FaAngleRight />
       </button>
       {/*インジケーター*/}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
