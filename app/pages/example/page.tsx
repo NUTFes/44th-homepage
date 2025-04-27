@@ -6,6 +6,7 @@ import Image from "next/image";
 import Line from "@/app/components/line";
 import BackFrame from "@/app/components/back_frame";
 import LinkButton from "@/app/components/link_button";
+import { MdMailOutline } from "react-icons/md";
 
 export default function TopPage() {
   return (
@@ -59,6 +60,16 @@ export default function TopPage() {
 
           <LinkButton href="/pages/top" className="bg-font_link">
             ボタンの色など変更
+          </LinkButton>
+          <LinkButton
+            isExternal={true}
+            href="mailto:yumeshinanting2@gmail.com"
+            className="https://www.nagaokaut.ac.jp/index.html"
+          >
+            <span>
+              <MdMailOutline size={24} />
+            </span>
+            <span>アイコンを追加</span>
           </LinkButton>
         </div>
       </BackFrame>
