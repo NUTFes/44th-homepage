@@ -1,7 +1,8 @@
 "use client";
 import React, { ReactNode, useState } from "react";
+import { useSwipeable } from "react-swipeable";
 import { FaAngleRight } from "react-icons/fa6";
-import { FaAngleLeft} from "react-icons/fa6";
+import { FaAngleLeft } from "react-icons/fa6";
 
 interface CaroucelProps {
   children: ReactNode[];
@@ -22,14 +23,18 @@ const Carousel: React.FC<CaroucelProps> = ({ children, className }) => {
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
   };
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: nextSlide,
+    onSwipedRight: prevSlide,
+  });
   return (
-    <div className={`relative overflow-hidden ${className}`}>
+    <div className={`relative overflow-hidden ${className}`}{...swipeHandlers}>
       <div
         className="flex transition-transform duration-500"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {children.map((child, index) => (
-          <div key={index} className="w-full flex-shrink-0">
+          <div key={index} className="w-full flex-shrink-0 relative">
             {child}
           </div>
         ))}
@@ -47,10 +52,16 @@ const Carousel: React.FC<CaroucelProps> = ({ children, className }) => {
         <FaAngleRight />
       </button>
       {/*インジケーター*/}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-      {children.map((_, index) => (
-        <button key={index} onClick={() => goToSlide(index)} className={`w-2 h-2 rounded-full shadow_dark border border-main ${currentIndex === index ? "bg-main" : "bg-white_back"}`}/>
-      ))}
+      <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {children.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`w-2 h-2 rounded-full shadow_dark border border-main ${
+              currentIndex === index ? "bg-main" : "bg-white_back"
+            }`}
+          />
+        ))}
       </div>
     </div>
   );
