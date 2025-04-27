@@ -58,19 +58,20 @@ export default function TopPage() {
             </LinkButton>
           </div>
 
-          <LinkButton href="/pages/top" className="bg-font_link">
+          <LinkButton href="/pages/top" className="bg-second">
             ボタンの色など変更
           </LinkButton>
           <LinkButton
             isExternal={true}
             href="https://www.nagaokaut.ac.jp/index.html"
-            className="flex items-center space-x-2 bg-font_link mailtoui"
+            className="bg-font_link flex items-center space-x-2"
           >
             <span>
               <MdMailOutline size={24} />
             </span>
             <span>アイコンを追加</span>
           </LinkButton>
+          <LinkButton href="/pages/top" className="bg-font_link">ボタン</LinkButton>
         </div>
       </BackFrame>
       <Frame>
