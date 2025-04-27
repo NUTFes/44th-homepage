@@ -5,20 +5,61 @@ import Icon from "@/public/icon/44thlogo.png";
 import Image from "next/image";
 import Line from "@/app/components/line";
 import BackFrame from "@/app/components/back_frame";
+import LinkButton from "@/app/components/link_button";
 
 export default function TopPage() {
   return (
     <div>
       <BackFrame>
-        <div className="p-2">
+        <div className="py-2 space-y-8">
           <Frame>
             <TextStyle styleType="title">
               <div className="text-center">見出しがあって</div>
             </TextStyle>
-            <TextStyle styleType="body2">このような本文などがあるかもしれませんね</TextStyle>
-            <div><TextStyle styleType="body2">このように<TextStyle styleType="body2_bold_khaki">スタイルが変わる</TextStyle>かもしれません</TextStyle></div>
-            <div><TextStyle styleType="body2">このように<b>スタイルを変えても</b> いいかもですね</TextStyle></div>
+            <TextStyle styleType="body2">
+              このような本文などがあるかもしれませんね
+            </TextStyle>
+            <div>
+              <TextStyle styleType="body2">
+                このように
+                <TextStyle styleType="body2_bold_khaki">
+                  スタイルが変わる
+                </TextStyle>
+                かもしれません
+              </TextStyle>
+            </div>
+            <div>
+              <TextStyle styleType="body2">
+                このように<b>スタイルを変えても</b> いいかもですね
+              </TextStyle>
+            </div>
+            <LinkButton href="/pages/top">
+              ボタン
+              <br />
+              （サイト内リンク）
+            </LinkButton>
+            <LinkButton
+              isExternal={true}
+              href="https://www.nagaokaut.ac.jp/index.html"
+            >
+              ボタン
+              <br />
+              （サイト外リンク）
+            </LinkButton>
           </Frame>
+          <Frame />
+          <div className="justify-center flex">
+            <LinkButton
+              isExternal={true}
+              href="https://www.nagaokaut.ac.jp/index.html"
+            >
+              frame外に置く場合
+            </LinkButton>
+          </div>
+
+          <LinkButton href="/pages/top" className="bg-font_link">
+            ボタンの色など変更
+          </LinkButton>
         </div>
       </BackFrame>
       <Frame>
