@@ -46,20 +46,20 @@ const Carousel: React.FC<CaroucelProps> = ({ children, className ,autoSlide=fals
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {childrenArray.map((child, index) => (
-          <div key={index} className="w-full flex-shrink-0 relative">
+          <div key={index} className="w-full flex-shrink-0 relative z-10">
             {child}
           </div>
         ))}
       </div>
       <button
         onClick={prevSlide}
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-dark_back rounded-sm text-white p-1 py-2 ml-2"
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-dark_back rounded-sm text-white p-1 py-2 ml-2 z-20"
       >
         <FaAngleLeft />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-dark_back rounded-sm text-white p-1 py-2 mr-2"
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-dark_back rounded-sm text-white p-1 py-2 mr-2 z-20"
       >
         <FaAngleRight />
       </button>

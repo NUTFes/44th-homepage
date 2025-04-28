@@ -9,7 +9,7 @@ const ReturnTopButton = () => {
   };
 
   return (
-    <button onClick={returnTop}>
+    <button onClick={returnTop} className="fixed bottom-4 right-4 z-[99]">
       <Image
         src="/icon/return_top_button.svg"
         alt="return_top_button"
