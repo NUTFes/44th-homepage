@@ -5,19 +5,20 @@ import { FaAngleRight } from "react-icons/fa6";
 import { FaAngleLeft } from "react-icons/fa6";
 
 interface CaroucelProps {
-  children: ReactNode[];
+  children: ReactNode | ReactNode[];//単一の要素|複数の要素
   className?: string;
 }
 const Carousel: React.FC<CaroucelProps> = ({ children, className }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const childrenArray = React.Children.toArray(children);
   //次へ機能
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % children.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % childrenArray.length);
   };
   //前へ機能
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? children.length - 1 : prevIndex - 1
+      prevIndex === 0 ? childrenArray.length - 1 : prevIndex - 1
     );
   };
   const goToSlide = (index: number) => {
@@ -33,7 +34,7 @@ const Carousel: React.FC<CaroucelProps> = ({ children, className }) => {
         className="flex transition-transform duration-500"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
-        {children.map((child, index) => (
+        {childrenArray.map((child, index) => (
           <div key={index} className="w-full flex-shrink-0 relative">
             {child}
           </div>
@@ -53,7 +54,7 @@ const Carousel: React.FC<CaroucelProps> = ({ children, className }) => {
       </button>
       {/*インジケーター*/}
       <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        {children.map((_, index) => (
+        {childrenArray.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
