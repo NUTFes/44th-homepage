@@ -5,6 +5,7 @@ import Icon from "@/public/icon/44thlogo.png";
 import Image from "next/image";
 import Line from "@/app/components/line";
 import BackFrame from "@/app/components/back_frame";
+import Carousel from "@/app/components/carousel";
 
 export default function TopPage() {
   return (
@@ -48,7 +49,14 @@ export default function TopPage() {
         </div>
       </Frame>
 
-      <Frame></Frame>
+      <Frame>
+      <Carousel autoSlide={true}>
+        <div className="bg-accent w-full h-[120px]"></div>
+        <div className="bg-second w-full h-[120px]"></div>
+        <div className="bg-font_link w-full h-[120px]"></div>
+      </Carousel>
+      </Frame>
+
 
       <Frame pg="none">
         <div>

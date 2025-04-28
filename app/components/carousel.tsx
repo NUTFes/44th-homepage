@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import { FaAngleRight } from "react-icons/fa6";
 import { FaAngleLeft } from "react-icons/fa6";
@@ -7,8 +7,10 @@ import { FaAngleLeft } from "react-icons/fa6";
 interface CaroucelProps {
   children: ReactNode | ReactNode[];//単一の要素|複数の要素
   className?: string;
+  autoSlide?: boolean;//自動スライドのオンオフ(デフォルトはfalse)
+  autoSlideInterval?:number;//自動スライドの間隔(ms)
 }
-const Carousel: React.FC<CaroucelProps> = ({ children, className }) => {
+const Carousel: React.FC<CaroucelProps> = ({ children, className ,autoSlide=false, autoSlideInterval=3000,}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const childrenArray = React.Children.toArray(children);
   //次へ機能
@@ -24,10 +26,19 @@ const Carousel: React.FC<CaroucelProps> = ({ children, className }) => {
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
   };
+  //スマホのスワイプ
   const swipeHandlers = useSwipeable({
     onSwipedLeft: nextSlide,
     onSwipedRight: prevSlide,
   });
+  //自動スライド
+  useEffect(()=>{
+    if (!autoSlide) return;//falseの場合は何もしない
+    const slideInterval = setInterval(()=>{
+      nextSlide();
+    }, autoSlideInterval);//スライドする→指定された時間待つ
+    return ()=> clearInterval(slideInterval);
+  },[currentIndex, autoSlide, autoSlideInterval]);
   return (
     <div className={`relative overflow-hidden ${className}`}{...swipeHandlers}>
       <div
