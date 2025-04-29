@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import TextStyle from './text_style';
+import TextStyle from '../../../components/text_style';
+import Frame from "@/app/components/frame";
 
 interface Info {
     番号: string;
@@ -42,22 +43,24 @@ if (error) return <div><p className='mb-4'><TextStyle styleType="title">お知�
 
 return (
     <div>
-        <p className='mb-4'>
-            <TextStyle styleType="title">お知らせ</TextStyle>
-        </p>
-            {infos.map((info) => (
-                <div key={info.番号} className='mb-4'>
-                    <p>
-                        <TextStyle styleType="body1_khaki">{info.投稿日時}</TextStyle>
-                    </p>
-                    <p>
-                        <TextStyle styleType="body1_bold_khaki">{info.タイトル}</TextStyle>
-                    </p>
-                    <p>
-                        <TextStyle styleType="body2">{info.内容}</TextStyle>
-                    </p>
-                </div>
-            ))}
+        <Frame>
+            <p className='text-center'>
+                <TextStyle styleType="section_title">お知らせ</TextStyle>
+            </p>
+                {infos.map((info) => (
+                    <div key={info.番号}>
+                        <p>
+                            <TextStyle styleType="body1_khaki">{info.投稿日時}</TextStyle>
+                        </p>
+                        <p>
+                            <TextStyle styleType="body1_bold_khaki">{info.タイトル}</TextStyle>
+                        </p>
+                        <p>
+                            <TextStyle styleType="body2">{info.内容}</TextStyle>
+                        </p>
+                    </div>
+                ))}
+        </Frame>
     </div>
 );
 };
