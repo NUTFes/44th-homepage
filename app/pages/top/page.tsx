@@ -3,6 +3,7 @@ import TextStyle from "@/app/components/text_style";
 import Frame from "@/app/components/frame";
 import Icon from "@/public/icon/44thlogo.png";
 import Image from "next/image";
+import Infos from "@/app/components/info";
 
 export default function TopPage() {
   return (
