@@ -1,4 +1,3 @@
-'use client';
 import React, { useEffect, useState } from 'react';
 import TextStyle from '../../../components/text_style';
 import Frame from "@/app/components/frame";
