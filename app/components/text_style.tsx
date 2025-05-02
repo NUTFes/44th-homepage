@@ -16,9 +16,10 @@ interface TextProps {
     | "body3"
     | "body3_khaki"; // 許可されるスタイルを制限
   children: ReactNode;
+  className?: string; // 上書きでCSSクラスを指定できる
 }
 
-const TextStyle: React.FC<TextProps> = ({ styleType, children }) => {
+const TextStyle: React.FC<TextProps> = ({ styleType, children, className }) => {
   const styles: Record<TextProps["styleType"], string> = {
     title: "text-h1 font-tegomin text-font_khaki shadow_font",
     section_title: "text-h2 font-tegomin text-font_khaki shadow_font",
@@ -35,7 +36,7 @@ const TextStyle: React.FC<TextProps> = ({ styleType, children }) => {
     body3_khaki: "text-body2 font-noto text-font_khaki",
   };
 
-  return <span className={styles[styleType]}>{children}</span>;
+  return <span className={`${styles[styleType]} ${className || ""}`}>{children}</span>;
 };
 
 export default TextStyle;
