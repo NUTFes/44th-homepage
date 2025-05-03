@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import TextStyle from '@/app/components/text_style';
 import Line from '@/app/components/line';
 import Frame from '@/app/components/frame';
-import { FaFileAlt } from "react-icons/fa";
+import { GoCopy } from "react-icons/go";
 import { FaRegCopy } from 'react-icons/fa';
 
 const RecruitmentSponsors: React.FC = () => {
@@ -38,35 +39,39 @@ const RecruitmentSponsors: React.FC = () => {
       <Line className="border-main w-full my-4" />
       
       <div className="flex flex-col gap-4">
-        <div className="text-font_main text-body2">
-          <p>技大祭実行委員会では、企業の皆さまからのご協賛を募集しております。</p>
-          <p className="mt-2">ご関心をお持ちの方は、以下の資料をご覧いただき、メールにてご連絡ください。</p>
+        <div className="text-font_main text-body3">
+          <p>技大祭実行委員会では、活気あふれる大学祭の実現に向け、皆様からの力強いご支援を賜りたく、ご協賛のお願いをしております。</p>
+          <p className="mt-2">ご関心をお持ちいただけましたら、こちらの資料をご覧いただき、ご検討いただけますと幸いです。</p>
         </div>
         
         {/* 資料を見るボタン */}
-        <button className="w-full bg-main hover:bg-second text-white py-3 rounded flex items-center transition-colors">
-          <div className="pl-4 flex items-center justify-center w-12">
-            <FaFileAlt className="text-xl text-white" />
-          </div>
-          <div className="flex-grow text-center font-bold">資料を見る</div>
-        </button>
+        <Link href="https://drive.google.com/drive/u/0/folders/15rxDMxk7GcWHYNMCwtlqw6kEP4-K2jKk" target="_blank" rel="noopener noreferrer" className="w-full">
+          <button className="w-full bg-main hover:bg-second text-white py-4 rounded flex items-center transition-colors shadow_button">
+            <div className="pl-4 flex items-center justify-center w-12">
+              <GoCopy className="text-xl text-white" />
+            </div>
+            <div className="flex-grow text-center">
+              <div className="text-white text-body1 font-noto">資料を見る</div>
+            </div>
+          </button>
+        </Link>
         
         <Line className="border-main w-full my-2" />
         
         <div className="flex flex-col gap-3">
-          <p className="text-font_main text-body2">協賛のお問い合わせは、以下のメールアドレスからご連絡ください。</p>
+          <p className="text-font_main text-body3">協賛のお問い合わせは、こちらのメールアドレスからご連絡ください。</p>
           
           {/* メールアドレスをコピーボタン*/}
           <button 
             onClick={handleCopyEmail} 
-            className="w-full bg-font_link hover:bg-opacity-80 text-white py-3 rounded flex items-center relative transition-colors"
+            className="w-full bg-font_link hover:bg-opacity-80 text-white py-4 rounded flex items-center relative transition-colors shadow_button"
             aria-label="メールアドレスをコピー"
           >
             <div className="pl-4 flex items-center justify-center w-12">
               <FaRegCopy className="text-xl text-white" />
             </div>
-            <div className="flex-grow text-center font-bold">
-              メール<span className="no-spam">xyz123</span>アドレス<span className="no-spam">abc456</span>をコピー
+            <div className="flex-grow text-center">
+              <div className="text-white text-body2 font-noto">メール<span className="no-spam">xyz123</span>アドレス<span className="no-spam">abc456</span>をコピー</div>
             </div>
           </button>
           
