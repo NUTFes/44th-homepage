@@ -15,7 +15,7 @@ export default function Footer() {
       </div>
       <div className="flex justify-center gap-[30%] md:gap-[30%] lg:gap-[30%] p-4">
       <a
-          href="https://www.instagram.com/nutfes/"
+          href="https://x.com/nut_fes"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -27,7 +27,7 @@ export default function Footer() {
           />
         </a>
         <a
-          href="https://x.com/nut_fes"
+          href="https://www.instagram.com/nutfes/"
           target="_blank"
           rel="noopener noreferrer"
         >
