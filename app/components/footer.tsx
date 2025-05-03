@@ -14,14 +14,38 @@ export default function Footer() {
         </Link>
       </div>
       <div className="flex justify-center gap-[30%] md:gap-[30%] lg:gap-[30%] p-4">
-        <a
+      <a
           href="https://www.instagram.com/nutfes/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src="/icon/x_logo.svg"
+            alt="X-link"
+            width={50}
+            height={50}
+          />
+        </a>
+        <a
+          href="https://x.com/nut_fes"
           target="_blank"
           rel="noopener noreferrer"
         >
           <Image
             src="/icon/Instagram_Glyph_White.svg"
             alt="instagram-link"
+            width={50}
+            height={50}
+          />
+        </a>
+        <a
+          href="https://www.instagram.com/nutfes/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src="/icon/facebook_logo.svg"
+            alt="facebook-link"
             width={50}
             height={50}
           />
