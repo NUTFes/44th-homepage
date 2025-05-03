@@ -30,3 +30,8 @@ body {
     text-wrap: balance;
   }
 }
+
+/* スパム対策用 */
+.no-spam {
+  display: none;
+}
