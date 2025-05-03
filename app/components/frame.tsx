@@ -17,7 +17,7 @@ const Frame: React.FC<AttentionFrameProps> = ({
             <div
                 className={`p-0.5 border-2 border-main bg-base_back rounded-sm
                 ${w === "big" ? "w-[366px]" : ""}
-                ${w === "small" ? "w-[186px]" : "w-[320px]"}`}>
+                ${w === "small" ? "w-[186px]" : "w-[290px]"}`}>
                 <div
                     className={`w-full border border-main rounded-sm
                     ${pg === "none" ? "" : "p-6"}`}>
