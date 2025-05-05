@@ -5,8 +5,8 @@ import Link from 'next/link';
 import TextStyle from '@/app/components/text_style';
 import Line from '@/app/components/line';
 import Frame from '@/app/components/frame';
+import { FaFileAlt } from "react-icons/fa";
 import { GoCopy } from "react-icons/go";
-import { FaRegCopy } from 'react-icons/fa';
 
 const RecruitmentSponsors: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -48,9 +48,9 @@ const RecruitmentSponsors: React.FC = () => {
         <Link href="https://drive.google.com/drive/u/0/folders/15rxDMxk7GcWHYNMCwtlqw6kEP4-K2jKk" target="_blank" rel="noopener noreferrer" className="w-full">
           <button className="w-full bg-main hover:bg-second text-white py-4 rounded flex items-center transition-colors shadow_button">
             <div className="pl-4 flex items-center justify-center w-12">
-              <GoCopy className="text-xl text-white" />
+              <FaFileAlt className="text-xl text-white" />
             </div>
-            <div className="flex-grow text-center">
+            <div className="flex-grow text-center pr-4">
               <div className="text-white text-body1 font-noto">資料を見る</div>
             </div>
           </button>
@@ -67,19 +67,17 @@ const RecruitmentSponsors: React.FC = () => {
             className="w-full bg-font_link hover:bg-opacity-80 text-white py-4 rounded flex items-center relative transition-colors shadow_button"
             aria-label="メールアドレスをコピー"
           >
-            <div className="pl-4 flex items-center justify-center w-12">
-              <FaRegCopy className="text-xl text-white" />
+            <div className="pl-2 flex items-center justify-center w-12">
+              <GoCopy className="text-xl text-white" />
             </div>
-            <div className="flex-grow text-center">
+            <div className="flex-grow text-center pr-2">
               <div className="text-white text-body2 font-noto">メール<span className="no-spam">xyz123</span>アドレス<span className="no-spam">abc456</span>をコピー</div>
             </div>
           </button>
           
-          {copied && (
-            <div className="text-sm text-main text-center font-bold mt-1">
-              コピーしました
-            </div>
-          )}
+          <div className="h-6 text-font_main text-body3 text-center mt-1 transition-opacity duration-500 ease-in-out" style={{ opacity: copied ? 1 : 0 }}>
+            コピーしました
+          </div>
         </div>
       </div>
     </Frame>
