@@ -32,7 +32,7 @@ const TextStyle: React.FC<TextProps> = ({ styleType, children }) => {
     body2_khaki: "text-body2 font-noto text-font_khaki",
     body2_bold_khaki: "text-body2 font-noto text-font_khaki font-bold",
     body3: "text-body3 font-noto text-font_main",
-    body3_khaki: "text-body2 font-noto text-font_khaki",
+    body3_khaki: "text-body3 font-noto text-font_khaki",
   };
 
   return <span className={styles[styleType]}>{children}</span>;
