@@ -24,9 +24,9 @@ const InfosClient: React.FC<Props> = ({ infos }) => {
             </p>
             {infos.map((info) => (
                 <div key={info.番号}>
-                    <p><TextStyle styleType="body1_khaki">{info.投稿日時}</TextStyle></p>
-                    <p><TextStyle styleType="body1_bold_khaki">{info.タイトル}</TextStyle></p>
-                    <p><TextStyle styleType="body2">{info.内容}</TextStyle></p>
+                    <p><TextStyle styleType="body3_khaki">{info.投稿日時}</TextStyle></p>
+                    <p><TextStyle styleType="body2_bold_khaki">{info.タイトル}</TextStyle></p>
+                    <p><TextStyle styleType="body3">{info.内容}</TextStyle></p>
                 </div>
             ))}
         </Frame>
