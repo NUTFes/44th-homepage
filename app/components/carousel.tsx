@@ -5,12 +5,17 @@ import { FaAngleRight } from "react-icons/fa6";
 import { FaAngleLeft } from "react-icons/fa6";
 
 interface CaroucelProps {
-  children: ReactNode | ReactNode[];//単一の要素|複数の要素
+  children: ReactNode | ReactNode[]; //単一の要素|複数の要素
   className?: string;
-  autoSlide?: boolean;//自動スライドのオンオフ(デフォルトはfalse)
-  autoSlideInterval?:number;//自動スライドの間隔(ms)
+  autoSlide?: boolean; //自動スライドのオンオフ(デフォルトはfalse)
+  autoSlideInterval?: number; //自動スライドの間隔(ms)
 }
-const Carousel: React.FC<CaroucelProps> = ({ children, className ,autoSlide=false, autoSlideInterval=3000,}) => {
+const Carousel: React.FC<CaroucelProps> = ({
+  children,
+  className,
+  autoSlide = false,
+  autoSlideInterval = 3000,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const childrenArray = React.Children.toArray(children);
   //次へ機能
@@ -32,22 +37,24 @@ const Carousel: React.FC<CaroucelProps> = ({ children, className ,autoSlide=fals
     onSwipedRight: prevSlide,
   });
   //自動スライド
-  useEffect(()=>{
-    if (!autoSlide) return;//falseの場合は何もしない
-    const slideInterval = setInterval(()=>{
+  useEffect(() => {
+    if (!autoSlide) return; //falseの場合は何もしない
+    const slideInterval = setInterval(() => {
       nextSlide();
-    }, autoSlideInterval);//スライドする→指定された時間待つ
-    return ()=> clearInterval(slideInterval);
-  },[currentIndex, autoSlide, autoSlideInterval]);
+    }, autoSlideInterval); //スライドする→指定された時間待つ
+    return () => clearInterval(slideInterval);
+  }, [currentIndex, autoSlide, autoSlideInterval]);
   return (
-    <div className={`relative overflow-hidden ${className}`}{...swipeHandlers}>
+    <div className={`relative overflow-hidden ${className}`} {...swipeHandlers}>
       <div
         className="flex transition-transform duration-500"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {childrenArray.map((child, index) => (
           <div key={index} className="w-full flex-shrink-0 relative z-10">
-            {child}
+            <div className="flex items-center justify-center h-full w-full">
+              <div className="object-contain max-h-full max-w-full overflow-hidden">{child}</div>
+            </div>
           </div>
         ))}
       </div>
