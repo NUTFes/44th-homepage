@@ -5,6 +5,7 @@ import Icon from "@/public/icon/44thlogo.png";
 import Image from "next/image";
 import Line from "@/app/components/line";
 import BackFrame from "@/app/components/back_frame";
+import Infos from "../top/components/Infos";
 
 export default function TopPage() {
   return (
@@ -19,6 +20,7 @@ export default function TopPage() {
             <div><TextStyle styleType="body2">このように<TextStyle styleType="body2_bold_khaki">スタイルが変わる</TextStyle>かもしれません</TextStyle></div>
             <div><TextStyle styleType="body2">このように<b>スタイルを変えても</b> いいかもですね</TextStyle></div>
           </Frame>
+          <Infos></Infos>
         </div>
       </BackFrame>
       <Frame>
