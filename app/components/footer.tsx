@@ -14,6 +14,18 @@ export default function Footer() {
         </Link>
       </div>
       <div className="flex justify-center gap-[30%] md:gap-[30%] lg:gap-[30%] p-4">
+      <a
+          href="https://x.com/nut_fes"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src="/icon/x_logo.svg"
+            alt="X-link"
+            width={50}
+            height={50}
+          />
+        </a>
         <a
           href="https://www.instagram.com/nutfes/"
           target="_blank"
@@ -22,6 +34,18 @@ export default function Footer() {
           <Image
             src="/icon/Instagram_Glyph_White.svg"
             alt="instagram-link"
+            width={50}
+            height={50}
+          />
+        </a>
+        <a
+          href="https://www.facebook.com/people/%E9%95%B7%E5%B2%A1%E6%8A%80%E8%A1%93%E7%A7%91%E5%AD%A6%E5%A4%A7%E5%AD%A6%E6%8A%80%E5%A4%A7%E7%A5%AD%E5%AE%9F%E8%A1%8C%E5%A7%94%E5%93%A1%E4%BC%9A/61570063509591/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src="/icon/facebook_logo.svg"
+            alt="facebook-link"
             width={50}
             height={50}
           />
