@@ -5,12 +5,14 @@ type AttentionFrameProps = {
     w?: "big" | "small" | "board";
     pg?: "none" | "default";
     children?: ReactNode;
+    className?: string;
 };
 
 const Frame: React.FC<AttentionFrameProps> = ({
     w = "signboard",
     pg = "default",
     children,
+    className
 }) => {
     return (
         <div className="flex justify-center">
@@ -20,7 +22,7 @@ const Frame: React.FC<AttentionFrameProps> = ({
                 ${w === "small" ? "w-[186px]" : "w-[290px]"}`}>
                 <div
                     className={`w-full border border-main rounded-sm
-                    ${pg === "none" ? "" : "p-6"}`}>
+                    ${pg === "none" ? "" : "p-6"} ${className}`}>
                     <div className={`flex flex-col ${pg === "none" ? "" : "gap-4"}`}>
                         {children}
                     </div>
