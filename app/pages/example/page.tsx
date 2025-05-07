@@ -5,8 +5,12 @@ import Icon from "@/public/icon/44thlogo.png";
 import Image from "next/image";
 import Line from "@/app/components/line";
 import BackFrame from "@/app/components/back_frame";
+
+import Carousel from "@/app/components/carousel";
+
 import LinkButton from "@/app/components/link_button";
 import { MdMailOutline } from "react-icons/md";
+
 
 export default function TopPage() {
   return (
@@ -34,6 +38,8 @@ export default function TopPage() {
                 このように<b>スタイルを変えても</b> いいかもですね
               </TextStyle>
             </div>
+
+
             <LinkButton href="/pages/top">
               ボタン
               <br />
@@ -47,6 +53,7 @@ export default function TopPage() {
               <br />
               （サイト外リンク）
             </LinkButton>
+
           </Frame>
           <Frame />
           <div className="justify-center flex">
@@ -87,7 +94,15 @@ export default function TopPage() {
         </div>
       </Frame>
 
-      <Frame></Frame>
+      <Frame>
+      <Carousel autoSlide={true}>
+        <div className="bg-accent w-[100px] h-[120px]"></div>
+        <div className="bg-second w-[200px] h-[500px]"></div>
+        <img src="/carousel_top/top_5_1.jpg" alt="昨年度の様子_1" className="w-full h-full" />
+        <img src="/carousel_top/yokotop_5_1.jpg" alt="昨年度の様子_よこなが" className="w-full h-full" />
+      </Carousel>
+      </Frame>
+
 
       <Frame pg="none">
         <div>
