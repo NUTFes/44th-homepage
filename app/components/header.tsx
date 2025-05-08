@@ -6,7 +6,7 @@ import { useState } from "react";
 
 // 5月時点の公開用に、一時的にリンクを無効化するためのフラグ
 // 後で有効にする場合は、これをfalseに変更するだけ
-const DISABLE_LINKS_TEMPORARILY = false;
+const DISABLE_LINKS_TEMPORARILY = true;
 
 export default function Header() {
   // メニューの開閉状態を管理するための状態
@@ -71,18 +71,10 @@ export default function Header() {
           {!DISABLE_LINKS_TEMPORARILY ? (
             // 通常時の完全なメニュー（すべてのリンクが有効）
             <>
-              <Link
-                href="/greeting"
-                onClick={toggleMenu}
-                className="text-lg"
-              >
+              <Link href="/greeting" onClick={toggleMenu} className="text-lg">
                 代表者挨拶
               </Link>
-              <Link
-                href="/access"
-                onClick={toggleMenu}
-                className="text-lg"
-              >
+              <Link href="/access" onClick={toggleMenu} className="text-lg">
                 アクセス
               </Link>
               <Link href="/map" onClick={toggleMenu} className="text-lg">
