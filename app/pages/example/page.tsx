@@ -5,6 +5,7 @@ import Icon from "@/public/icon/44thlogo.png";
 import Image from "next/image";
 import Line from "@/app/components/line";
 import BackFrame from "@/app/components/back_frame";
+import Infos from "../top/components/Infos";
 
 import Carousel from "@/app/components/carousel";
 
@@ -55,6 +56,9 @@ export default function TopPage() {
             </LinkButton>
 
           </Frame>
+
+          <Infos></Infos>
+
           <Frame />
           <div className="justify-center flex">
             <LinkButton
@@ -79,6 +83,7 @@ export default function TopPage() {
             <span>アイコンを追加</span>
           </LinkButton>
           <LinkButton href="/pages/top" className="bg-font_link">ボタン</LinkButton>
+         
         </div>
       </BackFrame>
       <Frame>
