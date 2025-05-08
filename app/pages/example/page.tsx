@@ -7,20 +7,83 @@ import Line from "@/app/components/line";
 import BackFrame from "@/app/components/back_frame";
 import Infos from "../top/components/Infos";
 
+import Carousel from "@/app/components/carousel";
+
+import LinkButton from "@/app/components/link_button";
+import { MdMailOutline } from "react-icons/md";
+
+
 export default function TopPage() {
   return (
     <div>
       <BackFrame>
-        <div className="p-2">
+        <div className="py-2 space-y-8">
           <Frame>
-            <TextStyle styleType="title">
+            <TextStyle styleType="section_title">
               <div className="text-center">見出しがあって</div>
             </TextStyle>
-            <TextStyle styleType="body2">このような本文などがあるかもしれませんね</TextStyle>
-            <div><TextStyle styleType="body2">このように<TextStyle styleType="body2_bold_khaki">スタイルが変わる</TextStyle>かもしれません</TextStyle></div>
-            <div><TextStyle styleType="body2">このように<b>スタイルを変えても</b> いいかもですね</TextStyle></div>
+            <TextStyle styleType="body2">
+              このような本文などがあるかもしれませんね
+            </TextStyle>
+            <div>
+              <TextStyle styleType="body2">
+                このように
+                <TextStyle styleType="body2_bold_khaki">
+                  スタイルが変わる
+                </TextStyle>
+                かもしれません
+              </TextStyle>
+            </div>
+            <div>
+              <TextStyle styleType="body2">
+                このように<b>スタイルを変えても</b> いいかもですね
+              </TextStyle>
+            </div>
+
+
+            <LinkButton href="/pages/top">
+              ボタン
+              <br />
+              （サイト内リンク）
+            </LinkButton>
+            <LinkButton
+              isExternal={true}
+              href="https://www.nagaokaut.ac.jp/index.html"
+            >
+              ボタン
+              <br />
+              （サイト外リンク）
+            </LinkButton>
+
           </Frame>
+
           <Infos></Infos>
+
+          <Frame />
+          <div className="justify-center flex">
+            <LinkButton
+              isExternal={true}
+              href="https://www.nagaokaut.ac.jp/index.html"
+            >
+              frame外に置く場合
+            </LinkButton>
+          </div>
+
+          <LinkButton href="/pages/top" className="bg-second">
+            ボタンの色など変更
+          </LinkButton>
+          <LinkButton
+            isExternal={true}
+            href="https://www.nagaokaut.ac.jp/index.html"
+            className="bg-font_link flex items-center space-x-2"
+          >
+            <span>
+              <MdMailOutline size={24} />
+            </span>
+            <span>アイコンを追加</span>
+          </LinkButton>
+          <LinkButton href="/pages/top" className="bg-font_link">ボタン</LinkButton>
+         
         </div>
       </BackFrame>
       <Frame>
@@ -36,7 +99,15 @@ export default function TopPage() {
         </div>
       </Frame>
 
-      <Frame></Frame>
+      <Frame>
+      <Carousel autoSlide={true}>
+        <div className="bg-accent w-[100px] h-[120px]"></div>
+        <div className="bg-second w-[200px] h-[500px]"></div>
+        <img src="/carousel_top/top_5_1.jpg" alt="昨年度の様子_1" className="w-full h-full" />
+        <img src="/carousel_top/yokotop_5_1.jpg" alt="昨年度の様子_よこなが" className="w-full h-full" />
+      </Carousel>
+      </Frame>
+
 
       <Frame pg="none">
         <div>

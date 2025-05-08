@@ -22,7 +22,7 @@ export default function RootLayout({
       >
         <Header />
         <div className="mt-20">
-          <div className="fixed bottom-10 right-10">
+          <div>
             <ReturnTopButton />
           </div>
           {children}
