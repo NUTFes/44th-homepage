@@ -39,7 +39,7 @@ export default function Footer() {
           />
         </a>
         <a
-          href="https://www.facebook.com/people/%E9%95%B7%E5%B2%A1%E6%8A%80%E8%A1%93%E7%A7%91%E5%AD%A6%E5%A4%A7%E5%AD%A6%E6%8A%80%E5%A4%A7%E7%A5%AD%E5%AE%9F%E8%A1%8C%E5%A7%94%E5%93%A1%E4%BC%9A/61570063509591/"
+          href="https://www.facebook.com/profile.php?id=61570063509591"
           target="_blank"
           rel="noopener noreferrer"
         >
