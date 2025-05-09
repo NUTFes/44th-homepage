@@ -1,6 +1,6 @@
 import React from "react";
-import TextStyle from "@/app/components/text_style";
-import Frame from "@/app/components/frame";
+import TextStyle from "@/components/text_style";
+import Frame from "@/components/frame";
 import Icon from "@/public/icon/44thlogo.png";
 import Image from "next/image";
 

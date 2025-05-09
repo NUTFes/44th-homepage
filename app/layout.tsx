@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { newTegomin, notoSansJP } from "./utils/fonts";
-import Header from "./components/header";
-import Footer from "./components/footer";
-import ReturnTopButton from "./components/return_top_button";
+import Header from "../components/header";
+import Footer from "../components/footer";
+import ReturnTopButton from "../components/return_top_button";
 
 export const metadata: Metadata = {
   title: "Create Next App",
