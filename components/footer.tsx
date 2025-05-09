@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bottom-0 w-full p-4 bg-header_footer min-h-screen">
       <div className="flex justify-center p-4">
-        <Link href={"/pages/top"}>
+        <Link href={"/"}>
           <Image
             src="/icon/44thlogo.png"
             alt="44th-icon"
@@ -14,17 +14,12 @@ export default function Footer() {
         </Link>
       </div>
       <div className="flex justify-center gap-[30%] md:gap-[30%] lg:gap-[30%] p-4">
-      <a
+        <a
           href="https://x.com/nut_fes"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
-            src="/icon/x_logo.svg"
-            alt="X-link"
-            width={50}
-            height={50}
-          />
+          <Image src="/icon/x_logo.svg" alt="X-link" width={50} height={50} />
         </a>
         <a
           href="https://www.instagram.com/nutfes/"
