@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import TextStyle from "../../../components/text_style";
+import TextStyle from "@/components/text_style";
 import Frame from "@/components/frame";
 
 interface Info {
