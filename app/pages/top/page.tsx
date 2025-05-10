@@ -17,6 +17,7 @@ export default function TopPage() {
             alt="44th_logo"
             width={200}
             height={200}
+            className='slide-in-bck-top'
           />
         </div>
         <div className="flex justify-center">
@@ -25,6 +26,7 @@ export default function TopPage() {
             alt="44th_date"
             width={200}
             height={200}
+            className='slide-in-bck-top'
           />
         </div>
       </div>
@@ -37,7 +39,6 @@ export default function TopPage() {
           <Line />
 
           <div className="text-center">
-            {' '}
             <TextStyle styleType="section_title">タイムスケジュール</TextStyle>
           </div>
 
