@@ -15,16 +15,16 @@ export default function TopPage() {
           <Image
             src="/logo/title_logo.svg"
             alt="44th_logo"
-            width={162}
-            height={256}
+            width={200}
+            height={200}
           />
         </div>
         <div className="flex justify-center">
           <Image
             src="/logo/title_date.svg"
             alt="44th_date"
-            width={175}
-            height={103}
+            width={200}
+            height={200}
           />
         </div>
       </div>
