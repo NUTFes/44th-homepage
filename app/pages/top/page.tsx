@@ -42,7 +42,7 @@ export default function TopPage() {
           </div>
 
           <div className="text-center">
-            <TextStyle styleType="body2">Comming soon</TextStyle>
+            <TextStyle styleType="body2">Coming soon</TextStyle>
           </div>
 
           <Line />
@@ -52,7 +52,7 @@ export default function TopPage() {
           </div>
 
           <div className="text-center">
-            <TextStyle styleType="body2">Comming soon</TextStyle>
+            <TextStyle styleType="body2">Coming soon</TextStyle>
           </div>
         </div>
       </BackFrame>
