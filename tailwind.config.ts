@@ -53,6 +53,7 @@ const config: Config = {
           '0%': { transform: 'translateX(100%)' }, // 画面右端から開始
           '100%': { transform: 'translateX(0%)' }, // 画面左端まで移動
         },
+
       },
     },
   },
@@ -65,7 +66,9 @@ const config: Config = {
           textShadow: '0 0 0.5rem rgba(225,225,225,1)',
         },
         '.shadow_font': {
-          textShadow: '0 0.20rem 0.020rem rgba(0,0,0,0.25)',
+
+          textShadow: '0 0.20rem 0.1rem rgba(0,0,0,0.25)',
+
         },
         //ボックスシャドウ
         '.shadow_logo': {

@@ -1,10 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="bottom-0 w-full p-4 bg-header_footer min-h-screen">
       <div className="flex justify-center p-4">
-        <Link href={"/pages/top"}>
+        <Link href={'/pages/top'}>
           <Image
             src="/icon/44thlogo.png"
             alt="44th-icon"
@@ -14,17 +14,12 @@ export default function Footer() {
         </Link>
       </div>
       <div className="flex justify-center gap-[30%] md:gap-[30%] lg:gap-[30%] p-4">
-      <a
+        <a
           href="https://x.com/nut_fes"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
-            src="/icon/x_logo.svg"
-            alt="X-link"
-            width={50}
-            height={50}
-          />
+          <Image src="/icon/x_logo.svg" alt="X-link" width={50} height={50} />
         </a>
         <a
           href="https://www.instagram.com/nutfes/"
@@ -39,7 +34,7 @@ export default function Footer() {
           />
         </a>
         <a
-          href="https://www.facebook.com/people/%E9%95%B7%E5%B2%A1%E6%8A%80%E8%A1%93%E7%A7%91%E5%AD%A6%E5%A4%A7%E5%AD%A6%E6%8A%80%E5%A4%A7%E7%A5%AD%E5%AE%9F%E8%A1%8C%E5%A7%94%E5%93%A1%E4%BC%9A/61570063509591/"
+          href="https://www.facebook.com/profile.php?id=61570063509591"
           target="_blank"
           rel="noopener noreferrer"
         >
