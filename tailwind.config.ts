@@ -40,6 +40,21 @@ const config: Config = {
         base_back: 'rgba(255,249,229,0.5)',
         dark_back: 'rgba(76,42,0,0.8)',
       },
+      animation: {
+        'move-clouds': 'move-clouds 30s linear infinite', // アニメーション名と設定
+        'move-clouds-2nd': 'move-clouds-2nd 30s linear infinite',
+      },
+      keyframes: {
+        'move-clouds': {
+          '0%': { transform: 'translateX(0%)' }, // 画面右端から開始
+          '100%': { transform: 'translateX(-100%)' }, // 画面左端まで移動
+        },
+        'move-clouds-2nd': {
+          '0%': { transform: 'translateX(100%)' }, // 画面右端から開始
+          '100%': { transform: 'translateX(0%)' }, // 画面左端まで移動
+        },
+
+      },
     },
   },
 
@@ -51,7 +66,9 @@ const config: Config = {
           textShadow: '0 0 0.5rem rgba(225,225,225,1)',
         },
         '.shadow_font': {
+
           textShadow: '0 0.20rem 0.1rem rgba(0,0,0,0.25)',
+
         },
         //ボックスシャドウ
         '.shadow_logo': {
