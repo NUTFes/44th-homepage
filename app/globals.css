@@ -7,7 +7,6 @@
   --foreground: #171717;
   --font-noto-sans-jp: 'Noto Sans JP', sans-serif;
   --font-new-tegomin: 'New Tegomin', serif;
-  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,8 +22,6 @@ body {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
-
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -34,4 +31,18 @@ body {
 /* スパム対策用 */
 .no-spam {
   display: none;
+}
+
+/* スクロールバーのスタイル */
+.scrollbar-custom::-webkit-scrollbar {
+  width: 6px; /* スクロールバーの幅 */
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: #d3b25b; /* スクロールバーの色 */
+  border-radius: 4px; /* スクロールバーの角丸 */
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background-color: #fff9e5; /* スクロールバーの背景 */
 }
