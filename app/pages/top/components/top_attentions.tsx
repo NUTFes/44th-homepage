@@ -3,7 +3,7 @@ import TextStyle from "@/app/components/text_style";
 import { FaCircleExclamation } from "react-icons/fa6";
 
 const attentionItems:{text: React.ReactNode}[] = [
-  { text: <>ご来場の際、<br/>お困りの際は案内所まで</> },
+  { text: <>お困りの際は案内所まで</> },
   { text: <>アルコール提供は<br/>リストバンドが必要</> },
   { text: <>大学構内では食事が禁止</> },
   { text: <>構内は全面禁煙</> },
