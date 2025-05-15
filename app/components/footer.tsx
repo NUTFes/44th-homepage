@@ -58,6 +58,15 @@ export default function Footer() {
             長岡技術科学大学ホームページ
           </div>
         </a>
+        <a
+          href="https://www.nagaokaut.ac.jp/j/50th/index.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="text-white hover:underline hover:text-main">
+            長岡技術科学大学開学50周年記念事業
+          </div>
+        </a>
 
         <div className="p-6 text-white">
           <div>〒940-2188</div>
