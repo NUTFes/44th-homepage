@@ -1,4 +1,6 @@
 import InfosClient from './InfosClient';
+import Frame from '@/app/components/frame';
+import TextStyle from '@/app/components/text_style';
 
 interface Info {
   番号: string;
@@ -26,10 +28,12 @@ const Infos = async () => {
 
     return (
       <div>
-        <p className="mb-4 text-font_main">
-          <strong>お知らせ</strong>
+        <Frame>
+        <p className="text-center">
+          <TextStyle styleType="section_title">お知らせ</TextStyle>
         </p>
-        <p className="text-font_main">エラーが発生しました: {errorMessage}</p>
+        <p><TextStyle styleType="body3">エラーが発生しました: {errorMessage}</TextStyle></p>
+        </Frame>
       </div>
     );
   }
