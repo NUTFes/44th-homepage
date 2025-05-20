@@ -41,8 +41,8 @@ const config: Config = {
         dark_back: 'rgba(76,42,0,0.8)',
       },
       animation: {
-        'move-clouds': 'move-clouds 30s linear infinite', // アニメーション名と設定
-        'move-clouds-2nd': 'move-clouds-2nd 30s linear infinite',
+        'move-clouds': 'move-clouds 50s linear infinite', // アニメーション名と設定
+        'move-clouds-2nd': 'move-clouds-2nd 50s linear infinite',
       },
       keyframes: {
         'move-clouds': {
