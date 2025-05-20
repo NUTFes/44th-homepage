@@ -24,6 +24,7 @@ export default function Header() {
           <Image
             src="/icon/44thlogo.png"
             alt="44th_icon"
+            
             width={40}
             height={40}
           />

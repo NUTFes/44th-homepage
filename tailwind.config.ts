@@ -35,7 +35,7 @@ const config: Config = {
         font_khaki: '#6c5c07',
         logo_color: '#ab1b1b',
         //ヘッダーのグラデーション
-        header_grad: 'rgba(24, 25, 38, 0.3)',
+        header_grad: 'rgba(24, 25, 38, 0.5)',
 
         font_link: '#5995a2',
         white_back: 'rgba(255,255,255,0.7)',
