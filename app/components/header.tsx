@@ -18,7 +18,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-header_footer flex justify-between pb-4 pt-4 pl-[3%] pr-[3%] shadow_button z-50">
+    <header className="fixed top-0 left-0 w-full flex justify-between pb-4 pt-4 pl-[3%] pr-[3%] bg-gradient-to-b from-header_grad bg-blend-darken z-50">
       <div className="flex">
         <Link href={"/pages/top"}>
           <Image
