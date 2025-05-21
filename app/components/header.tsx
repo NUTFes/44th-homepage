@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
 // 5月時点の公開用に、一時的にリンクを無効化するためのフラグ
 // 後で有効にする場合は、これをfalseに変更するだけ
@@ -20,11 +20,10 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full flex justify-between pb-4 pt-4 pl-[3%] pr-[3%] bg-gradient-to-b from-header_grad bg-blend-darken z-50">
       <div className="flex">
-        <Link href={"/pages/top"}>
+        <Link href={'/pages/top'}>
           <Image
-            src="/icon/44thlogo.png"
+            src="/icon/44thlogo_shadow.svg"
             alt="44th_icon"
-            
             width={40}
             height={40}
           />
@@ -32,14 +31,19 @@ export default function Header() {
       </div>
       <div className="flex">
         <button onClick={toggleMenu} aria-label="メニューを開く">
-          <Image src="/icon/BiMenu.svg" alt="menu" width={32} height={32} />
+          <Image
+            src="/icon/BiMenu_shadow.svg"
+            alt="menu"
+            width={32}
+            height={32}
+          />
         </button>
       </div>
 
       {/* メニューが開いた時の背景オーバーレイ */}
       <div
         className={`fixed top-0 right-0 w-screen h-screen bg-black bg-opacity-50 transform transition-opacity duration-300 ease-in-out ${
-          isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
         onClick={toggleMenu}
       ></div>
@@ -47,7 +51,7 @@ export default function Header() {
       {/* メニューの内容 */}
       <div
         className={`fixed top-0 right-0 h-screen bg-black w-64 transform transition-transform duration-300 ease-in-out ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         } overflow-y-auto z-50`}
       >
         {/* 閉じるボタン */}
