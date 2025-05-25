@@ -3,7 +3,7 @@
 import Frame from '@/app/components/frame';
 import Line from '@/app/components/line';
 import React from 'react';
-import TextStyle from '../../../components/text_style';
+import TextStyle from '../../components/text_style';
 
 interface Info {
   番号: string;
