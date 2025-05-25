@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // もし他に設定があれば、それはそのまま残してください
-  output: 'export',
   // ↓↓↓ この部分を追記 ↓↓↓
   webpack(config) {
     config.cache = false;
