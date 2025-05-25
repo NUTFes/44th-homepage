@@ -12,15 +12,12 @@
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
-    "classnames": "^2.5.1",
-    "date-fns": "^3.6.0",
-    "gray-matter": "^4.0.3",
+
     "next": "14.2.24",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.5.0",
-    "react-swipeable": "^7.0.2",
-    "sprintf-js": "^1.0.3"
+    "react-swipeable": "^7.0.2"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.13.12",
