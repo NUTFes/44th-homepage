@@ -43,7 +43,7 @@ const Carousel: React.FC<CaroucelProps> = ({
       nextSlide();
     }, autoSlideInterval); //スライドする→指定された時間待つ
     return () => clearInterval(slideInterval);
-  }, [currentIndex, autoSlide, autoSlideInterval]);
+  }, [nextSlide,currentIndex, autoSlide, autoSlideInterval]);
   return (
     <div className={`relative overflow-hidden ${className}`} {...swipeHandlers}>
       <div

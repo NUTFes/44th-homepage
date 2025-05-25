@@ -1,6 +1,5 @@
 import Frame from "@/app/components/frame";
 import TextStyle from "@/app/components/text_style";
-import { FaCircleExclamation } from "react-icons/fa6";
 import { FaCircleInfo } from "react-icons/fa6";
 import { RiBeerFill } from "react-icons/ri";
 import { MdNoMeals } from "react-icons/md";
