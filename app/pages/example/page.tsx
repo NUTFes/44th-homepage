@@ -103,8 +103,6 @@ export default function TopPage() {
       <Carousel autoSlide={true}>
         <div className="bg-accent w-[100px] h-[120px]"></div>
         <div className="bg-second w-[200px] h-[500px]"></div>
-        <img src="/carousel_top/top_5_1.jpg" alt="昨年度の様子_1" className="w-full h-full" />
-        <img src="/carousel_top/yokotop_5_1.jpg" alt="昨年度の様子_よこなが" className="w-full h-full" />
       </Carousel>
       </Frame>
 
