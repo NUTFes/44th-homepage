@@ -1,8 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-      images: {
-    unoptimized: true,  // 開発環境で画像最適化を無効化
+  // もし他に設定があれば、それはそのまま残してください
+
+  // ↓↓↓ この部分を追記 ↓↓↓
+  webpack(config) {
+    config.cache = false;
+    return config;
   },
+  // ↑↑↑ この部分を追記 ↑↑↑
 };
 
 export default nextConfig;

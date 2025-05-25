@@ -6,7 +6,6 @@ import Infos from './components/Infos';
 import RecruitmentSponsors from './components/recruitment_sponsors';
 import TopAttentions from './components/top_attentions';
 import TopCarousel from './components/top_carousel';
-export const runtime = 'edge';
 
 export default function TopPage() {
   return (
