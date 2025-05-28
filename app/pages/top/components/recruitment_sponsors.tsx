@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from 'react';
+import Frame from '@/src/components/frame';
+import Line from '@/src/components/line';
+import TextStyle from '@/src/components/text_style';
 import Link from 'next/link';
-import TextStyle from '@/app/components/text_style';
-import Line from '@/app/components/line';
-import Frame from '@/app/components/frame';
+import React, { useState } from 'react';
 import { FaFileAlt } from "react-icons/fa";
 import { GoCopy } from "react-icons/go";
 

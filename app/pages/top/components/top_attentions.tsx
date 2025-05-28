@@ -1,10 +1,10 @@
-import Frame from "@/app/components/frame";
-import TextStyle from "@/app/components/text_style";
-import { FaCircleInfo } from "react-icons/fa6";
-import { RiBeerFill } from "react-icons/ri";
-import { MdNoMeals } from "react-icons/md";
-import { TbSmokingNo } from "react-icons/tb";
+import Frame from "@/src/components/frame";
+import TextStyle from "@/src/components/text_style";
 import { FaBusAlt } from "react-icons/fa";
+import { FaCircleInfo } from "react-icons/fa6";
+import { MdNoMeals } from "react-icons/md";
+import { RiBeerFill } from "react-icons/ri";
+import { TbSmokingNo } from "react-icons/tb";
 
 const attentionItems:{text: React.ReactNode}[] = [
   { text: <>お困りの際は案内所まで</> },

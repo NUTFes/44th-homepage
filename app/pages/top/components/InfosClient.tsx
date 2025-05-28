@@ -1,9 +1,9 @@
 'use client';
 
-import Frame from '@/app/components/frame';
-import Line from '@/app/components/line';
+import Frame from '@/src/components/frame';
+import Line from '@/src/components/line';
 import React from 'react';
-import TextStyle from '../../../components/text_style';
+import TextStyle from '../../../../src/components/text_style';
 
 interface Info {
   番号: string;

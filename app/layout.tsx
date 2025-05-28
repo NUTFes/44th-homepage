@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import Footer from './components/footer';
-import Header from './components/header';
-import ReturnTopButton from './components/return_top_button';
+import Footer from '../src/components/footer';
+import Header from '../src/components/header';
+import MoveClouds from '../src/components/move_clouds';
+import ReturnTopButton from '../src/components/return_top_button';
 import './globals.css';
 import { newTegomin, notoSansJP } from './utils/fonts';
-import MoveClouds from './components/move_clouds';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -21,7 +21,7 @@ export default function RootLayout({
       <body
         className={`bg-[url('/hero_header/hero_header.svg')] bg-cover bg-fixed bg-center min-h-screen  ${notoSansJP.className} ${notoSansJP.variable} ${newTegomin.variable} antialiased`}
       >
-       <div className="absolute -z-10"><MoveClouds/></div>
+        <div className="absolute -z-10"><MoveClouds/></div>
         
 
         <Header />
