@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${notoSansJP.className} ${notoSansJP.variable} ${newTegomin.variable} antialiased`}
+        className={`relative min-h-screen ${notoSansJP.className} ${notoSansJP.variable} ${newTegomin.variable} antialiased`}
       >
         <div className="fixed inset-0 bg-[url('/hero_header/hero_header.svg')] bg-cover bg-center z-[-100]"></div>
         <div className="absolute -z-10">
