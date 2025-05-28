@@ -1,6 +1,6 @@
+import Frame from '@/src/components/common/frame';
+import TextStyle from '@/src/components/common/text_style';
 import InfosClient from './InfosClient';
-import Frame from '@/app/components/frame';
-import TextStyle from '@/app/components/text_style';
 
 interface Info {
   番号: string;

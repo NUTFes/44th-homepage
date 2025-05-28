@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full flex justify-between pb-4 pt-4 pl-[3%] pr-[3%] bg-gradient-to-b from-header_grad bg-blend-darken z-50">
       <div className="flex">
-        <Link href={'/pages/top'}>
+        <Link href={'/top'}>
           <Image
             src="/icon/44thlogo_shadow.svg"
             alt="44th_icon"
@@ -68,7 +68,7 @@ export default function Header() {
         {/* メニューリンク */}
         <nav className="flex flex-col text-white px-6 space-y-5">
           {/* トップページへのリンクは常に有効 */}
-          <Link href="/pages/top" onClick={toggleMenu} className="text-lg">
+          <Link href="/top" onClick={toggleMenu} className="text-lg">
             トップ
           </Link>
 
@@ -77,27 +77,27 @@ export default function Header() {
             // 通常時の完全なメニュー（すべてのリンクが有効）
             <>
               <Link
-                href="/pages/greeting"
+                href="/greeting"
                 onClick={toggleMenu}
                 className="text-lg"
               >
                 代表者挨拶
               </Link>
               <Link
-                href="/pages/access"
+                href="/access"
                 onClick={toggleMenu}
                 className="text-lg"
               >
                 アクセス
               </Link>
-              <Link href="/pages/map" onClick={toggleMenu} className="text-lg">
+              <Link href="/map" onClick={toggleMenu} className="text-lg">
                 マップ
               </Link>
 
               <div className="space-y-3">
                 <div className="text-lg">
                   <Link
-                    href="/pages/event"
+                    href="/event"
                     onClick={toggleMenu}
                     className="flex items-center"
                   >
@@ -106,21 +106,21 @@ export default function Header() {
                 </div>
                 <div className="pl-4 space-y-2">
                   <Link
-                    href="/pages/event/guest"
+                    href="/event/guest"
                     onClick={toggleMenu}
                     className="flex items-center"
                   >
                     <span className="mr-2">◆</span> ゲスト
                   </Link>
                   <Link
-                    href="/pages/event/plan"
+                    href="/event/plan"
                     onClick={toggleMenu}
                     className="flex items-center"
                   >
                     <span className="mr-2">◆</span> 企画
                   </Link>
                   <Link
-                    href="/pages/event/exh_exp"
+                    href="/event/exh_exp"
                     onClick={toggleMenu}
                     className="flex items-center"
                   >
@@ -136,21 +136,21 @@ export default function Header() {
                 </div>
               </div>
 
-              <Link href="/pages/food" onClick={toggleMenu} className="text-lg">
+              <Link href="/food" onClick={toggleMenu} className="text-lg">
                 飲食
               </Link>
-              <Link href="/pages/sale" onClick={toggleMenu} className="text-lg">
+              <Link href="/sale" onClick={toggleMenu} className="text-lg">
                 物品販売
               </Link>
               <Link
-                href="/pages/corpolate_booth"
+                href="/corpolate_booth"
                 onClick={toggleMenu}
                 className="text-lg"
               >
                 企業ブース
               </Link>
               <Link
-                href="/pages/sponsoring_corpolate"
+                href="/sponsoring_corpolate"
                 onClick={toggleMenu}
                 className="text-lg"
               >

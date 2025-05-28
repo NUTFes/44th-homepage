@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bottom-0 w-full p-4 bg-header_footer min-h-screen">
       <div className="flex justify-center p-4">
-        <Link href={'/pages/top'}>
+        <Link href={'/top'}>
           <Image
             src="/icon/44thlogo.png"
             alt="44th-icon"

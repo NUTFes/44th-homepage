@@ -1,11 +1,11 @@
-import BackFrame from '@/app/components/back_frame';
-import Line from '@/app/components/line';
-import TextStyle from '@/app/components/text_style';
+import BackFrame from '@/src/components/common/back_frame';
+import Line from '@/src/components/common/line';
+import TextStyle from '@/src/components/common/text_style';
+import Infos from '@/src/components/top/Infos';
+import RecruitmentSponsors from '@/src/components/top/recruitment_sponsors';
+import TopAttentions from '@/src/components/top/top_attentions';
+import TopCarousel from '@/src/components/top/top_carousel';
 import Image from 'next/image';
-import Infos from './components/Infos';
-import RecruitmentSponsors from './components/recruitment_sponsors';
-import TopAttentions from './components/top_attentions';
-import TopCarousel from './components/top_carousel';
 
 export default function TopPage() {
   return (
