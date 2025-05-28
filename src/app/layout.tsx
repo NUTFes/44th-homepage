@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import Footer from '../src/components/footer';
-import Header from '../src/components/header';
-import MoveClouds from '../src/components/move_clouds';
-import ReturnTopButton from '../src/components/return_top_button';
-import { newTegomin, notoSansJP } from '../src/utils/fonts';
+import Footer from '../components/footer';
+import Header from '../components/header';
+import MoveClouds from '../components/move_clouds';
+import ReturnTopButton from '../components/return_top_button';
+import { newTegomin, notoSansJP } from '../utils/fonts';
 import './globals.css';
 
 export const metadata: Metadata = {
