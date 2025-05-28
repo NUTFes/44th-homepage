@@ -1,4 +1,4 @@
-import Carousel from '@/src/components/carousel';
+import Carousel from '@/src/components/common/carousel';
 import Image from 'next/image';
 
 const TopCarousel: React.FC = () => {

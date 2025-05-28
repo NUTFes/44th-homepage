@@ -1,8 +1,8 @@
 "use client";
 
-import Frame from '@/src/components/frame';
-import Line from '@/src/components/line';
-import TextStyle from '@/src/components/text_style';
+import Frame from '@/src/components/common/frame';
+import Line from '@/src/components/common/line';
+import TextStyle from '@/src/components/common/text_style';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { FaFileAlt } from "react-icons/fa";

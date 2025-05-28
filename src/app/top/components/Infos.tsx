@@ -1,5 +1,5 @@
-import Frame from '@/src/components/frame';
-import TextStyle from '@/src/components/text_style';
+import Frame from '@/src/components/common/frame';
+import TextStyle from '@/src/components/common/text_style';
 import InfosClient from './InfosClient';
 
 interface Info {

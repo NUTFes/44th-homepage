@@ -1,5 +1,5 @@
-import Frame from "@/src/components/frame";
-import TextStyle from "@/src/components/text_style";
+import Frame from "@/src/components/common/frame";
+import TextStyle from "@/src/components/common/text_style";
 import { FaBusAlt } from "react-icons/fa";
 import { FaCircleInfo } from "react-icons/fa6";
 import { MdNoMeals } from "react-icons/md";

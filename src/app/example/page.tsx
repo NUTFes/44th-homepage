@@ -1,14 +1,14 @@
 import Icon from "@/public/icon/44thlogo.png";
-import BackFrame from "@/src/components/back_frame";
-import Frame from "@/src/components/frame";
-import Line from "@/src/components/line";
-import TextStyle from "@/src/components/text_style";
+import BackFrame from "@/src/components/common/back_frame";
+import Frame from "@/src/components/common/frame";
+import Line from "@/src/components/common/line";
+import TextStyle from "@/src/components/common/text_style";
 import Image from "next/image";
 import Infos from "../top/components/Infos";
 
-import Carousel from "@/src/components/carousel";
+import Carousel from "@/src/components/common/carousel";
 
-import LinkButton from "@/src/components/link_button";
+import LinkButton from "@/src/components/common/link_button";
 import { MdMailOutline } from "react-icons/md";
 
 

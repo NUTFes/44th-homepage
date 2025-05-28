@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import Footer from '../components/footer';
-import Header from '../components/header';
-import MoveClouds from '../components/move_clouds';
-import ReturnTopButton from '../components/return_top_button';
+import Footer from '../components/common/footer';
+import Header from '../components/common/header';
+import MoveClouds from '../components/common/move_clouds';
+import ReturnTopButton from '../components/common/return_top_button';
 import { newTegomin, notoSansJP } from '../utils/fonts';
 import './globals.css';
 
