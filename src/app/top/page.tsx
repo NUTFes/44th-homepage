@@ -6,6 +6,7 @@ import RecruitmentSponsors from '@/src/components/top/recruitment_sponsors';
 import TopAttentions from '@/src/components/top/top_attentions';
 import TopCarousel from '@/src/components/top/top_carousel';
 import Image from 'next/image';
+export const runtime = 'edge';
 
 export default function TopPage() {
   return (
@@ -17,7 +18,7 @@ export default function TopPage() {
             alt="44th_logo"
             width={200}
             height={200}
-            className='slide-in-bck-top'
+            className="slide-in-bck-top"
           />
         </div>
         <div className="flex justify-center">
@@ -26,7 +27,7 @@ export default function TopPage() {
             alt="44th_date"
             width={200}
             height={200}
-            className='slide-in-bck-top'
+            className="slide-in-bck-top"
           />
         </div>
       </div>
