@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 export default function Footer() {
   return (
-    <footer className="bottom-0 w-full p-4 bg-header_footer min-h-screen">
+    <footer className="bottom-0 w-full p-4 bg-header_footer min-h-dvh">
       <div className="flex justify-center p-4">
         <Link href={'/top'}>
           <Image

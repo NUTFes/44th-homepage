@@ -19,10 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-[url('/hero_header/hero_header.svg')] bg-cover bg-fixed bg-center min-h-screen  ${notoSansJP.className} ${notoSansJP.variable} ${newTegomin.variable} antialiased`}
+        className={`bg-[url('/hero_header/hero_header.svg')] bg-cover bg-fixed bg-center min-h-dvh  ${notoSansJP.className} ${notoSansJP.variable} ${newTegomin.variable} antialiased`}
       >
-        <div className="absolute -z-10"><MoveClouds/></div>
-        
+        <div className="absolute -z-10">
+          <MoveClouds />
+        </div>
 
         <Header />
         <div className="mt-20 z-20">
