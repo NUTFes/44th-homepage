@@ -3,8 +3,8 @@ import Footer from '../src/components/footer';
 import Header from '../src/components/header';
 import MoveClouds from '../src/components/move_clouds';
 import ReturnTopButton from '../src/components/return_top_button';
+import { newTegomin, notoSansJP } from '../src/utils/fonts';
 import './globals.css';
-import { newTegomin, notoSansJP } from './utils/fonts';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
