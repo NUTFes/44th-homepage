@@ -3,8 +3,8 @@ import BackFrame from "@/src/components/common/back_frame";
 import Frame from "@/src/components/common/frame";
 import Line from "@/src/components/common/line";
 import TextStyle from "@/src/components/common/text_style";
+import Infos from "@/src/components/top/Infos";
 import Image from "next/image";
-import Infos from "../top/components/Infos";
 
 import Carousel from "@/src/components/common/carousel";
 
