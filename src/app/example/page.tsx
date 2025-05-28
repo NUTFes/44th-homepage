@@ -1,16 +1,16 @@
-import Icon from "@/public/icon/44thlogo.png";
-import BackFrame from "@/src/components/common/back_frame";
-import Frame from "@/src/components/common/frame";
-import Line from "@/src/components/common/line";
-import TextStyle from "@/src/components/common/text_style";
-import Infos from "@/src/components/top/Infos";
-import Image from "next/image";
+import Icon from '@/public/icon/44thlogo.png';
+import BackFrame from '@/src/components/common/back_frame';
+import Frame from '@/src/components/common/frame';
+import Line from '@/src/components/common/line';
+import TextStyle from '@/src/components/common/text_style';
+import Infos from '@/src/components/top/Infos';
+import Image from 'next/image';
 
-import Carousel from "@/src/components/common/carousel";
+import Carousel from '@/src/components/common/carousel';
 
-import LinkButton from "@/src/components/common/link_button";
-import { MdMailOutline } from "react-icons/md";
-
+import LinkButton from '@/src/components/common/link_button';
+import { MdMailOutline } from 'react-icons/md';
+export const runtime = 'edge';
 
 export default function TopPage() {
   return (
@@ -39,7 +39,6 @@ export default function TopPage() {
               </TextStyle>
             </div>
 
-
             <LinkButton href="/pages/top">
               ボタン
               <br />
@@ -53,7 +52,6 @@ export default function TopPage() {
               <br />
               （サイト外リンク）
             </LinkButton>
-
           </Frame>
 
           <Infos></Infos>
@@ -81,8 +79,9 @@ export default function TopPage() {
             </span>
             <span>アイコンを追加</span>
           </LinkButton>
-          <LinkButton href="/pages/top" className="bg-font_link">ボタン</LinkButton>
-         
+          <LinkButton href="/pages/top" className="bg-font_link">
+            ボタン
+          </LinkButton>
         </div>
       </BackFrame>
       <Frame>
@@ -99,12 +98,11 @@ export default function TopPage() {
       </Frame>
 
       <Frame>
-      <Carousel autoSlide={true}>
-        <div className="bg-accent w-[100px] h-[120px]"></div>
-        <div className="bg-second w-[200px] h-[500px]"></div>
-      </Carousel>
+        <Carousel autoSlide={true}>
+          <div className="bg-accent w-[100px] h-[120px]"></div>
+          <div className="bg-second w-[200px] h-[500px]"></div>
+        </Carousel>
       </Frame>
-
 
       <Frame pg="none">
         <div>
