@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full flex justify-between pb-4 pt-4 pl-[3%] pr-[3%] bg-gradient-to-b from-header_grad bg-blend-darken z-50">
       <div className="flex">
-        <Link href={'/top'}>
+        <Link href={'/'}>
           <Image
             src="/icon/44thlogo_shadow.svg"
             alt="44th_icon"
@@ -68,7 +68,7 @@ export default function Header() {
         {/* メニューリンク */}
         <nav className="flex flex-col text-white px-6 space-y-5">
           {/* トップページへのリンクは常に有効 */}
-          <Link href="/top" onClick={toggleMenu} className="text-lg">
+          <Link href="/" onClick={toggleMenu} className="text-lg">
             トップ
           </Link>
 
