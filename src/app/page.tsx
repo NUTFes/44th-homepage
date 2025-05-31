@@ -6,8 +6,8 @@ import RecruitmentSponsors from '@/src/components/top/recruitment_sponsors';
 import TopAttentions from '@/src/components/top/top_attentions';
 import TopCarousel from '@/src/components/top/top_carousel';
 import Image from 'next/image';
-import TitleLogo from 'public/logo/title_logo.svg';
-import TitleDate from 'public/logo/title_date.svg';
+import TitleDate from '/logo/title_date.svg';
+import TitleLogo from '/logo/title_logo.svg';
 export const runtime = 'edge';
 
 export default function TopPage() {

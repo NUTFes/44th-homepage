@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Logo44th from 'public/icon/44thlogo_shadow.svg';
+import Logo44th from '/icon/44thlogo_shadow.svg';
 export default function Footer() {
   return (
     <footer className="bottom-0 w-full p-4 bg-header_footer min-h-screen">
