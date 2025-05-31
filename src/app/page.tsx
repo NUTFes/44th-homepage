@@ -6,6 +6,8 @@ import RecruitmentSponsors from '@/src/components/top/recruitment_sponsors';
 import TopAttentions from '@/src/components/top/top_attentions';
 import TopCarousel from '@/src/components/top/top_carousel';
 import Image from 'next/image';
+const TitleDate = '/logo/title_date.svg';
+const TitleLogo = '/logo/title_logo.svg';
 export const runtime = 'edge';
 
 export default function TopPage() {
@@ -14,7 +16,7 @@ export default function TopPage() {
       <div style={{ paddingBottom: '308px' }} className="space-y-6 pt-4">
         <div className="flex justify-center">
           <Image
-            src="/logo/title_logo.svg"
+            src={TitleLogo}
             alt="44th_logo"
             width={200}
             height={200}
@@ -23,7 +25,7 @@ export default function TopPage() {
         </div>
         <div className="flex justify-center">
           <Image
-            src="/logo/title_date.svg"
+            src={TitleDate}
             alt="44th_date"
             width={200}
             height={200}
