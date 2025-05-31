@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import Logo44th from 'public/icon/44thlogo_shadow.svg';
+import BiMenu from 'public/icon/BiMenu_shadow.svg';
 import { useState } from 'react';
 
 // 5月時点の公開用に、一時的にリンクを無効化するためのフラグ
@@ -22,7 +24,7 @@ export default function Header() {
       <div className="flex">
         <Link href={'/'}>
           <Image
-            src="/icon/44thlogo_shadow.svg"
+            src={Logo44th}
             alt="44th_icon"
             width={40}
             height={40}
@@ -32,7 +34,7 @@ export default function Header() {
       <div className="flex">
         <button onClick={toggleMenu} aria-label="メニューを開く">
           <Image
-            src="/icon/BiMenu_shadow.svg"
+            src={BiMenu}
             alt="menu"
             width={32}
             height={32}
