@@ -3,8 +3,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-const Logo44th = '/icon/44thlogo_shadow.svg';
-const BiMenu = '/icon/BiMenu_shadow.svg';
+// const Logo44th = '/icon/44thlogo_shadow.svg';
+// const BiMenu = '/icon/BiMenu_shadow.svg';
 
 // 5月時点の公開用に、一時的にリンクを無効化するためのフラグ
 // 後で有効にする場合は、これをfalseに変更するだけ
@@ -23,12 +23,12 @@ export default function Header() {
     <header className="fixed top-0 left-0 w-full flex justify-between pb-4 pt-4 pl-[3%] pr-[3%] bg-gradient-to-b from-header_grad bg-blend-darken z-50">
       <div className="flex">
         <Link href={'/'}>
-          <Image src={Logo44th} alt="44th_icon" width={40} height={40} />
+          <Image src="/icon/44thlogo_shadow.png" alt="44th_icon" width={40} height={40} />
         </Link>
       </div>
       <div className="flex">
         <button onClick={toggleMenu} aria-label="メニューを開く">
-          <Image src={BiMenu} alt="menu" width={32} height={32} />
+          <Image src="/icon/BiMenu_shadow.png" alt="menu" width={32} height={32} />
         </button>
       </div>
 
