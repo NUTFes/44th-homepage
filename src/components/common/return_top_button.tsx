@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import ReturnTopButtonImage from '/icon/return_top_bbutton.svg';
+const ReturnTopButtonImage = '/icon/return_top_bbutton.svg';
 const ReturnTopButton = () => {
   const returnTop = () => {
     window.scrollTo({

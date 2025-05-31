@@ -2,9 +2,9 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import Logo44th from 'public/icon/44thlogo_shadow.svg';
 import { useState } from 'react';
-import BiMenu from '/icon/BiMenu_shadow.svg';
+const Logo44th = '/icon/44thlogo_shadow.svg';
+const BiMenu = '/icon/BiMenu_shadow.svg';
 
 // 5月時点の公開用に、一時的にリンクを無効化するためのフラグ
 // 後で有効にする場合は、これをfalseに変更するだけ
