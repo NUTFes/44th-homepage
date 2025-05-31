@@ -1,12 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Logo44th from 'public/icon/44thlogo_shadow.svg';
 export default function Footer() {
   return (
     <footer className="bottom-0 w-full p-4 bg-header_footer min-h-screen">
       <div className="flex justify-center p-4">
         <Link href={'/'}>
           <Image
-            src="/icon/44thlogo.png"
+            src={Logo44th}
             alt="44th-icon"
             width={64}
             height={64}
