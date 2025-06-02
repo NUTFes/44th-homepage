@@ -6,8 +6,8 @@ import RecruitmentSponsors from '@/src/components/top/recruitment_sponsors';
 import TopAttentions from '@/src/components/top/top_attentions';
 import TopCarousel from '@/src/components/top/top_carousel';
 import Image from 'next/image';
-const TitleDate = '/logo/title_date.svg';
-const TitleLogo = '/logo/title_logo.svg';
+// const TitleDate = '/logo/title_date.svg';
+// const TitleLogo = '/logo/title_logo.svg';
 export const runtime = 'edge';
 
 export default function TopPage() {
@@ -15,22 +15,14 @@ export default function TopPage() {
     <div>
       <div style={{ paddingBottom: '308px' }} className="space-y-6 pt-4">
         <div className="flex justify-center">
-          <Image
-            src={TitleLogo}
-            alt="44th_logo"
-            width={200}
-            height={200}
-            className="slide-in-bck-top"
-          />
+          <div className="relative aspect-[344/552] w-[20%] max-md:w-[55%]">
+            <Image src="/logo/title_logo.png" alt="44th_logo" fill={true} />
+          </div>
         </div>
         <div className="flex justify-center">
-          <Image
-            src={TitleDate}
-            alt="44th_date"
-            width={200}
-            height={200}
-            className="slide-in-bck-top"
-          />
+          <div className="relative aspect-[175/103] w-[20%] max-md:w-[55%]">
+            <Image src="/logo/title_date.png" alt="44th_date" fill={true} />
+          </div>
         </div>
       </div>
       <BackFrame>
