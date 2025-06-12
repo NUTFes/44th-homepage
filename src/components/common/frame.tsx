@@ -16,7 +16,7 @@ const Frame: React.FC<AttentionFrameProps> = ({
     return (
         <div className="flex justify-center">
             <div
-                className={`p-0.5 w-[72%] min-w-[200px] border-2 border-main bg-base_back rounded-sm`}>
+                className={`p-0.5 w-[90%] min-w-[200px] border-2 border-main bg-base_back rounded-sm`}>
                 <div
                     className={`w-full border border-main rounded-sm
                     ${pg === "none" ? "" : "p-6"} ${className}`}>
