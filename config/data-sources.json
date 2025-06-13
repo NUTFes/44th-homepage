@@ -1,0 +1,10 @@
+[
+  {
+    "name": "exh_exp",
+    "tsv_url": "EXH_EXP_TSV_URL",
+    "json_path": "src/data/exh_exp.json",
+    "image_dir": "public/images/exh_exp",
+    "id_column": "番号",
+    "image_url_column": "画像"
+  }
+]
