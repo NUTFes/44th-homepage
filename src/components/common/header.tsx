@@ -47,7 +47,7 @@ export default function Header() {
         } overflow-y-auto z-50`}
       >
         {/* 閉じるボタン */}
-        <div className="flex justify-end p-4">
+        <div className="flex justify-end pt-4 pb-4 pl-4 pr-[3.5vw]">
           <button
             onClick={toggleMenu}
             className="text-white text-2xl"
