@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { execSync } from 'child_process';
+import 'dotenv/config';
 import fs from 'fs';
 import path from 'path';
 
