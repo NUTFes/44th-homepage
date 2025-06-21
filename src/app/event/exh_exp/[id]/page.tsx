@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { getExhExpDataById } from '@/src/lib/exh_exp';
 import { ExhExpItem } from '@/src/types/exh_exp';
 import Image from 'next/image';
