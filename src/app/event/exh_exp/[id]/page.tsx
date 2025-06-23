@@ -1,4 +1,5 @@
 export const runtime = 'edge';
+import DetailMap from '@/src/components/common/detail_map';
 import { getExhExpDataById } from '@/src/lib/exh_exp';
 import { ExhExpItem } from '@/src/types/exh_exp';
 import Image from 'next/image';
@@ -73,20 +74,7 @@ export default async function ExhExpDetailPage({ params }: ExhExpDetailProps) {
 
         <hr className="border-t-2 border-red-400 my-8" />
 
-        <div className="border-4 border-yellow-400 p-8 max-w-2xl mx-auto">
-          <h2 className="text-2xl text-center font-bold mb-4">開催場所</h2>
-          <p className="text-xl text-center mb-4">{item.開催場所}</p>
-          {/* Map image placeholder */}
-          <div className="bg-gray-200 w-full h-64 flex items-center justify-center mb-4">
-            地図画像
-          </div>
-          <Link
-            href="/map"
-            className="block w-full bg-yellow-500 text-white text-center py-3 rounded-md font-bold"
-          >
-            マップページへ
-          </Link>
-        </div>
+        <DetailMap location={item.開催場所} />
 
         <div className="text-center mt-12">
           <Link
