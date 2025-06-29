@@ -1,4 +1,7 @@
-import Link from 'next/link';
+'use client';
+import Frame from './frame';
+import LinkButton from './link_button';
+import TextStyle from './text_style';
 
 type DetailMapProps = {
   location: string;
@@ -6,19 +9,22 @@ type DetailMapProps = {
 
 const DetailMap = ({ location }: DetailMapProps) => {
   return (
-    <div className="border-4 border-yellow-400 p-8 max-w-2xl mx-auto">
-      <h2 className="text-2xl text-center font-bold mb-4">開催場所</h2>
-      <p className="text-xl text-center mb-4">{location}</p>
-      {/* Map image placeholder */}
-      <div className="bg-gray-200 w-full h-64 flex items-center justify-center mb-4">
-        地図画像
-      </div>
-      <Link
-        href="/map"
-        className="block w-full bg-yellow-500 text-white text-center py-3 rounded-md font-bold"
-      >
-        マップページへ
-      </Link>
+    <div>
+      <Frame>
+        <TextStyle styleType="section_title" className="text-center">
+          開催場所
+        </TextStyle>
+        <TextStyle styleType="body1" className="text-center">
+          {location}
+        </TextStyle>
+        {/* Map image placeholder */}
+        <div className="bg-gray-200 w-full h-64 flex items-center justify-center mb-4">
+          地図画像
+        </div>
+        <LinkButton href="/map" className="bg-second">
+          マップページへ
+        </LinkButton>
+      </Frame>
     </div>
   );
 };
