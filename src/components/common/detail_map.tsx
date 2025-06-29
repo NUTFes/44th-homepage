@@ -22,7 +22,7 @@ const DetailMap = ({ location }: DetailMapProps) => {
           地図画像
         </div>
         <LinkButton href="/map" className="bg-second">
-          マップページへ
+          <TextStyle styleType="body1" className="text-white">マップページへ</TextStyle>
         </LinkButton>
       </Frame>
     </div>
