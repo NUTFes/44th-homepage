@@ -1,6 +1,7 @@
 export const runtime = 'edge';
 import BackFrame from '@/src/components/common/back_frame';
 import DetailMap from '@/src/components/common/detail_map';
+import Line from '@/src/components/common/line';
 import ReturnEventButton from '@/src/components/common/return_event_button';
 import TextStyle from '@/src/components/common/text_style';
 import { getExhExpDataById } from '@/src/lib/exh_exp';
@@ -26,34 +27,35 @@ export default async function ExhExpDetailPage({ params }: ExhExpDetailProps) {
 
   return (
     <BackFrame>
-      <div className="container mx-auto px-4 py-8 pb-8">
+      <div className="container mx-auto py-8">
         <ReturnEventButton href="/event/exh_exp" />
         <div className="text-center">
           <TextStyle styleType="section_title">展示・体験</TextStyle>
-          <p className="text-h2">{item.出店タイトル}</p>
+          <p className="text-h2 pt-2 py-4">{item.出店タイトル}</p>
         </div>
-
-        <div className="w-full aspect-square flex items-center justify-center relative max-w-lg mx-auto">
-          {imageUrl ? (
-            <Image
-              src={imageUrl}
-              alt={item.出店タイトル || 'image'}
-              fill
-              className="object-contain"
-              unoptimized
-            />
-          ) : (
-            <div className="w-full h-full flex flex-col items-center justify-center text-white">
+        <div className="pb-4 pt-4">
+          <div className="w-[70%] aspect-square flex items-center justify-center relative max-w-lg mx-auto">
+            {imageUrl ? (
               <Image
-                src="/icon/44thlogo.svg"
-                alt="logo"
-                width={150}
-                height={150}
+                src={imageUrl}
+                alt={item.出店タイトル || 'image'}
+                fill
                 className="object-contain"
+                unoptimized
               />
-              <p className="mt-2">NO IMAGE</p>
-            </div>
-          )}
+            ) : (
+              <div className="w-full h-full flex flex-col items-center justify-center text-white">
+                <Image
+                  src="/icon/44thlogo.svg"
+                  alt="logo"
+                  width={150}
+                  height={150}
+                  className="object-contain"
+                />
+                <p className="mt-2">NO IMAGE</p>
+              </div>
+            )}
+          </div>
         </div>
 
         <p className="text-center my-8 text-body1">{item.PR文}</p>
@@ -69,7 +71,7 @@ export default async function ExhExpDetailPage({ params }: ExhExpDetailProps) {
           ))}
         </div>
 
-        <hr className="border-t-2 border-red-400 my-8" />
+        <Line className="my-8" />
 
         <DetailMap location={item.開催場所} />
 
