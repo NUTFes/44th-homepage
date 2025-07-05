@@ -1,6 +1,7 @@
 'use client';
 
-import TagModal from '@/src/components/common/tag';
+import Tag from '@/src/components/common/tag';
+import TagModal from '@/src/components/common/tag_modal';
 import CellContent from '@/src/components/event/exh_exp/CellContent';
 import { getAllExhExpData } from '@/src/lib/exh_exp';
 import { ExhExpItem } from '@/src/types/exh_exp';
@@ -46,14 +47,11 @@ export default function ExhExpPage() {
 
           <h1 className="text-4xl text-center font-bold my-8">展示・体験</h1>
 
-          <div className="text-center mb-8">
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="border-2 border-red-500 text-red-500 px-8 py-2 rounded-md"
-            >
-              タグ検索
-            </button>
-          </div>
+          <Tag
+            selectedTags={selectedTags}
+            onSearchClick={() => setIsModalOpen(true)}
+            onResetClick={() => setSelectedTags([])}
+          />
 
           <hr className="border-t-2 border-red-400 mb-8" />
 
