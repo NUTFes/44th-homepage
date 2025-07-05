@@ -20,7 +20,11 @@ const TagModal = ({
   return (
     <div
       className="fixed inset-0 bg-[#654321] flex flex-col items-center justify-center z-50 p-8"
-      style={{ backgroundColor: 'rgba(101, 67, 33, 1)' }} // #654321
+      style={{
+        backgroundColor: 'rgba(76, 42, 0, 0.9)',
+        backdropFilter: 'blur(6px)', // 背景ぼかし
+        WebkitBackdropFilter: 'blur(8px)', // Safari対応
+      }}
     >
       <div className="w-full max-w-md text-[#F8F5E9]">
         <h2 className="text-3xl font-bold mb-8 text-center">タグ検索</h2>
