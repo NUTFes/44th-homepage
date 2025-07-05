@@ -70,17 +70,19 @@ const TagModal = ({
                 height={28}
                 className="w-8 h-8 mr-4 hidden peer-checked:block"
               />
-              <span>{tag}</span>
+              <p className="text-base text-h1">
+                <span>{tag}</span>
+              </p>
             </label>
           ))}
         </div>
-        <div className="flex justify-between items-center">
-          <button onClick={onClose} className="text-2xl">
+        <div className="flex justify-between items-center px-4">
+          <button onClick={onClose} className="text-body1">
             戻る
           </button>
           <button
             onClick={onClose}
-            className="px-12 py-3 bg-[#F8F5E9] text-[#654321] text-2xl font-bold rounded-lg"
+            className="px-12 py-3 bg-base text-[#654321] text-body1 font-bold rounded-lg"
           >
             検索
           </button>
