@@ -1,4 +1,6 @@
 'use client';
+import Image from 'next/image';
+import TextStyle from './text_style';
 
 type TagModalProps = {
   isOpen: boolean;
@@ -20,10 +22,31 @@ const TagModal = ({
   return (
     <div
       className="fixed inset-0 bg-[#654321] flex flex-col items-center justify-center z-50 p-8"
-      style={{ backgroundColor: 'rgba(101, 67, 33, 1)' }} // #654321
+      style={{
+        backgroundColor: 'rgba(76, 42, 0, 0.9)',
+        backdropFilter: 'blur(6px)', // 背景ぼかし
+        WebkitBackdropFilter: 'blur(8px)', // Safari対応
+      }}
     >
       <div className="w-full max-w-md text-[#F8F5E9]">
-        <h2 className="text-3xl font-bold mb-8 text-center">タグ検索</h2>
+        <div className="flex justify-center">
+          <Image
+            src="/logo/tag_modal.png"
+            alt="タグ検索"
+            width={236}
+            height={139}
+          />
+        </div>
+
+        <div className="text-center pt-2 pb-4">
+          <TextStyle styleType="body2" className="text-base">
+            ※タグは複数選択ができます
+          </TextStyle>
+        </div>
+        <div className="pb-6">
+          <div className="border rounded-full border-base" />
+        </div>
+
         <div className="space-y-4 mb-10">
           {allTags.map((tag) => (
             <label key={tag} className="flex items-center text-2xl">
@@ -31,19 +54,35 @@ const TagModal = ({
                 type="checkbox"
                 checked={selectedTags.includes(tag)}
                 onChange={() => onTagChange(tag)}
-                className="appearance-none h-8 w-8 border-2 border-[#F8F5E9] rounded-sm bg-transparent checked:bg-[#F8F5E9] checked:border-transparent mr-4"
+                className="peer absolute opacity-0 w-0 h-0"
               />
-              <span>{tag}</span>
+              <Image
+                src="/icon/tag_modal/checkbox_off.png"
+                alt="□"
+                width={28}
+                height={28}
+                className="w-8 h-8 mr-4 peer-checked:hidden"
+              />
+              <Image
+                src="/icon/tag_modal/checkbox_on.png"
+                alt="■"
+                width={28}
+                height={28}
+                className="w-8 h-8 mr-4 hidden peer-checked:block"
+              />
+              <p className="text-base text-h1">
+                <span>{tag}</span>
+              </p>
             </label>
           ))}
         </div>
-        <div className="flex justify-between items-center">
-          <button onClick={onClose} className="text-2xl">
+        <div className="flex justify-between items-center px-4">
+          <button onClick={onClose} className="text-body1">
             戻る
           </button>
           <button
             onClick={onClose}
-            className="px-12 py-3 bg-[#F8F5E9] text-[#654321] text-2xl font-bold rounded-lg"
+            className="px-12 py-3 bg-base text-[#654321] text-body1 font-bold rounded-lg"
           >
             検索
           </button>
