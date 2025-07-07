@@ -43,7 +43,7 @@ export default function ExhExpPage() {
       <div>
         <BackFrame>
           <ReturnEventButton href="/event" />
-          <div className="container px-4 py-8">
+          <div className="container px-4">
             <div className="text-center py-8">
               <TextStyle styleType="title">展示・体験</TextStyle>
             </div>
