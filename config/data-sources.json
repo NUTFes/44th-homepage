@@ -6,5 +6,13 @@
     "image_dir": "public/images/exh_exp",
     "id_column": "番号",
     "image_url_column": "画像"
+  },
+  {
+    "name": "sale",
+    "tsv_url": "SALE_TSV_URL",
+    "json_path": "src/data/sale.json",
+    "image_dir": "public/images/sale",
+    "id_column": "番号",
+    "image_url_column": "画像"
   }
 ]
