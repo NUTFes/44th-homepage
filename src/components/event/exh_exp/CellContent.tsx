@@ -18,7 +18,7 @@ export default function CellContent({ imageId, title }: CellContentProps) {
             src={imageUrl}
             alt={title || 'image'}
             fill
-            className="object-contain"
+            className="object-contain shadow-button"
             unoptimized // If the images are static and already optimized
           />
         ) : (
@@ -34,7 +34,7 @@ export default function CellContent({ imageId, title }: CellContentProps) {
           </div>
         )}
       </div>
-      <p className="mt-2 font-bold">{title || '出店タイトル'}</p>
+      <p className="mt-2">{title || '出店タイトル'}</p>
     </div>
   );
 }
