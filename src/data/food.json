@@ -1,0 +1,29 @@
+[
+  {
+    "番号": "1",
+    "出店タイトル": "飲食1",
+    "PR文": "",
+    "画像": "https://drive.google.com/file/d/1bVm1qXcAItTS9Kwry563uAPeJbXfZntV/view?usp=sharing",
+    "開催場所": "〇〇棟〇〇エリア",
+    "タグ": "子供向け, 企業出店, お酒あり",
+    "メニュー": ""
+  },
+  {
+    "番号": "2",
+    "出店タイトル": "ドラックストアMAC",
+    "PR文": "",
+    "画像": "https://drive.google.com/file/d/1D19gbKbDouHsl5MTu0geVAp7lkznn0Ob/view?usp=sharing",
+    "開催場所": "〇〇棟〇〇エリア",
+    "タグ": "子供向け, 学生出店, お酒あり",
+    "メニュー": ""
+  },
+  {
+    "番号": "3",
+    "出店タイトル": "ねぎし",
+    "PR文": "",
+    "画像": "https://drive.google.com/file/d/1ayLM6p99OeASsJVB-Gn0rJ6xzTG7hBhS/view?usp=sharing",
+    "開催場所": "〇〇棟〇〇エリア",
+    "タグ": "企業出店, お酒あり, 国際グルメ, フード",
+    "メニュー": ""
+  }
+]
