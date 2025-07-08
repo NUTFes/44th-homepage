@@ -56,33 +56,21 @@ export default function ExhExpPage() {
           <hr className="border-t-2 border-red-400 mb-8" />
 
           <main
-            className="grid grid-cols-2 gap-8 relative"
+            className="grid grid-cols-2 gap-8"
             style={{
-              minHeight: '600px',
+              backgroundImage: "url('/assets/illust_people_1.svg')",
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center',
+              backgroundSize: 'contain',
             }}
           >
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                backgroundImage: "url('/assets/illust_people_1.svg')",
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
-                backgroundSize: '300px 400px',
-                zIndex: 0,
-              }}
-            />
-            <div className="relative z-10 contents">
-              {filteredData.map((item) => (
-                <div key={item.番号} className="text-center">
-                  <Link href={`/event/exh_exp/${item.番号 || ''}`}>
-                    <CellContent
-                      imageId={item.番号}
-                      title={item.出店タイトル}
-                    />
-                  </Link>
-                </div>
-              ))}
-            </div>
+            {filteredData.map((item) => (
+              <div key={item.番号} className="text-center">
+                <Link href={`/event/exh_exp/${item.番号 || ''}`}>
+                  <CellContent imageId={item.番号} title={item.出店タイトル} />
+                </Link>
+              </div>
+            ))}
           </main>
         </div>
       </div>
