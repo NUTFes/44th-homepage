@@ -27,7 +27,7 @@ export default async function ExhExpDetailPage({ params }: ExhExpDetailProps) {
 
   return (
     <BackFrame>
-      <div className="container mx-auto py-8">
+      <div>
         <ReturnEventButton href="/event/exh_exp" />
         <div className="text-center">
           <TextStyle styleType="section_title">展示・体験</TextStyle>
