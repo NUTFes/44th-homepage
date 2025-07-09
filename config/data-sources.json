@@ -14,5 +14,13 @@
     "image_dir": "public/images/sale",
     "id_column": "番号",
     "image_url_column": "画像"
+  },
+  {
+    "name": "food",
+    "tsv_url": "FOOD_TSV_URL",
+    "json_path": "src/data/food.json",
+    "image_dir": "public/images/food",
+    "id_column": "番号",
+    "image_url_column": "画像"
   }
 ]
