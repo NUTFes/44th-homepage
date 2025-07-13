@@ -15,6 +15,7 @@ export default function AccessPage() {
           <DateSection />
           <Line />
           <TextStyle styleType="section_title">技大前バス時刻表</TextStyle>
+          ここにバス時刻表
         </div>
       </BackFrame>
     </div>
