@@ -1,4 +1,3 @@
-import React from 'react';
 import Frame from '@/src/components/common/frame';
 import TextStyle from '@/src/components/common/text_style';
 const DateSection = () => {
@@ -10,7 +9,7 @@ const DateSection = () => {
           <TextStyle styleType="body1_khaki">１日目</TextStyle>
         </div>
         <div>
-          <TextStyle styleType="body1">９月 13日</TextStyle>
+          <TextStyle styleType="body1_bold">９/13（土）</TextStyle>
         </div>
       </div>
       <div className="p-0">
@@ -18,7 +17,7 @@ const DateSection = () => {
           <TextStyle styleType="body1_khaki">２日目</TextStyle>
         </div>
         <div>
-          <TextStyle styleType="body1">９月 14日</TextStyle>
+          <TextStyle styleType="body1_bold">９/14（日）</TextStyle>
         </div>
       </div>
     </Frame>
