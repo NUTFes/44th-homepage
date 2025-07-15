@@ -27,13 +27,13 @@ export default async function ExhExpDetailPage({ params }: ExhExpDetailProps) {
 
   return (
     <BackFrame>
-      <div>
+      <div className="flex flex-col gap-y-8">
         <ReturnEventButton href="/event/exh_exp" />
         <div className="text-center">
           <TextStyle styleType="section_title">展示・体験</TextStyle>
-          <p className="text-h2 pt-2 py-4">{item.出店タイトル}</p>
+          <p className="text-h2">{item.出店タイトル}</p>
         </div>
-        <div className="pb-4 pt-4">
+
           <div className="w-[70%] aspect-square flex items-center justify-center relative max-w-lg mx-auto">
             {imageUrl ? (
               <Image
@@ -56,9 +56,8 @@ export default async function ExhExpDetailPage({ params }: ExhExpDetailProps) {
               </div>
             )}
           </div>
-        </div>
 
-        <p className="text-center my-8 text-body1">{item.PR文}</p>
+        <p className="text-center text-body1">{item.PR文}</p>
 
         <div className="flex justify-center gap-4 my-8">
           {tags.map((tag, index) => (
