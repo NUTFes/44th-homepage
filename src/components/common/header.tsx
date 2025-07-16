@@ -23,12 +23,22 @@ export default function Header() {
     <header className="fixed top-0 left-0 w-full flex justify-between pb-4 pt-4 pl-[3%] pr-[3%] bg-gradient-to-b from-header_grad bg-blend-darken z-50">
       <div className="flex">
         <Link href={'/'}>
-          <Image src="/icon/44thlogo_shadow.png" alt="44th_icon" width={40} height={40} />
+          <Image
+            src="/icon/44thlogo_shadow.png"
+            alt="44th_icon"
+            width={40}
+            height={40}
+          />
         </Link>
       </div>
       <div className="flex">
         <button onClick={toggleMenu} aria-label="メニューを開く">
-          <Image src="/icon/BiMenu_shadow.png" alt="menu" width={32} height={32} />
+          <Image
+            src="/icon/BiMenu_shadow.png"
+            alt="menu"
+            width={32}
+            height={32}
+          />
         </button>
       </div>
 
@@ -121,7 +131,7 @@ export default function Header() {
               </div>
 
               <Link href="/food" onClick={toggleMenu} className="text-lg">
-                飲食
+                食品販売
               </Link>
               <Link href="/sale" onClick={toggleMenu} className="text-lg">
                 物品販売
@@ -166,7 +176,7 @@ export default function Header() {
                 </div>
               </div>
 
-              <div className="text-lg text-gray">飲食</div>
+              <div className="text-lg text-gray">食品販売</div>
               <div className="text-lg text-gray">物品販売</div>
               <div className="text-lg text-gray">企業ブース</div>
               <div className="text-lg text-gray">協賛企業一覧</div>
