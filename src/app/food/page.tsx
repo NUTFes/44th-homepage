@@ -54,7 +54,7 @@ export default function FoodPage() {
             {'<< 戻る'}
           </Link>
 
-          <h1 className="text-4xl text-center font-bold my-8">飲食</h1>
+          <h1 className="text-4xl text-center font-bold my-8">食品販売</h1>
 
           <Tag
             selectedTags={selectedTags}
