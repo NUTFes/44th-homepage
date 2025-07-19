@@ -1,6 +1,5 @@
 'use client';
 import Image from 'next/image';
-import TextStyle from './text_style';
 
 type TagModalProps = {
   isOpen: boolean;
@@ -28,7 +27,7 @@ const TagModal = ({
         WebkitBackdropFilter: 'blur(8px)', // Safari対応
       }}
     >
-      <div className="w-full max-w-md text-[#F8F5E9]">
+      <div className="w-full max-w-md text-base">
         <div className="flex justify-center">
           <Image
             src="/logo/tag_modal.png"
@@ -38,10 +37,8 @@ const TagModal = ({
           />
         </div>
 
-        <div className="text-center pt-2 pb-4">
-          <TextStyle styleType="body2" className="text-base">
-            ※タグは複数選択ができます
-          </TextStyle>
+        <div className="text-center pt-2 pb-4 ">
+          <p className="text-body2 text-base">※タグは複数選択ができます</p>
         </div>
         <div className="pb-6">
           <div className="border rounded-full border-base" />
@@ -70,7 +67,7 @@ const TagModal = ({
                 height={28}
                 className="w-8 h-8 mr-4 hidden peer-checked:block"
               />
-              <p className="text-base text-h1">
+              <p className="text-base text-body1">
                 <span>{tag}</span>
               </p>
             </label>
