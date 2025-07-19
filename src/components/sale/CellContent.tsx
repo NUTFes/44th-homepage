@@ -34,7 +34,7 @@ export default function CellContent({ imageId, title }: CellContentProps) {
           </div>
         )}
       </div>
-      <p className="mt-2 font-bold">{title || '出店タイトル'}</p>
+      <p className="mt-2">{title || '出店タイトル'}</p>
     </div>
   );
 }
