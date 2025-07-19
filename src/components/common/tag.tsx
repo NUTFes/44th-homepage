@@ -15,7 +15,7 @@ const Tag = ({ selectedTags, onSearchClick, onResetClick }: TagProps) => {
         <div>
           <button
             onClick={onResetClick}
-            className="inline-flex items-center justify-center h-[49px] px-[54px] py-2 text-white bg-accent rounded-sm text-body2 shadow-button text-center mb-4"
+            className="inline-flex items-center justify-center h-[49px] px-[54px] py-2 text-white bg-accent rounded-sm text-body2 shadow_button text-center mb-4"
           >
             × タグをリセット
           </button>
@@ -31,12 +31,14 @@ const Tag = ({ selectedTags, onSearchClick, onResetClick }: TagProps) => {
           </div>
         </div>
       ) : (
+        
         <button
           onClick={onSearchClick}
-          className="inline-flex items-center justify-center h-[49px] px-[54px] py-2 text-accent bg-base border-2 border-accent rounded-sm text-body2 shadow-button text-center"
+          className="inline-flex items-center justify-center h-[49px] px-[54px] py-2 text-accent bg-base border-2 border-accent rounded-sm text-body2 text-center shadow_button"
         >
           タグ検索
         </button>
+        
       )}
     </div>
   );
