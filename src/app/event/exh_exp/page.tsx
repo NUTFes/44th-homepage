@@ -64,18 +64,21 @@ export default function ExhExpPage() {
                 backgroundSize: 'contain',
               }}
             >
-              {filteredData.map((item) => (
-                <div key={item.番号} className="text-center">
-                  <Link href={`/event/exh_exp/${item.番号 || ''}`}>
-                    <TextStyle styleType="body2">
-                      <CellContent
-                        imageId={item.番号}
-                        title={item.出店タイトル}
-                      />
-                    </TextStyle>
-                  </Link>
-                </div>
-              ))}
+              {filteredData.map((item, index) => {
+                const itemId = item.番号 || `missing-${index}`;
+                return (
+                  <div key={itemId} className="text-center">
+                    <Link href={`/event/exh_exp/${encodeURIComponent(itemId)}`}>
+                      <TextStyle styleType="body2">
+                        <CellContent
+                          imageId={item.番号}
+                          title={item.出店タイトル}
+                        />
+                      </TextStyle>
+                    </Link>
+                  </div>
+                );
+              })}
             </main>
             <ReturnEventButton size="large_event" href="/event" />
           </div>

@@ -22,5 +22,13 @@
     "image_dir": "public/images/food",
     "id_column": "番号",
     "image_url_column": "画像"
+  },
+  {
+    "name": "corpolate_booth",
+    "tsv_url": "CORPOLATE_BOOTH_TSV_URL",
+    "json_path": "src/data/corpolate_booth.json",
+    "image_dir": "public/images/corpolate_booth",
+    "id_column": "番号",
+    "image_url_column": "画像"
   }
 ]

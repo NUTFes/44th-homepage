@@ -81,16 +81,19 @@ export default function FoodPage() {
               }}
             />
             <div className="relative z-10 contents">
-              {filteredData.map((item) => (
-                <div key={item.番号} className="text-center">
-                  <Link href={`/food/${item.番号 || ''}`}>
-                    <CellContent
-                      imageId={item.番号}
-                      title={item.出店タイトル}
-                    />
-                  </Link>
-                </div>
-              ))}
+              {filteredData.map((item, index) => {
+                const itemId = item.番号 || `missing-${index}`;
+                return (
+                  <div key={itemId} className="text-center">
+                    <Link href={`/food/${encodeURIComponent(itemId)}`}>
+                      <CellContent
+                        imageId={item.番号}
+                        title={item.出店タイトル}
+                      />
+                    </Link>
+                  </div>
+                );
+              })}
             </div>
           </main>
         </div>
