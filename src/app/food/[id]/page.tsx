@@ -7,8 +7,6 @@ import ReturnEventButton from '@/src/components/common/return_event_button';
 import TextStyle from '@/src/components/common/text_style';
 import { getAllFoodData, getFoodDataById } from '@/src/lib/food';
 import { FoodItem } from '@/src/types/food';
-import Image from 'next/image';
-import Link from 'next/link';
 
 type FoodDetailProps = {
   params: {
@@ -77,28 +75,9 @@ export default async function FoodDetailPage({ params }: FoodDetailProps) {
 
         <Line className="my-8" />
 
-        <DetailMap location={item.開催場所} />
+        <DetailMap location={item.開催場所} roomNumber={item.番号} />
 
         <ReturnEventButton size={'large'} href="/food" />
-
-        <div className="border-4 border-yellow-400 p-4 mt-16 max-w-2xl mx-auto">
-          <div className="w-full aspect-video bg-black flex items-center justify-center relative">
-            {/* Placeholder for sponsor image */}
-            <Image
-              src="/icon/44thlogo.svg"
-              alt="sponsor logo"
-              width={150}
-              height={150}
-              className="object-contain"
-            />
-          </div>
-          <Link
-            href="/sponsoring_corpolate"
-            className="block w-full bg-white border-2 border-yellow-400 text-yellow-600 text-center py-3 rounded-md font-bold mt-4"
-          >
-            {'ご協賛いただいた企業様 >>'}
-          </Link>
-        </div>
       </div>
     </BackFrame>
   );
