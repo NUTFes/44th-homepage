@@ -1,10 +1,11 @@
 export const runtime = 'edge';
 import BackFrame from '@/src/components/common/back_frame';
 import DetailMap from '@/src/components/common/detail_map';
+import FallbackImage from '@/src/components/common/FallbackImage';
 import Line from '@/src/components/common/line';
 import ReturnEventButton from '@/src/components/common/return_event_button';
 import TextStyle from '@/src/components/common/text_style';
-import { getFoodDataById } from '@/src/lib/food';
+import { getAllFoodData, getFoodDataById } from '@/src/lib/food';
 import { FoodItem } from '@/src/types/food';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -16,14 +17,23 @@ type FoodDetailProps = {
 };
 
 export default async function FoodDetailPage({ params }: FoodDetailProps) {
-  const item: FoodItem | undefined = getFoodDataById(params.id);
+  const decodedId = decodeURIComponent(params.id);
+
+  let item: FoodItem | undefined;
+  if (decodedId.startsWith('missing-')) {
+    // missing-${index} 形式の場合、インデックスから取得
+    const index = parseInt(decodedId.split('-')[1]);
+    const allData = getAllFoodData();
+    item = allData[index];
+  } else {
+    item = getFoodDataById(decodedId);
+  }
 
   if (!item) {
     return <div>データが見つかりません。</div>;
   }
 
   const tags = item.タグ ? item.タグ.split(',').map((tag) => tag.trim()) : [];
-  const imageUrl = item.番号 ? `/images/food/${item.番号}.png` : null;
 
   return (
     <BackFrame>
@@ -35,26 +45,13 @@ export default async function FoodDetailPage({ params }: FoodDetailProps) {
         </div>
         <div className="pb-4 pt-4">
           <div className="w-[70%] aspect-square flex items-center justify-center relative max-w-lg mx-auto">
-            {imageUrl ? (
-              <Image
-                src={imageUrl}
-                alt={item.出店タイトル || 'image'}
-                fill
-                className="object-contain"
-                unoptimized
-              />
-            ) : (
-              <div className="w-full h-full flex flex-col items-center justify-center text-white">
-                <Image
-                  src="/icon/44thlogo.svg"
-                  alt="logo"
-                  width={150}
-                  height={150}
-                  className="object-contain"
-                />
-                <p className="mt-2">NO IMAGE</p>
-              </div>
-            )}
+            <FallbackImage
+              imageDir="food"
+              imageId={item.番号}
+              alt={item.出店タイトル || 'image'}
+              fill
+              className="object-contain"
+            />
           </div>
         </div>
 

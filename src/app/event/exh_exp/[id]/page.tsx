@@ -1,10 +1,11 @@
 export const runtime = 'edge';
 import BackFrame from '@/src/components/common/back_frame';
 import DetailMap from '@/src/components/common/detail_map';
+import FallbackImage from '@/src/components/common/FallbackImage';
 import Line from '@/src/components/common/line';
 import ReturnEventButton from '@/src/components/common/return_event_button';
 import TextStyle from '@/src/components/common/text_style';
-import { getExhExpDataById } from '@/src/lib/exh_exp';
+import { getAllExhExpData, getExhExpDataById } from '@/src/lib/exh_exp';
 import { ExhExpItem } from '@/src/types/exh_exp';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -16,48 +17,45 @@ type ExhExpDetailProps = {
 };
 
 export default async function ExhExpDetailPage({ params }: ExhExpDetailProps) {
-  const item: ExhExpItem | undefined = getExhExpDataById(params.id);
+  const decodedId = decodeURIComponent(params.id);
+
+  let item: ExhExpItem | undefined;
+  if (decodedId.startsWith('missing-')) {
+    // missing-${index} 形式の場合、インデックスから取得
+    const index = parseInt(decodedId.split('-')[1]);
+    const allData = getAllExhExpData();
+    item = allData[index];
+  } else {
+    item = getExhExpDataById(decodedId);
+  }
 
   if (!item) {
     return <div>データが見つかりません。</div>;
   }
 
   const tags = item.タグ ? item.タグ.split(',').map((tag) => tag.trim()) : [];
-  const imageUrl = item.番号 ? `/images/exh_exp/${item.番号}.png` : null;
 
   return (
     <BackFrame>
-      <div className="flex flex-col gap-y-8">
+      <div className="container mx-auto py-8">
         <ReturnEventButton href="/event/exh_exp" />
         <div className="text-center">
           <TextStyle styleType="section_title">展示・体験</TextStyle>
-          <p className="text-h2">{item.出店タイトル}</p>
+          <p className="text-h2 pt-2 py-4">{item.出店タイトル}</p>
+        </div>
+        <div className="pb-4 pt-4">
+          <div className="w-[70%] aspect-square flex items-center justify-center relative max-w-lg mx-auto">
+            <FallbackImage
+              imageDir="exh_exp"
+              imageId={item.番号}
+              alt={item.出店タイトル || 'image'}
+              fill
+              className="object-contain"
+            />
+          </div>
         </div>
 
-          <div className="w-[70%] aspect-square flex items-center justify-center relative max-w-lg mx-auto">
-            {imageUrl ? (
-              <Image
-                src={imageUrl}
-                alt={item.出店タイトル || 'image'}
-                fill
-                className="object-contain"
-                unoptimized
-              />
-            ) : (
-              <div className="w-full h-full flex flex-col items-center justify-center text-white">
-                <Image
-                  src="/icon/44thlogo.svg"
-                  alt="logo"
-                  width={150}
-                  height={150}
-                  className="object-contain"
-                />
-                <p className="mt-2">NO IMAGE</p>
-              </div>
-            )}
-          </div>
-
-        <p className="text-center text-body1">{item.PR文}</p>
+        <p className="text-center my-8 text-body1">{item.PR文}</p>
 
         <div className="flex justify-center gap-4 my-8">
           {tags.map((tag, index) => (

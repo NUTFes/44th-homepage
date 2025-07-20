@@ -64,13 +64,19 @@ export default function SalePage() {
               backgroundSize: 'contain',
             }}
           >
-            {filteredData.map((item) => (
-              <div key={item.番号} className="text-center">
-                <Link href={`/sale/${item.番号 || ''}`}>
-                  <CellContent imageId={item.番号} title={item.出店タイトル} />
-                </Link>
-              </div>
-            ))}
+            {filteredData.map((item, index) => {
+              const itemId = item.番号 || `missing-${index}`;
+              return (
+                <div key={itemId} className="text-center">
+                  <Link href={`/sale/${encodeURIComponent(itemId)}`}>
+                    <CellContent
+                      imageId={item.番号}
+                      title={item.出店タイトル}
+                    />
+                  </Link>
+                </div>
+              );
+            })}
           </main>
         </div>
       </div>
