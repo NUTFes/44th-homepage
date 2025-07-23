@@ -36,7 +36,7 @@ export default async function FoodDetailPage({ params }: FoodDetailProps) {
 
   return (
     <BackFrame>
-      <div className="container mx-auto py-8">
+      <div className="container mx-auto py-8 text-font_main">
         <ReturnEventButton href="/food" />
         <div className="text-center">
           <TextStyle styleType="section_title">食品販売</TextStyle>

@@ -51,7 +51,7 @@ export default function FoodPage() {
       <div>
         <BackFrame>
           <ReturnEventButton href="/event" />
-          <div className="container px-4 font-main">
+          <div className="container px-4 text-font_main">
             <div className="text-center py-8">
               <TextStyle styleType="title">食品販売</TextStyle>
             </div>
