@@ -7,7 +7,8 @@ import ReturnEventButton from '@/src/components/common/return_event_button';
 import TextStyle from '@/src/components/common/text_style';
 import { getCorpolateBoothDataById } from '@/src/lib/corpolate_booth';
 import { CorpolateBoothItem } from '@/src/types/corpolate_booth';
-import Link from 'next/link';
+//import Link from 'next/link';
+import Frame from '@/src/components/common/frame';
 
 type CorpolateBoothDetailProps = {
   params: {
@@ -28,7 +29,7 @@ export default async function CorpolateBoothDetailPage({
 
   return (
     <BackFrame>
-      <div className="container mx-auto py-8">
+      <div className="container mx-auto py-8 text-font_main">
         <ReturnEventButton href="/corpolate_booth" />
         <div className="text-center">
           <TextStyle styleType="section_title">企業ブース</TextStyle>
@@ -38,7 +39,7 @@ export default async function CorpolateBoothDetailPage({
           <div className="w-[70%] aspect-square flex items-center justify-center relative max-w-lg mx-auto">
             <FallbackImage
               imageDir="corpolate_booth"
-              imageId={item.番号}
+              //imageId={item.番号}
               alt={item.出店タイトル || 'image'}
               fill
               className="object-contain"
@@ -49,13 +50,13 @@ export default async function CorpolateBoothDetailPage({
         <p className="text-center my-8 text-body1">{item.PR文}</p>
 
         {item.企業紹介文 && (
-          <div className="text-center my-8">
-            <TextStyle styleType="section_title">どんな企業？</TextStyle>
+          <Frame>
+            <TextStyle styleType="section_title" className="text-center">どんな企業？</TextStyle>
             <p className="text-body1 mt-2">{item.企業紹介文}</p>
-          </div>
+          </Frame>
         )}
 
-        {item.企業HPのURL && (
+        {/* {item.企業HPのURL && (
           <div className="my-8 max-w-2xl mx-auto">
             <div className="border-4 border-yellow-400 p-6 bg-yellow-50">
               <TextStyle styleType="section_title">企業HPURL</TextStyle>
@@ -74,11 +75,11 @@ export default async function CorpolateBoothDetailPage({
               </p>
             </div>
           </div>
-        )}
+        )} */}
 
         <Line className="my-8" />
 
-        <DetailMap location={item.開催場所} roomNumber={item.番号} />
+        <DetailMap location={item.開催場所} />
 
         <ReturnEventButton size={'large'} href="/corpolate_booth" />
       </div>
