@@ -93,7 +93,7 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
 
             {(item['1日目(晴)開始時刻'] || item['1日目(雨)開始時刻']) && (
               <div className="text-center mb-2">
-                <div className="font-bold">1日目</div>
+                <div className="text-font_khaki font-bold">1日目</div>
                 {item['1日目(晴)開始時刻'] && item['1日目(晴)終了時刻'] && (
                   <div className="text-body1">
                     晴れ: {item['1日目(晴)開始時刻']}～
@@ -110,7 +110,7 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
 
             {(item['2日目(晴)開始時刻'] || item['2日目(雨)開始時刻']) && (
               <div className="text-center mb-4">
-                <div className="font-bold">2日目</div>
+                <div className="text-font_khaki font-bold">2日目</div>
                 {item['2日目(晴)開始時刻'] &&
                   item['2日目(晴)終了時刻'] &&
                   item['2日目(晴)開始時刻'] !== 'なし' && (
