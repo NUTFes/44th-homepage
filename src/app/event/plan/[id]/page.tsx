@@ -8,6 +8,7 @@ import TextStyle from '@/src/components/common/text_style';
 import { getAllPlanData, getPlanDataById } from '@/src/lib/plan';
 import { PlanItem } from '@/src/types/plan';
 import Link from 'next/link';
+import Frame from '@/src/components/common/frame';
 
 type PlanDetailProps = {
   params: {
@@ -36,7 +37,7 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
 
   return (
     <BackFrame>
-      <div className="container mx-auto py-8">
+      <div className="container mx-auto py-8 text-font_main">
         <ReturnEventButton href="/event/plan" />
         <div className="text-center">
           <TextStyle styleType="section_title">企画</TextStyle>
@@ -61,7 +62,7 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
               href={item.参加応募URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-yellow-400 text-black px-8 py-3 rounded-md font-bold text-lg hover:bg-yellow-500 transition-colors"
+              className="px-12  py-4 text-white bg-second rounded-sm text-body2 shadow_button text-center hover:bg-yellow-500 transition-colors"
             >
               参加応募はこちら
             </Link>
@@ -74,7 +75,7 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="border-2 border-red-500 text-red-500 px-4 py-1 rounded-md"
+              className="border-2 border-accent text-accent px-4 py-1 rounded-sm bg-base"
             >
               {tag}
             </span>
@@ -85,7 +86,7 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
 
         {/* 開催時間セクション */}
         <div className="my-8">
-          <div className="border-4 border-yellow-400 p-6 bg-yellow-50 max-w-md mx-auto">
+          <Frame>
             <TextStyle styleType="section_title" className="text-center mb-4">
               開催時間
             </TextStyle>
@@ -128,7 +129,7 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
                   )}
               </div>
             )}
-          </div>
+          </Frame>
         </div>
 
         <DetailMap location={item['開催場所（晴れ）']} roomNumber={item.番号} />
