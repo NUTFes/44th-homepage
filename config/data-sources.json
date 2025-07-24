@@ -30,5 +30,13 @@
     "image_dir": "public/images/corpolate_booth",
     "id_column": "番号",
     "image_url_column": "画像"
+  },
+  {
+    "name": "plan",
+    "tsv_url": "PLAN_TSV_URL",
+    "json_path": "src/data/plan.json",
+    "image_dir": "public/images/plan",
+    "id_column": "番号",
+    "image_url_column": "画像URL"
   }
 ]
