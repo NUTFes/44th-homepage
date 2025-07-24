@@ -5,6 +5,7 @@ import FallbackImage from '@/src/components/common/FallbackImage';
 import Line from '@/src/components/common/line';
 import ReturnEventButton from '@/src/components/common/return_event_button';
 import TextStyle from '@/src/components/common/text_style';
+import Frame from '@/src/components/common/frame';
 import { getAllFoodData, getFoodDataById } from '@/src/lib/food';
 import { FoodItem } from '@/src/types/food';
 
@@ -35,7 +36,7 @@ export default async function FoodDetailPage({ params }: FoodDetailProps) {
 
   return (
     <BackFrame>
-      <div className="container mx-auto py-8">
+      <div className="container mx-auto py-8 text-font_main">
         <ReturnEventButton href="/food" />
         <div className="text-center">
           <TextStyle styleType="section_title">食品販売</TextStyle>
@@ -56,10 +57,10 @@ export default async function FoodDetailPage({ params }: FoodDetailProps) {
         <p className="text-center my-8 text-body1">{item.PR文}</p>
 
         {item.メニュー && (
-          <div className="text-center my-8">
-            <TextStyle styleType="section_title">メニュー</TextStyle>
+          <Frame>
+            <TextStyle styleType="section_title" className="text-center">おしながき</TextStyle>
             <p className="text-body1 mt-2">{item.メニュー}</p>
-          </div>
+          </Frame>
         )}
 
         <div className="flex justify-center gap-4 my-8">

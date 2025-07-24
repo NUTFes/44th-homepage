@@ -1,7 +1,10 @@
 'use client';
 
+import BackFrame from '@/src/components/common/back_frame';
+import ReturnEventButton from '@/src/components/common/return_event_button';
 import Tag from '@/src/components/common/tag';
 import TagModal from '@/src/components/common/tag_modal';
+import TextStyle from '@/src/components/common/text_style';
 import CellContent from '@/src/components/food/CellContent';
 import { getAllFoodData } from '@/src/lib/food';
 import { FoodItem } from '@/src/types/food';
@@ -45,58 +48,54 @@ export default function FoodPage() {
 
   return (
     <>
-      <div className="bg-[#F8F5E9] min-h-screen font-serif text-[#432F2F]">
-        <div className="container mx-auto px-4 py-8">
-          <Link
-            href="/event"
-            className="inline-block bg-gray-400 text-white px-4 py-2 rounded mb-4"
-          >
-            {'<< 戻る'}
-          </Link>
-
-          <h1 className="text-4xl text-center font-bold my-8">食品販売</h1>
-
-          <Tag
-            selectedTags={selectedTags}
-            onSearchClick={() => setIsModalOpen(true)}
-            onResetClick={() => setSelectedTags([])}
-          />
-
-          <hr className="border-t-2 border-red-400 mb-8" />
-
-          <main
-            className="grid grid-cols-2 gap-8 relative"
-            style={{
-              minHeight: '600px',
-            }}
-          >
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                backgroundImage: "url('/assets/illust_yatai_1.svg')",
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
-                backgroundSize: '300px 400px',
-                zIndex: 0,
-              }}
-            />
-            <div className="relative z-10 contents">
-              {filteredData.map((item, index) => {
-                const itemId = item.番号 || `missing-${index}`;
-                return (
-                  <div key={itemId} className="text-center">
-                    <Link href={`/food/${encodeURIComponent(itemId)}`}>
-                      <CellContent
-                        imageId={item.番号}
-                        title={item.出店タイトル}
-                      />
-                    </Link>
-                  </div>
-                );
-              })}
+      <div>
+        <BackFrame>
+          <ReturnEventButton href="/event" />
+          <div className="container px-4 text-font_main">
+            <div className="text-center py-8">
+              <TextStyle styleType="title">食品販売</TextStyle>
             </div>
-          </main>
-        </div>
+            <Tag
+              selectedTags={selectedTags}
+              onSearchClick={() => setIsModalOpen(true)}
+              onResetClick={() => setSelectedTags([])}
+            />
+
+            <hr className="border-t-2 border-red-400 mb-8" />
+
+            <main
+              className="grid grid-cols-2 gap-8 relative"
+              style={{
+                minHeight: '600px',
+              }}
+            >
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'center',
+                  backgroundSize: '300px 400px',
+                  zIndex: 0,
+                }}
+              />
+              <div className="relative z-10 contents">
+                {filteredData.map((item, index) => {
+                  const itemId = item.番号 || `missing-${index}`;
+                  return (
+                    <div key={itemId} className="text-center">
+                      <Link href={`/food/${encodeURIComponent(itemId)}`}>
+                        <CellContent
+                          imageId={item.番号}
+                          title={item.出店タイトル}
+                        />
+                      </Link>
+                    </div>
+                  );
+                })}
+              </div>
+            </main>
+          </div>
+        </BackFrame>
       </div>
 
       <TagModal
