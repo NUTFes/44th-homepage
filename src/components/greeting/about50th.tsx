@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 const About50th: React.FC = () => {
 return (
+  <div>
     <Frame>
       <TextStyle styleType="section_title" className="text-center">
         学校について
@@ -25,26 +26,29 @@ return (
       <TextStyle styleType="body2">
         大学では技大祭のほか、地域の皆様や本学に関係する皆様と本学教職員・在学生と交流を深めていただくイベントを開催していきます。
       </TextStyle>
-      <TextStyle styleType="body2_khaki" className="text-center pt-4">
-        50周年記念サイトはこちら
-      </TextStyle>
-            <TextStyle styleType="body1" className="text-center">
-        <a
-          href="https://www.nagaokaut.ac.jp/50th/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block"
-        >
-          <Image
-            src="/images/greeting/greeting_button.png"
-            alt="50周年記念サイトはこちら"
-            width={200}
-            height={80}
-            className="mx-auto h-auto object-contain"
-          />
-        </a>
-      </TextStyle>
+      <div className="flex justify-center flex-col gap-[8px]">
+              <TextStyle styleType="body2_khaki" className="text-center pt-4">
+                50周年記念サイトはこちら
+              </TextStyle>
+                    <TextStyle styleType="body1" className="text-center">
+                <a
+                  href="https://www.nagaokaut.ac.jp/j/50th/index.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <Image
+                    src="/images/greeting/greeting_button.png"
+                    alt="50周年記念サイトはこちら"
+                    width={200}
+                    height={80}
+                    className="mx-auto h-auto object-contain"
+                  />
+                </a>
+            </TextStyle>
+      </div>
     </Frame>
+    </div>
   );
 };
 
