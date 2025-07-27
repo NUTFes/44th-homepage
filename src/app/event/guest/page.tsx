@@ -3,6 +3,7 @@ import Line from '@/src/components/common/line';
 import ReturnEventButton from '@/src/components/common/return_event_button';
 import TextStyle from '@/src/components/common/text_style';
 import GuestInfos from '@/src/components/event/guest/guest_info';
+import TicketInfos from '@/src/components/event/guest/ticket_infos';
 
 export default function GuestPage() {
   return (
@@ -30,6 +31,7 @@ export default function GuestPage() {
           </div>
           <Line />
           <GuestInfos />
+          <TicketInfos/>
         </div>
       </BackFrame>
     </div>
