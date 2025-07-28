@@ -6,6 +6,7 @@ import Cast from '@/src/components/event/guest/cast';
 import GuestAttentions from '@/src/components/event/guest/guest_attentions';
 import GuestInfos from '@/src/components/event/guest/guest_info';
 import TicketInfos from '@/src/components/event/guest/ticket_infos';
+import Image from 'next/image';
 
 export default function GuestPage() {
   return (
@@ -16,6 +17,13 @@ export default function GuestPage() {
           <TextStyle styleType="title" className="text-center">
             ゲスト
           </TextStyle>
+                    <Image
+                      src="/images/guest/cast_tombrown.png"
+                      alt="トム・ブラウン"
+                      width={216}
+                      height={149}
+                      className="object-cover h-auto w-full justifuy-center flex "
+                    ></Image>
           <div className="body1 font-bold">
             今年の技大祭に大人気お笑いコンビ
             <span className="text-font_khaki">「トム・ブラウン」</span>

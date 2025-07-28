@@ -23,41 +23,41 @@ const Cast = () => {
         </div>
         <div className="flex  flex-col justify-start items-start gap-y-4">
           <div>
-          <p>
-            <b>布川ひろき さん</b>（左）
-          </p>
-          <div className="body2">
-            <span className="text-font_khaki">生年月日：</span>1984年1月28日
+            <p className="body1">
+              <b>布川ひろき さん</b>（左）
+            </p>
+            <div className="body2">
+              <span className="text-font_khaki">生年月日：</span>1984年1月28日
+            </div>
+            <div className="body2">
+              <span className="text-font_khaki">出身地：</span>北海道札幌市
+            </div>
+            <div className="body2">
+              <span className="text-font_khaki">趣味：</span>
+              ギザ10円集め/aikoのことを調べる
+            </div>
+            <div className="body2">
+              <span className="text-font_khaki">特技：</span>足ツッコミ/九九
+            </div>
           </div>
-          <div className="body2">
-            <span className="text-font_khaki">出身地：</span>北海道札幌市
-          </div>
-          <div className="body2">
-            <span className="text-font_khaki">趣味：</span>
-            ギザ10円集め/aikoのことを調べる
-          </div>
-          <div className="body2">
-            <span className="text-font_khaki">特技：</span>足ツッコミ/九九
-          </div>
-          </div>
-<div>
-          <p>
-            <b>みちお さん</b>（右）
-          </p>
-          <div className="body2">
-            <span className="text-font_khaki">生年月日：</span>1984年12月29日
-          </div>
-          <div className="body2">
-            <span className="text-font_khaki">出身地：</span>北海道札幌市
-          </div>
-          <div className="body2">
-            <span className="text-font_khaki">趣味：</span>
-            ロボットアニメ/映画鑑賞/歴史/ゲーム/スポーツ
-          </div>
-          <div className="body2">
-            <span className="text-font_khaki">特技：</span>
-            スノーボード/相撲/柔道/素手でフルーツを潰してミックスジュースを作る/少年紙を素手で真っ二つに破く/Y字バランス/股わり
-          </div>
+          <div>
+            <p className="body1">
+              <b>みちお さん</b>（右）
+            </p>
+            <div className="body2">
+              <span className="text-font_khaki">生年月日：</span>1984年12月29日
+            </div>
+            <div className="body2">
+              <span className="text-font_khaki">出身地：</span>北海道札幌市
+            </div>
+            <div className="body2">
+              <span className="text-font_khaki">趣味：</span>
+              ロボットアニメ/映画鑑賞/歴史/ゲーム/スポーツ
+            </div>
+            <div className="body2">
+              <span className="text-font_khaki">特技：</span>
+              スノーボード/相撲/柔道/素手でフルーツを潰してミックスジュースを作る/少年紙を素手で真っ二つに破く/Y字バランス/股わり
+            </div>
           </div>
         </div>
       </div>
