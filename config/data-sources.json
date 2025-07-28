@@ -38,5 +38,13 @@
     "image_dir": "public/images/plan",
     "id_column": "番号",
     "image_url_column": "画像URL"
+  },
+  {
+    "name": "sponsoring_corpolate",
+    "tsv_url": "SPONSORING_CORPOLATE_TSV_URL",
+    "json_path": "src/data/sponsoring_corpolate.json",
+    "image_dir": "public/images/sponsoring_corpolate",
+    "id_column": "番号",
+    "image_url_column": "広告画像"
   }
 ]
