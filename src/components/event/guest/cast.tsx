@@ -21,7 +21,8 @@ const Cast = () => {
             className="object-cover h-auto w-full"
           ></Image>
         </div>
-        <div className="flex  flex-col items-start ">
+        <div className="flex  flex-col justify-start items-start gap-y-4">
+          <div>
           <p>
             <b>布川ひろき さん</b>（左）
           </p>
@@ -38,8 +39,8 @@ const Cast = () => {
           <div className="body2">
             <span className="text-font_khaki">特技：</span>足ツッコミ/九九
           </div>
-        </div>
-        <div className="flex  flex-col items-start">
+          </div>
+<div>
           <p>
             <b>みちお さん</b>（右）
           </p>
@@ -57,13 +58,14 @@ const Cast = () => {
             <span className="text-font_khaki">特技：</span>
             スノーボード/相撲/柔道/素手でフルーツを潰してミックスジュースを作る/少年紙を素手で真っ二つに破く/Y字バランス/股わり
           </div>
+          </div>
         </div>
       </div>
       <Line className="border-main" />
-      <div className="text-center flex flex-col items-center relative">
+      <div className="text-center flex flex-col items-center relative w">
         <p className="body2">MC</p>
         <p className="body1 font-bold">清野幹</p>
-        <div className="flex  flex-col items-start ">
+        <div className="flex  flex-col items-start">
           <p>
             <b>清野幹（せいの もとき） さん</b>
           </p>
