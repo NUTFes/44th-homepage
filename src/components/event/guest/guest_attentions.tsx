@@ -22,14 +22,16 @@ const GuestAttentions = () => {
                 ※MCやゲストの指示があった場合に限り、録音・撮影が可能です。
               </p>
             </div>
-            <div className="flex justify-center text-accent items-center gap-x-2">
-              <div className="flex justify-center text-accent items-center">
-                <MdOutlineNoMeals size={40} />
-                <LuCupSoda size={40} />
-              </div>
-              <div>
-                <p className="font-bold">体育館では食事禁止</p>
-                <p className="font-bold">水分補給のみ可能</p>
+            <div className="w-full relative">
+              <div className="flex justify-between text-accent items-center gap-x-2">
+                <div className="flex justify-center text-accent items-center">
+                  <MdOutlineNoMeals size={40} />
+                  <LuCupSoda size={40} />
+                </div>
+                <div className="w-full">
+                  <p className="font-bold">体育館では食事禁止</p>
+                  <p className="font-bold">水分補給のみ可能</p>
+                </div>
               </div>
             </div>
 
