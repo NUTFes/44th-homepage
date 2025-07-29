@@ -39,7 +39,7 @@ export default async function CorpolateBoothDetailPage({
           <div className="w-[70%] aspect-square flex items-center justify-center relative max-w-lg mx-auto">
             <FallbackImage
               imageDir="corpolate_booth"
-              //imageId={item.番号}
+              imageId={item.番号}
               alt={item.出店タイトル || 'image'}
               fill
               className="object-contain"
@@ -51,7 +51,9 @@ export default async function CorpolateBoothDetailPage({
 
         {item.企業紹介文 && (
           <Frame>
-            <TextStyle styleType="section_title" className="text-center">どんな企業？</TextStyle>
+            <TextStyle styleType="section_title" className="text-center">
+              どんな企業？
+            </TextStyle>
             <p className="text-body1 mt-2">{item.企業紹介文}</p>
           </Frame>
         )}
