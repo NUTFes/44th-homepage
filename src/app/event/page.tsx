@@ -2,6 +2,7 @@ import BackFrame from '@/src/components/common/back_frame';
 import Line from '@/src/components/common/line';
 import LinkButton from '@/src/components/common/link_button';
 import TextStyle from '@/src/components/common/text_style';
+import { RandomPlanItems, RandomExhExpItems} from '@/src/components/event/random_banner';
 
 export default function EventPage() {
   return (
@@ -28,7 +29,8 @@ export default function EventPage() {
             </LinkButton>
           </div>
           <div>
-            <p>ここに企画ランダム表示</p>
+            {/* 企画ランダム表示 */}
+            <RandomPlanItems />
           </div>
           <div className="flex justify-between px-8 items-center">
             <TextStyle styleType="section_title">展示・体験</TextStyle>
@@ -37,7 +39,8 @@ export default function EventPage() {
             </LinkButton>
           </div>
           <div>
-            <p>ここに展示体験ランダム表示</p>
+            {/* 展示体験ランダム表示 */}
+            <RandomExhExpItems />
           </div>
           <Line />
           <TextStyle styleType="section_title">タイムスケジュール</TextStyle>
