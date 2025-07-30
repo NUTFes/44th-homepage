@@ -1,6 +1,7 @@
 'use client';
 
 import BackFrame from '@/src/components/common/back_frame';
+import Line from '@/src/components/common/line';
 import ReturnEventButton from '@/src/components/common/return_event_button';
 import Tag from '@/src/components/common/tag';
 import TagModal from '@/src/components/common/tag_modal';
@@ -61,7 +62,7 @@ export default function FoodPage() {
               onResetClick={() => setSelectedTags([])}
             />
 
-            <hr className="border-t-2 border-red-400 mb-8" />
+            <Line/>
 
             <main
               className="grid grid-cols-2 gap-8 relative"
