@@ -1,7 +1,10 @@
 'use client';
 
+import BackFrame from '@/src/components/common/back_frame';
+import Line from '@/src/components/common/line';
 import Tag from '@/src/components/common/tag';
 import TagModal from '@/src/components/common/tag_modal';
+import TextStyle from '@/src/components/common/text_style';
 import CellContent from '@/src/components/sale/CellContent';
 import { getAllSaleData } from '@/src/lib/sale';
 import { SaleItem } from '@/src/types/sale';
@@ -36,49 +39,44 @@ export default function SalePage() {
 
   return (
     <>
-      <div className="bg-[#F8F5E9] min-h-screen font-serif text-[#432F2F]">
-        <div className="container mx-auto px-4 py-8">
-          <Link
-            href="/event"
-            className="inline-block bg-gray-400 text-white px-4 py-2 rounded mb-4"
-          >
-            {'<< 戻る'}
-          </Link>
+      <div className="min-h-screen text-font_main">
+        <BackFrame>
+          <div className="container px-4 text-font_main">
+            <div className="text-center py-8">
+              <TextStyle styleType="title">食品販売</TextStyle>
+            </div>
+            <Tag
+              selectedTags={selectedTags}
+              onSearchClick={() => setIsModalOpen(true)}
+              onResetClick={() => setSelectedTags([])}
+            />
 
-          <h1 className="text-4xl text-center font-bold my-8">物品販売</h1>
+           <Line/>
 
-          <Tag
-            selectedTags={selectedTags}
-            onSearchClick={() => setIsModalOpen(true)}
-            onResetClick={() => setSelectedTags([])}
-          />
-
-          <hr className="border-t-2 border-red-400 mb-8" />
-
-          <main
-            className="grid grid-cols-2 gap-8"
-            style={{
-              backgroundImage: "url('/assets/illust_people_1.svg')",
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'center',
-              backgroundSize: 'contain',
-            }}
-          >
-            {filteredData.map((item, index) => {
-              const itemId = item.番号 || `missing-${index}`;
-              return (
-                <div key={itemId} className="text-center">
-                  <Link href={`/sale/${encodeURIComponent(itemId)}`}>
-                    <CellContent
-                      imageId={item.番号}
-                      title={item.出店タイトル}
-                    />
-                  </Link>
-                </div>
-              );
-            })}
-          </main>
-        </div>
+            <main
+              className="grid grid-cols-2 gap-8"
+              style={{
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                backgroundSize: 'contain',
+              }}
+            >
+              {filteredData.map((item, index) => {
+                const itemId = item.番号 || `missing-${index}`;
+                return (
+                  <div key={itemId} className="text-center">
+                    <Link href={`/sale/${encodeURIComponent(itemId)}`}>
+                      <CellContent
+                        imageId={item.番号}
+                        title={item.出店タイトル}
+                      />
+                    </Link>
+                  </div>
+                );
+              })}
+            </main>
+          </div>
+        </BackFrame>
       </div>
 
       <TagModal
