@@ -17,13 +17,15 @@ export default function GuestPage() {
           <TextStyle styleType="title" className="text-center">
             ゲスト
           </TextStyle>
+          <div className="px-4">
                     <Image
-                      src="/images/guest/cast_tombrown.png"
+                      src="/images/guest/cast_tate.png"
                       alt="トム・ブラウン"
                       width={216}
                       height={149}
-                      className="object-cover h-auto w-full justifuy-center flex "
+                      className="object-cover h-auto w-full justifuy-center flex border-2 border-main rounded-sm shadow_button"
                     ></Image>
+                    </div>
           <div className="body1 font-bold">
             今年の技大祭に大人気お笑いコンビ
             <span className="text-font_khaki">「トム・ブラウン」</span>
