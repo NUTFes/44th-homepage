@@ -2,7 +2,6 @@
 
 import BackFrame from '@/src/components/common/back_frame';
 import Line from '@/src/components/common/line';
-import ReturnEventButton from '@/src/components/common/return_event_button';
 import Tag from '@/src/components/common/tag';
 import TagModal from '@/src/components/common/tag_modal';
 import TextStyle from '@/src/components/common/text_style';
@@ -51,7 +50,7 @@ export default function FoodPage() {
     <>
       <div>
         <BackFrame>
-          <ReturnEventButton href="/event" />
+       
           <div className="container px-4 text-font_main">
             <div className="text-center py-8">
               <TextStyle styleType="title">食品販売</TextStyle>
