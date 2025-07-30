@@ -12,25 +12,27 @@ const TicketInfos = () => {
         <p className="body2">
           ゲストステージの整理券を以下のスケジュールで配布します。
         </p>
-        <div>
-          <p className="font-bold">【場所】</p>
-          <p className="body2 font-bold">　B講義室（講義棟１階）</p>
-        </div>
-        <div>
-          <p className="font-bold">【時間】</p>
-          <p className="text-font_khaki font-bold">　９/13（土）</p>
-          <p>
-            　第一回：<b>10:00~11:30</b>　300枚
-          </p>
-          <p>
-            　第二回：<b>13:00~14:30</b>　300枚
-          </p>
-        </div>
-        <div>
-          <p className="text-font_khaki font-bold">　９/14（日）</p>
-          <p>
-            　第三回：<b>10:00~11:30</b>　200枚
-          </p>
+        <div className="flex flex-col gap-y-2">
+          <div>
+            <p className="font-bold">【場所】</p>
+            <p className="body2 font-bold">　B講義室（講義棟１階）</p>
+          </div>
+          <div>
+            <p className="font-bold">【時間】</p>
+            <p className="text-font_khaki font-bold">　９/13（土）</p>
+            <p>
+              　第一回：<b>10:00~11:30</b>　300枚
+            </p>
+            <p>
+              　第二回：<b>13:00~14:30</b>　300枚
+            </p>
+          </div>
+          <div>
+            <p className="text-font_khaki font-bold">　９/14（日）</p>
+            <p>
+              　第三回：<b>10:00~11:30</b>　200枚
+            </p>
+          </div>
         </div>
       </div>
       <Line className="border-main" />
