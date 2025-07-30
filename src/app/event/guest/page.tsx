@@ -13,7 +13,7 @@ export default function GuestPage() {
     <div className="text-font_main">
       <BackFrame>
         <ReturnEventButton size="small" href="/event" />
-        <div className="flex flex-col gap-y-8">
+        <div className="flex flex-col gap-y-8 pb-4">
           <TextStyle styleType="title" className="text-center">
             ゲスト
           </TextStyle>
@@ -46,7 +46,7 @@ export default function GuestPage() {
           <TicketInfos/>
           <GuestAttentions />
           <Cast/>
-          
+          <ReturnEventButton size="large_event" href="/event"/>
         </div>
       </BackFrame>
     </div>
