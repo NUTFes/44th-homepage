@@ -43,7 +43,7 @@ export default function SalePage() {
         <BackFrame>
           <div className="container px-4 text-font_main">
             <div className="text-center py-8">
-              <TextStyle styleType="title">食品販売</TextStyle>
+              <TextStyle styleType="title">物品販売</TextStyle>
             </div>
             <Tag
               selectedTags={selectedTags}
@@ -51,7 +51,7 @@ export default function SalePage() {
               onResetClick={() => setSelectedTags([])}
             />
 
-           <Line/>
+            <Line />
 
             <main
               className="grid grid-cols-2 gap-8"
