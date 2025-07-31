@@ -35,7 +35,7 @@ export default async function SaleDetailPage({ params }: SaleDetailProps) {
 
   return (
     <BackFrame>
-      <div className="container mx-auto py-8">
+      <div className="container mx-auto py-8 text-font_main">
         <ReturnEventButton href="/sale" />
         <div className="text-center">
           <TextStyle styleType="section_title">物品販売</TextStyle>
