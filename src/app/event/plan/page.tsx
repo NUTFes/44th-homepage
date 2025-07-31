@@ -63,7 +63,7 @@ export default function PlanPage() {
               onResetClick={() => setSelectedTags([])}
             />
             <div className="py-4">
-              <Line className="accenat" />
+              <Line />
             </div>
             <main
               className="grid grid-cols-2 gap-8"

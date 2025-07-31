@@ -67,7 +67,7 @@ export default async function FoodDetailPage({ params }: FoodDetailProps) {
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="border-2 border-red-500 text-red-500 px-4 py-1 rounded-md"
+              className="border-2 border-accent text-accent px-4 py-1 rounded-sm bg-base"
             >
               {tag}
             </span>
