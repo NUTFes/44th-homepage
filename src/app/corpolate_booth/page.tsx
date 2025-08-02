@@ -11,11 +11,14 @@ export default function CorpolateBoothPage() {
   const allData = getAllCorpolateBoothData();
 
   return (
-    <div>
+
+    <div className="text-font_main">
+
       <div>
         <BackFrame>
           <div className="container px-4">
             <div className="text-center py-8">
+
               <TextStyle styleType="title">企業ブース</TextStyle>
               
             </div>
@@ -24,7 +27,6 @@ export default function CorpolateBoothPage() {
             <div className="py-4">
               <Line className="accenat" />
             </div>
-
             <main
               className="grid grid-cols-2 gap-8 relative"
               style={{

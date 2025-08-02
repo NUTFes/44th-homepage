@@ -19,7 +19,7 @@ export default function CellContent({ imageId, title }: CellContentProps) {
           className="object-contain"
         />
       </div>
-      <p className="mt-2 font-bold">{title || '展示・体験名'}</p>
+      <p className="mt-2">{title || '展示・体験名'}</p>
     </div>
   );
 }
