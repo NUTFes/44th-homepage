@@ -4,7 +4,7 @@ import LinkButton from '@/src/components/common/link_button';
 import TextStyle from '@/src/components/common/text_style';
 import Image from 'next/image';
 import { RandomPlanItems, RandomExhExpItems} from '@/src/components/event/random_banner';
-
+import TimeSchedule from '@/src/components/common/time_schedule';
 export default function EventPage() {
   return (
     <div>
@@ -55,7 +55,8 @@ export default function EventPage() {
           </div>
           <Line />
           <TextStyle styleType="section_title">タイムスケジュール</TextStyle>
-          <p>ここにタイスケコンポーネント</p>
+
+          <TimeSchedule />
         </div>
       </BackFrame>
     </div>

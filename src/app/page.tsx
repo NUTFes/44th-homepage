@@ -50,9 +50,7 @@ export default function TopPage() {
             <TextStyle styleType="section_title">タイムスケジュール</TextStyle>
           </div>
 
-          <div className="text-center">
-            <TextStyle styleType="body2">Coming soon</TextStyle>
-          </div>
+          <TimeSchedule />
 
           <Line />
           <div className="text-center">
@@ -64,7 +62,6 @@ export default function TopPage() {
             <TextStyle styleType="body2">Coming soon</TextStyle>
           </div>
         </div>
-        <TimeSchedule/>
       </BackFrame>
     </div>
   );
