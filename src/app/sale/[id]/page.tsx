@@ -2,12 +2,12 @@ export const runtime = 'edge';
 import BackFrame from '@/src/components/common/back_frame';
 import DetailMap from '@/src/components/common/detail_map';
 import FallbackImage from '@/src/components/common/FallbackImage';
+import Frame from '@/src/components/common/frame';
 import Line from '@/src/components/common/line';
 import ReturnEventButton from '@/src/components/common/return_event_button';
 import TextStyle from '@/src/components/common/text_style';
 import { getAllSaleData, getSaleDataById } from '@/src/lib/sale';
 import { SaleItem } from '@/src/types/sale';
-
 type SaleDetailProps = {
   params: {
     id: string;
@@ -35,7 +35,7 @@ export default async function SaleDetailPage({ params }: SaleDetailProps) {
 
   return (
     <BackFrame>
-      <div className="container mx-auto py-8">
+      <div className="container mx-auto py-8 text-font_main">
         <ReturnEventButton href="/sale" />
         <div className="text-center">
           <TextStyle styleType="section_title">物品販売</TextStyle>
@@ -56,17 +56,19 @@ export default async function SaleDetailPage({ params }: SaleDetailProps) {
         <p className="text-center my-8 text-body1">{item.PR文}</p>
 
         {item.メニュー && (
-          <div className="text-center my-8">
-            <TextStyle styleType="section_title">メニュー</TextStyle>
-            <p className="text-body1 mt-2">{item.メニュー}</p>
-          </div>
+          <Frame>
+            <div className="text-center">
+              <TextStyle styleType="section_title">おしながき</TextStyle>
+              <p className="text-body1 mt-2">{item.メニュー}</p>
+            </div>
+          </Frame>
         )}
 
         <div className="flex justify-center gap-4 my-8">
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="border-2 border-red-500 text-red-500 px-4 py-1 rounded-md"
+              className="border-2 border-accent text-accent px-4 py-1 rounded-sm bg-base"
             >
               {tag}
             </span>

@@ -5,17 +5,28 @@ import TextStyle from '@/src/components/common/text_style';
 import CellContent from '@/src/components/corpolate_booth/CellContent';
 import { getAllCorpolateBoothData } from '@/src/lib/corpolate_booth';
 import Link from 'next/link';
+import Line from '@/src/components/common/line';
 
 export default function CorpolateBoothPage() {
   const allData = getAllCorpolateBoothData();
 
   return (
+
     <div className="text-font_main">
+
       <div>
         <BackFrame>
           <div className="container px-4">
             <div className="text-center py-8">
+
+
               <TextStyle styleType="title">企業ブース</TextStyle>
+              
+            </div>
+            <p className="text-center font-bold"> 開催場所：AL１講義室・eggルーム</p>
+           
+            <div className="py-4">
+              <Line className="accenat" />
             </div>
             <main
               className="grid grid-cols-2 gap-8 relative"
