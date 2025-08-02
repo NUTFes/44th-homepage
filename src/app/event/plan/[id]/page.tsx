@@ -2,6 +2,7 @@ export const runtime = 'edge';
 import BackFrame from '@/src/components/common/back_frame';
 import DetailMap from '@/src/components/common/detail_map';
 import FallbackImage from '@/src/components/common/FallbackImage';
+import Frame from '@/src/components/common/frame';
 import Line from '@/src/components/common/line';
 import ReturnEventButton from '@/src/components/common/return_event_button';
 import TextStyle from '@/src/components/common/text_style';
@@ -36,13 +37,13 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
 
   return (
     <BackFrame>
-      <div className="container mx-auto py-8">
+      <div className="container mx-auto text-font_main flex flex-col items-col gap-y-8">
         <ReturnEventButton href="/event/plan" />
         <div className="text-center">
           <TextStyle styleType="section_title">企画</TextStyle>
-          <p className="text-h2 pt-2 py-4">{item.企画名}</p>
+          <p className="text-h2">{item.企画名}</p>
         </div>
-        <div className="pb-4 pt-4">
+
           <div className="w-[70%] aspect-square flex items-center justify-center relative max-w-lg mx-auto">
             <FallbackImage
               imageDir="plan"
@@ -52,7 +53,7 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
               className="object-contain"
             />
           </div>
-        </div>
+
 
         {/* 参加応募ボタン */}
         {item.参加応募URL && (
@@ -61,16 +62,16 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
               href={item.参加応募URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-yellow-400 text-black px-8 py-3 rounded-md font-bold text-lg hover:bg-yellow-500 transition-colors"
+              className="px-12  py-4 text-white bg-second rounded-sm text-body2 shadow_button text-center"
             >
               参加応募はこちら
             </Link>
           </div>
         )}
 
-        <p className="text-center my-8 text-body1">{item.PR文}</p>
+        <p className="text-center text-body1">{item.PR文}</p>
 
-        <div className="flex justify-center gap-4 my-8">
+        <div className="flex justify-center gap-4 ">
           {tags.map((tag, index) => (
             <span
               key={index}
@@ -81,55 +82,51 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
           ))}
         </div>
 
-        <Line className="my-8" />
+        <Line />
 
         {/* 開催時間セクション */}
-        <div className="my-8">
-          <div className="border-4 border-yellow-400 p-6 bg-yellow-50 max-w-md mx-auto">
-            <TextStyle styleType="section_title" className="text-center mb-4">
-              開催時間
-            </TextStyle>
+        <Frame>
+          <TextStyle styleType="section_title" className="text-center mb-4">
+            開催時間
+          </TextStyle>
 
-            {(item['1日目(晴)開始時刻'] || item['1日目(雨)開始時刻']) && (
-              <div className="text-center mb-2">
-                <div className="font-bold">1日目</div>
-                {item['1日目(晴)開始時刻'] && item['1日目(晴)終了時刻'] && (
+          {(item['1日目(晴)開始時刻'] || item['1日目(雨)開始時刻']) && (
+            <div className="text-center mb-2">
+              <div className="font-bold">1日目</div>
+              {item['1日目(晴)開始時刻'] && item['1日目(晴)終了時刻'] && (
+                <div className="text-body1">
+                  晴れ: {item['1日目(晴)開始時刻']}～{item['1日目(晴)終了時刻']}
+                </div>
+              )}
+              {item['1日目(雨)開始時刻'] && item['1日目(雨)終了時刻'] && (
+                <div className="text-body1">
+                  雨: {item['1日目(雨)開始時刻']}～{item['1日目(雨)終了時刻']}
+                </div>
+              )}
+            </div>
+          )}
+
+          {(item['2日目(晴)開始時刻'] || item['2日目(雨)開始時刻']) && (
+            <div className="text-center mb-4">
+              <div className="font-bold">2日目</div>
+              {item['2日目(晴)開始時刻'] &&
+                item['2日目(晴)終了時刻'] &&
+                item['2日目(晴)開始時刻'] !== 'なし' && (
                   <div className="text-body1">
-                    晴れ: {item['1日目(晴)開始時刻']}～
-                    {item['1日目(晴)終了時刻']}
+                    晴れ: {item['2日目(晴)開始時刻']}～
+                    {item['2日目(晴)終了時刻']}
                   </div>
                 )}
-                {item['1日目(雨)開始時刻'] && item['1日目(雨)終了時刻'] && (
+              {item['2日目(雨)開始時刻'] &&
+                item['2日目(雨)終了時刻'] &&
+                item['2日目(雨)開始時刻'] !== 'なし' && (
                   <div className="text-body1">
-                    雨: {item['1日目(雨)開始時刻']}～{item['1日目(雨)終了時刻']}
+                    雨: {item['2日目(雨)開始時刻']}～{item['2日目(雨)終了時刻']}
                   </div>
                 )}
-              </div>
-            )}
-
-            {(item['2日目(晴)開始時刻'] || item['2日目(雨)開始時刻']) && (
-              <div className="text-center mb-4">
-                <div className="font-bold">2日目</div>
-                {item['2日目(晴)開始時刻'] &&
-                  item['2日目(晴)終了時刻'] &&
-                  item['2日目(晴)開始時刻'] !== 'なし' && (
-                    <div className="text-body1">
-                      晴れ: {item['2日目(晴)開始時刻']}～
-                      {item['2日目(晴)終了時刻']}
-                    </div>
-                  )}
-                {item['2日目(雨)開始時刻'] &&
-                  item['2日目(雨)終了時刻'] &&
-                  item['2日目(雨)開始時刻'] !== 'なし' && (
-                    <div className="text-body1">
-                      雨: {item['2日目(雨)開始時刻']}～
-                      {item['2日目(雨)終了時刻']}
-                    </div>
-                  )}
-              </div>
-            )}
-          </div>
-        </div>
+            </div>
+          )}
+        </Frame>
 
         <DetailMap location={item['開催場所（晴れ）']} roomNumber={item.番号} />
 
