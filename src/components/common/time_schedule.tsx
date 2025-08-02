@@ -1,62 +1,30 @@
+'use client';
 import Image from 'next/image';
-import ZoomCarousel from './zoom_container';
-//image_modalでクリックで全画面表示させたかったけどzoom_container(枠内で動かせるやつ)との組み合わせが上手くいきませんでした...
+import Carousel from './carousel';
+import ZoomableImage from './zoomable_image';
+import ImageModal from './image_modal';
 const TimeSchedule: React.FC = () => {
   return (
-    <ZoomCarousel>
-      <Image
-        src="/images/time_schedule/time_1sunny.png"
-        alt="晴れ１日目"
-        width={1920}
-        height={1080}
-        style={{
-          width: 'auto',
-          height: 'auto',
-          maxWidth: 'none',
-          display: 'block',
-          objectFit: 'contain',
-        }}
-      />
-      <Image
-        src="/images/time_schedule/time_1rain.png"
-        alt="雨1日目"
-        width={1920}
-        height={1080}
-        style={{
-          width: 'auto',
-          height: 'auto',
-          maxWidth: 'none',
-          display: 'block',
-          objectFit: 'contain',
-        }}
-      />
-      <Image
-        src="/images/time_schedule/time_2sunny.png"
-        alt="晴れ2日目"
-        width={1920}
-        height={1080}
-        style={{
-          width: 'auto',
-          height: 'auto',
-          maxWidth: 'none',
-          display: 'block',
-          objectFit: 'contain',
-        }}
-      />
-      <Image
-        src="/images/time_schedule/time_2rain.png"
-        alt="雨2日目"
-        width={1920}
-        height={1080}
-        style={{
-          width: 'auto',
-          height: 'auto',
-          maxWidth: 'none',
-          display: 'block',
-          objectFit: 'contain',
-        }}
-      />
-    </ZoomCarousel>
+   <div>
+    <div className="body2 text-center text-font_khaki"><p>ピンチ操作で画像を拡大／縮小、</p><p>タップで全画面表示に切り替わります</p></div>
+   <div className="border-2 border-main rounded-sm">
+   <Carousel autoSlide={false} >
+<ZoomableImage>
+  
+  <ImageModal src="/images/time_schedule/time_1sunny.png" alt="1日目晴れ" width={3413} height={1942}/>
+</ZoomableImage>
+<ZoomableImage>
+  <ImageModal src="/images/time_schedule/time_1rain.png" alt="1日目雨" width={3413} height={1942}/>
+</ZoomableImage>
+<ZoomableImage>
+  <ImageModal src="/images/time_schedule/time_2sunny.png" alt="2日目晴れ" width={3413} height={1942}/>
+</ZoomableImage>
+<ZoomableImage>
+  <ImageModal src="/images/time_schedule/time_2rain.png" alt="2日目雨" width={3413} height={1942}/>
+</ZoomableImage>
+</Carousel>
+</div>
+</div>
   );
 };
 export default TimeSchedule;
