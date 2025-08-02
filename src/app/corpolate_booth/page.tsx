@@ -15,7 +15,7 @@ export default function CorpolateBoothPage() {
         <BackFrame>
           <div className="container px-4">
             <div className="text-center py-8">
-              <TextStyle styleType="title">展示・体験</TextStyle>
+              <TextStyle styleType="title">企業ブース</TextStyle>
             </div>
             <main
               className="grid grid-cols-2 gap-8 relative"
