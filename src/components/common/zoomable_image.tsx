@@ -10,11 +10,11 @@ function ZoomableImage({ children }: ZoomableImageProps) {
     <TransformWrapper initialScale={1}>
       <TransformComponent>
         {/* TransformComponent の内部に position: relative の div を追加 */}
-
+      <div className="border-2 border-main rounded-sm">
 
 
 {children}
-
+</div>
 
       </TransformComponent>
     </TransformWrapper>
