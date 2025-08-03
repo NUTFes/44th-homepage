@@ -44,7 +44,7 @@ const TagModal = ({
           <div className="border rounded-full border-base" />
         </div>
 
-        <div className="space-y-4 mb-10">
+        <div className="grid grid-cols-2 gap-4 mb-10">
           {allTags.map((tag) => (
             <label key={tag} className="flex items-center text-2xl">
               <input
