@@ -8,7 +8,13 @@ import { SaleItem } from '@/src/types/sale';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-const allTags = ['子供向け', '技大グッズ', '学生出店', '企業出店'];
+const allTags = [
+  '子供向け', 
+  '技大グッズ', 
+  '学生出店', 
+  '企業出店',
+  'フリマ',
+];
 
 export default function SalePage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
