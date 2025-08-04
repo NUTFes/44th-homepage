@@ -19,10 +19,11 @@ export default function CorpolateBoothPage() {
           <div className="container px-4">
             <div className="text-center py-8">
 
+
               <TextStyle styleType="title">企業ブース</TextStyle>
               
             </div>
-            <p className="text-center font-bold"> 開催場所：</p>
+            <p className="text-center font-bold"> 開催場所：AL１講義室・eggルーム</p>
            
             <div className="py-4">
               <Line className="accenat" />
