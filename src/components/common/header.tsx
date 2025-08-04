@@ -8,7 +8,12 @@ import { useState } from 'react';
 
 // 5月時点の公開用に、一時的にリンクを無効化するためのフラグ
 // 後で有効にする場合は、これをfalseに変更するだけ
-const DISABLE_LINKS_TEMPORARILY = true;
+const DISABLE_LINKS_TEMPORARILY = false;
+
+// 特定のリンクを個別に無効化するためのフラグ
+const DISABLE_GREETING = true; // 代表者挨拶を無効化
+const DISABLE_MAP = true; // マップを無効化
+const DISABLE_SPONSORS = true; // 協賛企業一覧を無効化
 
 export default function Header() {
   // メニューの開閉状態を管理するための状態
@@ -76,17 +81,25 @@ export default function Header() {
 
           {/* 他のメニュー項目は条件によって有効/無効を切り替え */}
           {!DISABLE_LINKS_TEMPORARILY ? (
-            // 通常時の完全なメニュー（すべてのリンクが有効）
+            // 通常時のメニュー（個別制御あり）
             <>
-              <Link href="/greeting" onClick={toggleMenu} className="text-lg">
-                代表者挨拶
-              </Link>
+              {DISABLE_GREETING ? (
+                <div className="text-lg text-gray">代表者挨拶</div>
+              ) : (
+                <Link href="/greeting" onClick={toggleMenu} className="text-lg">
+                  代表者挨拶
+                </Link>
+              )}
               <Link href="/access" onClick={toggleMenu} className="text-lg">
                 アクセス
               </Link>
-              <Link href="/map" onClick={toggleMenu} className="text-lg">
-                マップ
-              </Link>
+              {DISABLE_MAP ? (
+                <div className="text-lg text-gray">マップ</div>
+              ) : (
+                <Link href="/map" onClick={toggleMenu} className="text-lg">
+                  マップ
+                </Link>
+              )}
 
               <div className="space-y-3">
                 <div className="text-lg">
@@ -121,7 +134,7 @@ export default function Header() {
                     <span className="mr-2">◆</span> 展示・体験
                   </Link>
                   <Link
-                    href="#"
+                    href="/event#timeschedule"
                     onClick={toggleMenu}
                     className="flex items-center"
                   >
@@ -143,16 +156,19 @@ export default function Header() {
               >
                 企業ブース
               </Link>
-              <Link
-                href="/sponsoring_corpolate"
-                onClick={toggleMenu}
-                className="text-lg"
-              >
-                協賛企業一覧
-              </Link>
+              {DISABLE_SPONSORS ? (
+                <div className="text-lg text-gray">協賛企業一覧</div>
+              ) : (
+                <Link
+                  href="/sponsoring_corpolate"
+                  onClick={toggleMenu}
+                  className="text-lg"
+                >
+                  協賛企業一覧
+                </Link>
+              )}
             </>
           ) : (
-            // 5月時点公開用の制限されたメニュー（リンクが無効で灰色表示）
             <>
               <div className="text-lg text-gray">代表者挨拶</div>
               <div className="text-lg text-gray">アクセス</div>
