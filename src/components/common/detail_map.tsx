@@ -25,7 +25,7 @@ const DetailMap = ({ location, roomNumber }: DetailMapProps) => {
         )}
         {/* Map image placeholder */}
         <div className="bg-gray-200 w-full h-64 flex items-center justify-center mb-4">
-          地図画像
+          comming soon
         </div>
         <LinkButton href="/map" className="bg-second">
           <TextStyle styleType="body1" className="text-white">
