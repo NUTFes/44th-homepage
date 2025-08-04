@@ -4,12 +4,19 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
 
+type ImageModalProps = {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+};
+
 export default function ImageModal({
   src,
   alt,
   width = 300, // 初期表示用
   height = 200, // 初期表示用
-}) {
+}: ImageModalProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => setIsOpen(true);
