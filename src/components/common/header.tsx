@@ -12,6 +12,7 @@ const DISABLE_LINKS_TEMPORARILY = false;
 
 // 特定のリンクを個別に無効化するためのフラグ
 const DISABLE_GREETING = true; // 代表者挨拶を無効化
+const DISABLE_MAP = true; // マップを無効化
 const DISABLE_SPONSORS = true; // 協賛企業一覧を無効化
 
 export default function Header() {
@@ -92,9 +93,13 @@ export default function Header() {
               <Link href="/access" onClick={toggleMenu} className="text-lg">
                 アクセス
               </Link>
-              <Link href="/map" onClick={toggleMenu} className="text-lg">
-                マップ
-              </Link>
+              {DISABLE_MAP ? (
+                <div className="text-lg text-gray">マップ</div>
+              ) : (
+                <Link href="/map" onClick={toggleMenu} className="text-lg">
+                  マップ
+                </Link>
+              )}
 
               <div className="space-y-3">
                 <div className="text-lg">
