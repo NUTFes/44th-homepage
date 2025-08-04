@@ -20,6 +20,7 @@ const allTags = [
   'フード',
   'スイーツ',
   'ドリンク',
+  'キッチンカー',
 ];
 
 export default function FoodPage() {

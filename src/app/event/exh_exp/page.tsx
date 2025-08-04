@@ -12,7 +12,14 @@ import { ExhExpItem } from '@/src/types/exh_exp';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-const allTags = ['子供向け', '企業出店', '学生出店', '展示', '体験'];
+const allTags = [
+  '子供向け', 
+  '企業出店', 
+  '学生出店', 
+  '展示', 
+  '体験', 
+  '研究室'
+];
 
 export default function ExhExpPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
