@@ -9,7 +9,7 @@ import TextStyle from '@/src/components/common/text_style';
 import { getAllPlanData, getPlanDataById } from '@/src/lib/plan';
 import { PlanItem } from '@/src/types/plan';
 import Link from 'next/link';
-import Frame from '@/src/components/common/frame';
+
 
 type PlanDetailProps = {
   params: {
