@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 // 5月時点の公開用に、一時的にリンクを無効化するためのフラグ
 // 後で有効にする場合は、これをfalseに変更するだけ
-const DISABLE_LINKS_TEMPORARILY = true;
+const DISABLE_LINKS_TEMPORARILY = false;
 
 export default function Header() {
   // メニューの開閉状態を管理するための状態
