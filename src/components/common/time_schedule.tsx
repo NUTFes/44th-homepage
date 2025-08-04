@@ -8,7 +8,7 @@ const TimeSchedule: React.FC = () => {
       <Carousel autoSlide={false}>
         <div className="px-4">
           <p className="font-bold text-font_khaki">
-            1日目（8/13）スケジュール・晴れ
+            1日目（9/13）スケジュール・晴れ
           </p>
           <ZoomableImage>
             <ImageModal
@@ -21,7 +21,7 @@ const TimeSchedule: React.FC = () => {
         </div>
         <div className="px-4">
           <p className="font-bold text-font_khaki">
-            1日目（8/13）スケジュール・雨
+            1日目（9/13）スケジュール・雨
           </p>
           <ZoomableImage>
             <ImageModal
@@ -34,7 +34,7 @@ const TimeSchedule: React.FC = () => {
         </div>
         <div className="px-4">
           <p className="font-bold text-font_khaki">
-            2日目（8/14）スケジュール・晴れ
+            2日目（9/14）スケジュール・晴れ
           </p>
           <ZoomableImage>
             <ImageModal
@@ -47,7 +47,7 @@ const TimeSchedule: React.FC = () => {
         </div>
         <div className="px-4">
           <p className="font-bold text-font_khaki">
-            2日目（8/14）スケジュール・雨
+            2日目（9/14）スケジュール・雨
           </p>
           <ZoomableImage>
             <ImageModal
