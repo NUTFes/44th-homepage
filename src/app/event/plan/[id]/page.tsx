@@ -6,10 +6,10 @@ import Frame from '@/src/components/common/frame';
 import Line from '@/src/components/common/line';
 import ReturnEventButton from '@/src/components/common/return_event_button';
 import TextStyle from '@/src/components/common/text_style';
+import TimeSchedule from '@/src/components/common/time_schedule';
 import { getAllPlanData, getPlanDataById } from '@/src/lib/plan';
 import { PlanItem } from '@/src/types/plan';
 import Link from 'next/link';
-
 
 type PlanDetailProps = {
   params: {
@@ -39,23 +39,21 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
   return (
     <BackFrame>
       <div className="container mx-auto text-font_main flex flex-col items-col gap-y-8">
-
         <ReturnEventButton href="/event/plan" />
         <div className="text-center">
           <TextStyle styleType="section_title">企画</TextStyle>
           <p className="text-h2">{item.企画名}</p>
         </div>
 
-          <div className="w-[70%] aspect-square flex items-center justify-center relative max-w-lg mx-auto">
-            <FallbackImage
-              imageDir="plan"
-              imageId={item.番号}
-              alt={item.企画名 || 'image'}
-              fill
-              className="object-contain"
-            />
-          </div>
-
+        <div className="w-[70%] aspect-square flex items-center justify-center relative max-w-lg mx-auto">
+          <FallbackImage
+            imageDir="plan"
+            imageId={item.番号}
+            alt={item.企画名 || 'image'}
+            fill
+            className="object-contain"
+          />
+        </div>
 
         {/* 参加応募ボタン */}
         {item.参加応募URL && (
@@ -64,9 +62,7 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
               href={item.参加応募URL}
               target="_blank"
               rel="noopener noreferrer"
-
               className="px-12  py-4 text-white bg-second rounded-sm text-body2 shadow_button text-center hover:bg-yellow-500 transition-colors"
-
             >
               参加応募はこちら
             </Link>
@@ -117,7 +113,6 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
               {item['2日目(晴)開始時刻'] &&
                 item['2日目(晴)終了時刻'] &&
                 item['2日目(晴)開始時刻'] !== 'なし' && (
-
                   <div className="text-body1">
                     晴れ: {item['2日目(晴)開始時刻']}～
                     {item['2日目(晴)終了時刻']}
@@ -130,11 +125,13 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
                     雨: {item['2日目(雨)開始時刻']}～{item['2日目(雨)終了時刻']}
                   </div>
                 )}
-
             </div>
           )}
         </Frame>
-
+        <Frame>
+          <TextStyle styleType="section_title" className="text-center">タイムスケジュール</TextStyle>
+          <TimeSchedule />
+        </Frame>
 
         <DetailMap location={item['開催場所（晴れ）']} roomNumber={item.番号} />
 
