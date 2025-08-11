@@ -14,8 +14,8 @@ const GuestAttentions = () => {
               会場での注意事項
             </TextStyle>
             <div>
-              <div className="flex justify-center text-accent items-center gap-x-2">
-                <BiCameraOff size={56} />
+              <div className="flex justify-start text-accent items-center gap-x-2">
+                <BiCameraOff size={40} />
                 <p className="font-bold">イベント中の 録音・撮影は原則禁止</p>
               </div>
               <p className="text-accent">
@@ -23,8 +23,8 @@ const GuestAttentions = () => {
               </p>
             </div>
             <div className="w-full">
-              <div className="flex justify-center text-accent items-center gap-x-2">
-                <div className="flex justify-center text-accent items-center min-w-max">
+              <div className="flex justify-start text-accent items-center gap-x-2">
+                <div className="flex justify-start text-accent items-center min-w-max">
                   <MdOutlineNoMeals size={40} />
                   <LuCupSoda size={40} />
                 </div>
