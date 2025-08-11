@@ -10,8 +10,8 @@ interface ImageSponsorCardProps {
 
 export default function ImageSponsorCard({ sponsor }: ImageSponsorCardProps) {
   const CardContent = () => (
-    <div className="bg-white border-2 border-yellow-400 p-4 text-center">
-      <h3 className="text-lg font-bold mb-4 text-[#432F2F]">
+    <div className="p-2 text-center">
+      <h3 className="body1 text-font_khaki pb-2">
         {sponsor.企業名}
       </h3>
       <div className="w-full aspect-video flex items-center justify-center relative bg-black">
