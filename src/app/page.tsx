@@ -7,6 +7,7 @@ import TopAttentions from '@/src/components/top/top_attentions';
 import TopCarousel from '@/src/components/top/top_carousel';
 import Image from 'next/image';
 import TimeSchedule from '../components/common/time_schedule';
+import SponsorCarousel from '../components/common/sponser-carousel';
 // const TitleDate = '/logo/title_date.svg';
 // const TitleLogo = '/logo/title_logo.svg';
 export const runtime = 'edge';
@@ -61,6 +62,7 @@ export default function TopPage() {
           <div className="text-center">
             <TextStyle styleType="body2">Coming soon</TextStyle>
           </div>
+          <SponsorCarousel/>
         </div>
       </BackFrame>
     </div>
