@@ -1,10 +1,11 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import SimpleCarousel from '@/src/components/common/simple-carousel';
+import ImageSponsorCard from '@/src/components/sponsoring_corpolate/ImageSponsorCard';
 import { getSponsoringCorpolateDataWithImages } from '@/src/lib/sponsoring_corpolate';
 import { SponsoringCorpolateItem } from '@/src/types/sponsoring_corpolate';
-import ImageSponsorCard from '@/src/components/sponsoring_corpolate/ImageSponsorCard';
-import SimpleCarousel from '@/src/components/common/simple-carousel';
+import { useEffect, useState } from 'react';
+import Frame from './frame';
 
 interface SponsorCarouselProps {
   title?: string;
@@ -18,7 +19,9 @@ export default function SponsorCarousel({
   autoSlide = true,
   autoSlideInterval = 4000,
 }: SponsorCarouselProps) {
-  const [imageSponsors, setImageSponsors] = useState<SponsoringCorpolateItem[]>([]);
+  const [imageSponsors, setImageSponsors] = useState<SponsoringCorpolateItem[]>(
+    []
+  );
 
   useEffect(() => {
     setImageSponsors(getSponsoringCorpolateDataWithImages());
@@ -33,16 +36,17 @@ export default function SponsorCarousel({
   }
 
   return (
-    <div className={`w-full ${className}`}>
-   
-
-      <div className="w-hull">
-        <SimpleCarousel autoSlide={autoSlide} autoSlideInterval={autoSlideInterval}>
+    <Frame>
+      <div className="w-hull px-2">
+        <SimpleCarousel
+          autoSlide={autoSlide}
+          autoSlideInterval={autoSlideInterval}
+        >
           {imageSponsors.map((sponsor, index) => (
             <ImageSponsorCard key={index} sponsor={sponsor} />
           ))}
         </SimpleCarousel>
       </div>
-    </div>
+    </Frame>
   );
 }
