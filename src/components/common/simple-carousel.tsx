@@ -49,8 +49,8 @@ const SimpleCarousel: React.FC<SimpleCarouselProps> = ({
       >
         {childrenArray.map((child, index) => (
           <div key={index} className="w-full flex-shrink-0 relative z-10">
-            <div className="flex items-center justify-center h-full w-full">
-              <div className="object-contain max-h-full max-w-full overflow-hidden">
+            <div className="h-full w-full">
+              <div className="max-h-full max-w-full overflow-hidden">
                 {child}
               </div>
             </div>

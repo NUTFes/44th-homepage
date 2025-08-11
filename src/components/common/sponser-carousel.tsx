@@ -14,7 +14,6 @@ interface SponsorCarouselProps {
 }
 
 export default function SponsorCarousel({
-  title = '協賛企業一覧',
   className = '',
   autoSlide = true,
   autoSlideInterval = 4000,
@@ -35,9 +34,9 @@ export default function SponsorCarousel({
 
   return (
     <div className={`w-full ${className}`}>
-      <h2 className="text-2xl font-bold text-center mb-6">{title}</h2>
+   
 
-      <div className="w-full max-w-5xl mx-auto mb-8">
+      <div className="w-hull">
         <SimpleCarousel autoSlide={autoSlide} autoSlideInterval={autoSlideInterval}>
           {imageSponsors.map((sponsor, index) => (
             <ImageSponsorCard key={index} sponsor={sponsor} />

@@ -10,17 +10,18 @@ interface ImageSponsorCardProps {
 
 export default function ImageSponsorCard({ sponsor }: ImageSponsorCardProps) {
   const CardContent = () => (
-    <div className="p-2 text-center">
+    <div className=" p-2 text-center">
       <h3 className="body1 text-font_khaki pb-2">
         {sponsor.企業名}
       </h3>
-      <div className="w-full aspect-video flex items-center justify-center relative bg-black">
+      <div className="w-full aspect-[3/2] flex items-center justify-center relative">
         <FallbackImage
           imageDir="sponsoring_corpolate"
           imageId={sponsor.番号}
           alt={sponsor.企業名}
           fill
-          className="object-contain"
+          className="object-contain w-full h-full"
+
         />
       </div>
     </div>
