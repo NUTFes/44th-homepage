@@ -15,7 +15,6 @@ interface SponsorCarouselProps {
 }
 
 export default function SponsorCarousel({
-  className = '',
   autoSlide = true,
   autoSlideInterval = 4000,
 }: SponsorCarouselProps) {
