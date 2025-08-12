@@ -5,7 +5,6 @@ import ImageSponsorCard from '@/src/components/sponsoring_corpolate/ImageSponsor
 import { getSponsoringCorpolateDataWithImages } from '@/src/lib/sponsoring_corpolate';
 import { SponsoringCorpolateItem } from '@/src/types/sponsoring_corpolate';
 import { useEffect, useState } from 'react';
-import Frame from './frame';
 
 interface SponsorCarouselProps {
   title?: string;
@@ -35,17 +34,38 @@ export default function SponsorCarousel({
   }
 
   return (
-    <Frame>
-      <div className="w-hull px-2">
-        <SimpleCarousel
-          autoSlide={autoSlide}
-          autoSlideInterval={autoSlideInterval}
+    <div className="flex justify-center">
+      <div
+        className={`p-0.5 w-[90%] min-w-[200px] border-2 border-second bg-base_back rounded-sm`}
+      >
+        <div
+          className="w-full border border-second rounded-sm
+                  py-2"
         >
-          {imageSponsors.map((sponsor, index) => (
-            <ImageSponsorCard key={index} sponsor={sponsor} />
-          ))}
-        </SimpleCarousel>
+          <div className="flex flex-colgap-4">
+            <div className="w-hull px-2 h-auto">
+              <SimpleCarousel
+                autoSlide={autoSlide}
+                autoSlideInterval={autoSlideInterval}
+              >
+                {imageSponsors.map((sponsor, index) => (
+                  <ImageSponsorCard key={index} sponsor={sponsor} />
+                ))}
+              </SimpleCarousel>
+              <div className="flex justify-center">
+              <a
+                className="bg-base text-main border border-main px-12  py-4 rounded-sm text-body2 shadow_button text-center hover:bg-second hover:text-base transition-colors"
+                href="/sponsoring_corpolate"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ご協賛いただいた企業様＞＞
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </Frame>
+    </div>
   );
 }
