@@ -36,13 +36,13 @@ export default function SponsorCarousel({
   return (
     <div className="flex justify-center">
       <div
-        className={`p-0.5 w-[90%] min-w-[200px] border-2 border-second bg-base_back rounded-sm`}
+        className={`p-0.5 w-[90%] min-w-[200px] max-w-[300px] border-2 border-second bg-base_back rounded-sm`}
       >
         <div
           className="w-full border border-second rounded-sm
                   py-2"
         >
-          <div className="flex flex-colgap-4">
+          <div className="flex flex-col gap-4">
             <div className="w-hull px-2 h-auto">
               <SimpleCarousel
                 autoSlide={autoSlide}
@@ -53,16 +53,16 @@ export default function SponsorCarousel({
                 ))}
               </SimpleCarousel>
               {/* ↓協賛ページ公開時に有効にする */}
-              {/* <div className="flex justify-center">
+              <div className="flex justify-center">
               <a
-                className="bg-base text-main border border-main px-12  py-4 rounded-sm text-body2 shadow_button text-center hover:bg-second hover:text-base transition-colors"
+                className="bg-base text-body2 text-main border border-main w-full py-4 rounded-sm text-body2 shadow_button text-center hover:bg-second hover:text-base transition-colors"
                 href="/sponsoring_corpolate"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 ご協賛いただいた企業様＞＞
               </a>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
