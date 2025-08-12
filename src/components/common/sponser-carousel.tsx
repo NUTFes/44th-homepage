@@ -15,7 +15,7 @@ interface SponsorCarouselProps {
 
 export default function SponsorCarousel({
   autoSlide = true,
-  autoSlideInterval = 4000,
+  autoSlideInterval = 5000,
 }: SponsorCarouselProps) {
   const [imageSponsors, setImageSponsors] = useState<SponsoringCorpolateItem[]>(
     []
@@ -52,7 +52,8 @@ export default function SponsorCarousel({
                   <ImageSponsorCard key={index} sponsor={sponsor} />
                 ))}
               </SimpleCarousel>
-              <div className="flex justify-center">
+              {/* ↓協賛ページ公開時に有効にする */}
+              {/* <div className="flex justify-center">
               <a
                 className="bg-base text-main border border-main px-12  py-4 rounded-sm text-body2 shadow_button text-center hover:bg-second hover:text-base transition-colors"
                 href="/sponsoring_corpolate"
@@ -61,7 +62,7 @@ export default function SponsorCarousel({
               >
                 ご協賛いただいた企業様＞＞
               </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
