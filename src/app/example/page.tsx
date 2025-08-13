@@ -5,6 +5,7 @@ import Line from '@/src/components/common/line';
 import TextStyle from '@/src/components/common/text_style';
 import Infos from '@/src/components/top/Infos';
 import Image from 'next/image';
+import Youchien from '@/src/components/top/youchien';
 
 import Carousel from '@/src/components/common/carousel';
 
@@ -53,7 +54,7 @@ export default function TopPage() {
               （サイト外リンク）
             </LinkButton>
           </Frame>
-
+                      <Youchien></Youchien>
           <Infos></Infos>
 
           <Frame />
