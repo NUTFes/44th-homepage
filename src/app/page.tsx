@@ -7,6 +7,7 @@ import TopAttentions from '@/src/components/top/top_attentions';
 import TopCarousel from '@/src/components/top/top_carousel';
 import Image from 'next/image';
 import TimeSchedule from '../components/common/time_schedule';
+import TopAttentionTexts from '../components/top/top_attentions_text';
 // const TitleDate = '/logo/title_date.svg';
 // const TitleLogo = '/logo/title_logo.svg';
 export const runtime = 'edge';
@@ -43,7 +44,7 @@ export default function TopPage() {
           <TopCarousel />
           <RecruitmentSponsors />
           <Infos />
-          <TopAttentions />
+          <TopAttentionTexts />
           <Line />
 
           <div className="text-center">
