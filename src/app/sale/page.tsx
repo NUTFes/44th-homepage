@@ -10,6 +10,7 @@ import { getAllSaleData } from '@/src/lib/sale';
 import { SaleItem } from '@/src/types/sale';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import IdFrame from '@/src/components/common/id_frame';
 
 const allTags = [
   '子供向け', 
@@ -71,12 +72,14 @@ export default function SalePage() {
                 const itemId = item.番号 || `missing-${index}`;
                 return (
                   <div key={itemId} className="text-center">
+                    <IdFrame>
                     <Link href={`/sale/${encodeURIComponent(itemId)}`}>
                       <CellContent
                         imageId={item.番号}
                         title={item.出店タイトル}
                       />
                     </Link>
+                    </IdFrame>
                   </div>
                 );
               })}

@@ -6,6 +6,7 @@ import CellContent from '@/src/components/corpolate_booth/CellContent';
 import { getAllCorpolateBoothData } from '@/src/lib/corpolate_booth';
 import Link from 'next/link';
 import Line from '@/src/components/common/line';
+import IdFrame from '@/src/components/common/id_frame';
 
 export default function CorpolateBoothPage() {
   const allData = getAllCorpolateBoothData();
@@ -46,12 +47,14 @@ export default function CorpolateBoothPage() {
               <div className="relative z-10 contents">
                 {allData.map((item) => (
                   <div key={item.番号} className="text-center">
+                    <IdFrame>
                     <Link href={`/corpolate_booth/${item.番号 || ''}`}>
                       <CellContent
                         imageId={item.番号}
                         title={item.出店タイトル}
                       />
                     </Link>
+                    </IdFrame>
                   </div>
                 ))}
               </div>

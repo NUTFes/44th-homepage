@@ -1,6 +1,7 @@
 'use client';
 
 import BackFrame from '@/src/components/common/back_frame';
+import IdFrame from '@/src/components/common/id_frame';
 import Line from '@/src/components/common/line';
 import ReturnEventButton from '@/src/components/common/return_event_button';
 import Tag from '@/src/components/common/tag';
@@ -12,14 +13,7 @@ import { ExhExpItem } from '@/src/types/exh_exp';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-const allTags = [
-  '子供向け', 
-  '企業出店', 
-  '学生出店', 
-  '展示', 
-  '体験', 
-  '研究室'
-];
+const allTags = ['子供向け', '企業出店', '学生出店', '展示', '体験', '研究室'];
 
 export default function ExhExpPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -75,14 +69,18 @@ export default function ExhExpPage() {
                 const itemId = item.番号 || `missing-${index}`;
                 return (
                   <div key={itemId} className="text-center">
-                    <Link href={`/event/exh_exp/${encodeURIComponent(itemId)}`}>
-                      <TextStyle styleType="body2">
-                        <CellContent
-                          imageId={item.番号}
-                          title={item.出店タイトル}
-                        />
-                      </TextStyle>
-                    </Link>
+                    <IdFrame>
+                      <Link
+                        href={`/event/exh_exp/${encodeURIComponent(itemId)}`}
+                      >
+                        <TextStyle styleType="body2">
+                          <CellContent
+                            imageId={item.番号}
+                            title={item.出店タイトル}
+                          />
+                        </TextStyle>
+                      </Link>
+                    </IdFrame>
                   </div>
                 );
               })}
