@@ -10,6 +10,7 @@ import { getAllFoodData } from '@/src/lib/food';
 import { FoodItem } from '@/src/types/food';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import IdFrame from '@/src/components/common/id_frame';
 
 const allTags = [
   '子供向け',
@@ -83,14 +84,18 @@ export default function FoodPage() {
                 {filteredData.map((item, index) => {
                   const itemId = item.番号 || `missing-${index}`;
                   return (
+                    
                     <div key={itemId} className="text-center">
+                      <IdFrame>
                       <Link href={`/food/${encodeURIComponent(itemId)}`}>
                         <CellContent
                           imageId={item.番号}
                           title={item.出店タイトル}
                         />
                       </Link>
+                      </IdFrame>
                     </div>
+                    
                   );
                 })}
               </div>
