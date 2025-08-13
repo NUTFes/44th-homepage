@@ -55,6 +55,15 @@ export default function Footer() {
           </div>
         </a>
         <a
+          href="https://shonenjumpplus.com/episode/4855956445109234830"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="text-white hover:underline hover:text-main">
+            幼稚園WARSとコラボ決定！試し読みはこちら
+          </div>
+        </a>
+        <a
           href="https://www.nagaokaut.ac.jp/j/50th/index.html"
           target="_blank"
           rel="noopener noreferrer"
