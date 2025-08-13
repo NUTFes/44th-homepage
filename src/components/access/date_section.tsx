@@ -9,7 +9,10 @@ const DateSection = () => {
           <TextStyle styleType="body1_khaki">１日目</TextStyle>
         </div>
         <div>
-          <TextStyle styleType="body1_bold">９/13（土）</TextStyle>
+          <TextStyle styleType="body1_bold">
+            9/13{'('}土{')'}
+          </TextStyle>
+          <p className="font-bold">10:00～20:00{'(出店は17:00まで)'}</p>
         </div>
       </div>
       <div className="p-0">
@@ -17,7 +20,10 @@ const DateSection = () => {
           <TextStyle styleType="body1_khaki">２日目</TextStyle>
         </div>
         <div>
-          <TextStyle styleType="body1_bold">９/14（日）</TextStyle>
+          <TextStyle styleType="body1_bold">
+            9/14{'('}日{')'}
+          </TextStyle>
+          <p className="font-bold">10:00～18:30{'(出店は16:00まで)'}</p>
         </div>
       </div>
     </Frame>
