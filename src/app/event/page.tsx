@@ -37,7 +37,7 @@ export default function EventPage() {
           <div className="flex justify-between px-8 items-center">
             <TextStyle styleType="section_title">企画</TextStyle>
             <LinkButton href="/event/plan" className="px-4 py-2">
-              詳しく見る＞＞
+              もっと見る＞＞
             </LinkButton>
           </div>
           <div>
@@ -47,7 +47,7 @@ export default function EventPage() {
           <div className="flex justify-between px-8 items-center">
             <TextStyle styleType="section_title">展示・体験</TextStyle>
             <LinkButton href="/event/exh_exp" className="px-4 py-2">
-              詳しく見る＞＞
+              もっと見る＞＞
             </LinkButton>
           </div>
           <div>
