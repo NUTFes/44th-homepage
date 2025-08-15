@@ -5,6 +5,7 @@ import TextStyle from '@/src/components/common/text_style';
 import Image from 'next/image';
 import { RandomPlanItems, RandomExhExpItems} from '@/src/components/event/random_banner';
 import TimeSchedule from '@/src/components/common/time_schedule';
+import SponsorCarousel from '@/src/components/common/sponser-carousel';
 export default function EventPage() {
   return (
     <div>
@@ -57,6 +58,8 @@ export default function EventPage() {
           <TextStyle styleType="section_title">タイムスケジュール</TextStyle>
 
           <TimeSchedule />
+                    <Line/>
+          <SponsorCarousel/>
         </div>
       </BackFrame>
     </div>
