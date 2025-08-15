@@ -8,6 +8,7 @@ import TopCarousel from '@/src/components/top/top_carousel';
 import Image from 'next/image';
 import TimeSchedule from '../components/common/time_schedule';
 import SponsorCarousel from '../components/common/sponser-carousel';
+import Youchien from '../components/top/youchien';
 // const TitleDate = '/logo/title_date.svg';
 // const TitleLogo = '/logo/title_logo.svg';
 export const runtime = 'edge';
@@ -44,7 +45,11 @@ export default function TopPage() {
           <TopCarousel />
           <RecruitmentSponsors />
           <Infos />
+                    <Line/>
+          <SponsorCarousel/>
+          <Line/>
           <TopAttentions />
+          <Youchien/>
           <Line />
 
           <div className="text-center">
@@ -62,6 +67,7 @@ export default function TopPage() {
           <div className="text-center">
             <TextStyle styleType="body2">Coming soon</TextStyle>
           </div>
+          <Line/>
           <SponsorCarousel/>
         </div>
       </BackFrame>
