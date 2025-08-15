@@ -45,7 +45,7 @@ const Youchien: React.FC = () => {
             className="w-full h-auto object-contain"
           />
         </div>
-        <LinkButton href="https://shonenjumpplus.com/episode/4855956445109234830" className="w-full">
+        <LinkButton href="https://shonenjumpplus.com/episode/4855956445109234830" isExternal className="w-full">
                 第１話の試し読みはこちら<br/>（少年ジャンプ＋）
               </LinkButton>
         
