@@ -51,7 +51,7 @@ export default function CorpolateBoothPage() {
                 }}
               />
               <div className="relative z-10 contents">
-                {chunkArray(allData, 6).map((chunk, chunkIndex) => (
+                {chunkArray(allData, 8).map((chunk, chunkIndex) => (
                   <div key={`chunk-${chunkIndex}`} className="contents">
                     {chunk.map((item, index) => {
                       const itemId = item.番号 || `missing-${chunkIndex}-${index}`;
