@@ -16,7 +16,7 @@ const Youchien: React.FC = () => {
           第44回技大祭では、長岡技科大出身の漫画家、
         </TextStyle>
         <TextStyle styleType="body2_bold">
-          千葉侑先生による大人気作品『幼稚園WARS』
+          千葉侑生先生による大人気作品『幼稚園WARS』
         </TextStyle>
         <TextStyle styleType="body2">
             とのコラボレーションが決定しました！
