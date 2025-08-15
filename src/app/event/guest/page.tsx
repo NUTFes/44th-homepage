@@ -7,6 +7,7 @@ import GuestAttentions from '@/src/components/event/guest/guest_attentions';
 import GuestInfos from '@/src/components/event/guest/guest_info';
 import TicketInfos from '@/src/components/event/guest/ticket_infos';
 import Image from 'next/image';
+import SponsorCarousel from '@/src/components/common/sponser-carousel';
 
 export default function GuestPage() {
   return (
@@ -47,6 +48,8 @@ export default function GuestPage() {
           <GuestAttentions />
           <Cast/>
           <ReturnEventButton size="large_event" href="/event"/>
+                    <Line/>
+          <SponsorCarousel/>
         </div>
       </BackFrame>
     </div>
