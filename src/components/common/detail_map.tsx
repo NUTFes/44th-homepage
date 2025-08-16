@@ -1,6 +1,5 @@
 'use client';
 import Frame from './frame';
-import LinkButton from './link_button';
 import TextStyle from './text_style';
 
 type DetailMapProps = {
