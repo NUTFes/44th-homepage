@@ -3,6 +3,7 @@ import DateSection from '@/src/components/access/date_section';
 import GoogleMap from '@/src/components/access/googlemap';
 import BackFrame from '@/src/components/common/back_frame';
 import Line from '@/src/components/common/line';
+import SponsorCarousel from '@/src/components/common/sponser-carousel';
 import TextStyle from '@/src/components/common/text_style';
 export default function AccessPage() {
   return (
@@ -16,7 +17,10 @@ export default function AccessPage() {
           <Line />
           <TextStyle styleType="section_title">技大前バス時刻表</TextStyle>
           <BusTime/>
+          <Line/>
+          <SponsorCarousel/>
         </div>
+        
       </BackFrame>
     </div>
   );

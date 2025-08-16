@@ -1,7 +1,9 @@
 'use client';
 
 import BackFrame from '@/src/components/common/back_frame';
+import IdFrame from '@/src/components/common/id_frame';
 import Line from '@/src/components/common/line';
+import SponsorCarousel from '@/src/components/common/sponser-carousel'; // 追加
 import Tag from '@/src/components/common/tag';
 import TagModal from '@/src/components/common/tag_modal';
 import TextStyle from '@/src/components/common/text_style';
@@ -10,7 +12,6 @@ import { getAllFoodData } from '@/src/lib/food';
 import { FoodItem } from '@/src/types/food';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import IdFrame from '@/src/components/common/id_frame';
 
 const allTags = [
   '子供向け',
@@ -23,6 +24,15 @@ const allTags = [
   'ドリンク',
   'キッチンカー',
 ];
+
+// 🔧 配列をチャンクに分割する関数
+function chunkArray<T>(array: T[], size: number): T[][] {
+  const result: T[][] = [];
+  for (let i = 0; i < array.length; i += size) {
+    result.push(array.slice(i, i + size));
+  }
+  return result;
+}
 
 export default function FoodPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -52,18 +62,18 @@ export default function FoodPage() {
     <>
       <div>
         <BackFrame>
-       
           <div className="container px-4 text-font_main">
             <div className="text-center py-8">
               <TextStyle styleType="title">食品販売</TextStyle>
             </div>
+
             <Tag
               selectedTags={selectedTags}
               onSearchClick={() => setIsModalOpen(true)}
               onResetClick={() => setSelectedTags([])}
             />
 
-            <Line/>
+            <Line />
 
             <main
               className="grid grid-cols-2 gap-8 relative"
@@ -81,23 +91,31 @@ export default function FoodPage() {
                 }}
               />
               <div className="relative z-10 contents">
-                {filteredData.map((item, index) => {
-                  const itemId = item.番号 || `missing-${index}`;
-                  return (
-                    
-                    <div key={itemId} className="text-center">
-                      <IdFrame>
-                      <Link href={`/food/${encodeURIComponent(itemId)}`}>
-                        <CellContent
-                          imageId={item.番号}
-                          title={item.出店タイトル}
-                        />
-                      </Link>
-                      </IdFrame>
+                {chunkArray(filteredData, 8).map((chunk, chunkIndex) => (
+                  <div key={`chunk-${chunkIndex}`} className="contents">
+                    {chunk.map((item, index) => {
+                      const itemId =
+                        item.番号 || `missing-${chunkIndex}-${index}`;
+                      return (
+                        <div key={itemId} className="text-center">
+                          <IdFrame>
+                            <Link href={`/food/${encodeURIComponent(itemId)}`}>
+                              <CellContent
+                                imageId={item.番号}
+                                title={item.出店タイトル}
+                              />
+                            </Link>
+                          </IdFrame>
+                        </div>
+                      );
+                    })}
+                    <div className="col-span-2 flex flex-col gap-y-8">
+                      <Line />
+                      <SponsorCarousel />
+                      <Line />
                     </div>
-                    
-                  );
-                })}
+                  </div>
+                ))}
               </div>
             </main>
           </div>

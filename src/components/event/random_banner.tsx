@@ -4,6 +4,7 @@ import CellContent from '@/src/components/event/plan/CellContent';
 import { getAllExhExpData } from '@/src/lib/exh_exp';
 import { getAllPlanData } from '@/src/lib/plan';
 import Link from 'next/link';
+import IdFrame from '../common/id_frame';
 
 function getRandomItems<T>(array: T[], count: number): T[] {
   const shuffled = [...array].sort(() => Math.random() - 0.5);
@@ -29,9 +30,11 @@ export function RandomPlanItems() {
             key={item.番号}
             href={`/event/plan/${encodeURIComponent(item.番号)}`}
           >
+            <IdFrame>
             <TextStyle styleType="body2">
               <CellContent imageId={item.番号} title={item.企画名} />
             </TextStyle>
+            </IdFrame>
           </Link>
         ))}
       </main>
@@ -58,12 +61,14 @@ export function RandomExhExpItems() {
             key={item.番号}
             href={`/event/exh_exp/${encodeURIComponent(item.番号)}`}
           >
+            <IdFrame>
             <TextStyle styleType="body2">
               <ExhExpCellContent
                 imageId={item.番号}
                 title={item.出店タイトル}
               />
             </TextStyle>
+            </IdFrame>
           </Link>
         ))}
       </main>
