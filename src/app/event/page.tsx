@@ -1,11 +1,14 @@
 import BackFrame from '@/src/components/common/back_frame';
 import Line from '@/src/components/common/line';
 import LinkButton from '@/src/components/common/link_button';
-import TextStyle from '@/src/components/common/text_style';
-import Image from 'next/image';
-import { RandomPlanItems, RandomExhExpItems} from '@/src/components/event/random_banner';
-import TimeSchedule from '@/src/components/common/time_schedule';
 import SponsorCarousel from '@/src/components/common/sponser-carousel';
+import TextStyle from '@/src/components/common/text_style';
+import TimeSchedule from '@/src/components/common/time_schedule';
+import {
+  RandomExhExpItems,
+  RandomPlanItems,
+} from '@/src/components/event/random_banner';
+import Image from 'next/image';
 export default function EventPage() {
   return (
     <div>
@@ -22,15 +25,15 @@ export default function EventPage() {
               </LinkButton>
             </div>
             <div className="px-8">
-            <a href="/event/guest">
-              <Image
-                src="/images/guest/cast_yoko.png"
-                width={1080}
-                height={810}
-                className="border-2 border-main rounded-sm hover:opacity-60 transition-opacity"
-                alt="ゲスト/トム・ブラウン"
-              />
-            </a>
+              <a href="/event/guest">
+                <Image
+                  src="/images/guest/cast_yoko.png"
+                  width={1080}
+                  height={810}
+                  className="border-2 border-main rounded-sm hover:opacity-60 transition-opacity"
+                  alt="ゲスト/トム・ブラウン"
+                />
+              </a>
             </div>
           </div>
 
@@ -55,11 +58,12 @@ export default function EventPage() {
             <RandomExhExpItems />
           </div>
           <Line />
-          <TextStyle styleType="section_title">タイムスケジュール</TextStyle>
-
-          <TimeSchedule />
-                    <Line/>
-          <SponsorCarousel/>
+          <div id="timeschedule">
+            <TextStyle styleType="section_title">タイムスケジュール</TextStyle>
+            <TimeSchedule />
+          </div>
+          <Line />
+          <SponsorCarousel />
         </div>
       </BackFrame>
     </div>
