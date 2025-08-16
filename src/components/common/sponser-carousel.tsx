@@ -53,7 +53,7 @@ export default function SponsorCarousel({
                 ))}
               </SimpleCarousel>
               {/* ↓協賛ページ公開時に有効にする */}
-              <div className="flex justify-center">
+              {/* <div className="flex justify-center">
               <a
                 className="bg-base text-body2 text-main border border-main w-full py-4 rounded-sm text-body2 shadow_button text-center hover:bg-second hover:text-base transition-colors"
                 href="/sponsoring_corpolate"
@@ -62,7 +62,7 @@ export default function SponsorCarousel({
               >
                 ご協賛いただいた企業様＞＞
               </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
