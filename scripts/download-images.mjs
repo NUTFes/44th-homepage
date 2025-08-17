@@ -14,6 +14,45 @@ const getFileIdFromUrl = (url) => {
   return match ? match[1] : null;
 };
 
+// URLがGoogle DriveのURLかどうかを判定する
+const isGoogleDriveUrl = (url) => {
+  if (!url) return false;
+  return url.includes('drive.google.com') || url.includes('docs.google.com');
+};
+
+// URLから拡張子を取得する（Firebase/Imgur用）
+const getFileExtensionFromUrl = (url) => {
+  if (!url) return '.png'; // デフォルト
+
+  // URLから拡張子を抽出
+  const match = url.match(/\.(png|jpe?g|gif|webp)(\?|$)/i);
+  if (match) {
+    return `.${match[1].toLowerCase()}`;
+  }
+
+  // Firebase URLの場合、altパラメータより前から拡張子を抽出
+  const firebaseMatch = url.match(
+    /([^\/\?]+)\.(png|jpe?g|gif|webp)(\?alt=media|$)/i
+  );
+  if (firebaseMatch) {
+    return `.${firebaseMatch[2].toLowerCase()}`;
+  }
+
+  return '.png'; // デフォルト
+};
+
+// Firebase/ImgurのURLから直接画像をダウンロードする関数
+const downloadImageDirect = (url, filepath) => {
+  try {
+    console.log(`  Attempting to download from: ${url}`);
+    execSync(`curl -L -s -o "${filepath}" "${url}"`, { stdio: 'inherit' });
+    return true;
+  } catch (error) {
+    console.error(`  Error downloading ${url} with curl:`, error.message);
+    return false;
+  }
+};
+
 // 画像をダウンロードする関数 (curlを使用)
 const downloadImage = (url, filepath) => {
   try {
@@ -78,24 +117,43 @@ async function main() {
       console.log(`  Created directory: ${imageDir}`);
     }
 
-    for (const item of items) {
+    for (const [index, item] of items.entries()) {
       const imageUrl = item[source.image_url_column];
-      const imageId = item[source.id_column];
-      if (!imageUrl || !imageId) continue;
+      let imageId = item[source.id_column];
 
-      const fileId = getFileIdFromUrl(imageUrl);
-      if (!fileId) {
-        console.warn(`  Could not extract file ID from URL: ${imageUrl}`);
-        continue;
+      // 番号が欠損している場合は代替IDを生成
+      if (!imageId || imageId.trim() === '') {
+        imageId = `missing-${index}`;
       }
 
-      const filename = `${imageId}.png`;
-      const filepath = path.join(imageDir, filename);
+      if (!imageUrl) continue; // 画像URLがない場合のみスキップ
 
-      // 常にダウンロードを実行する
       console.log(`  Downloading image for item ${imageId}...`);
-      const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
-      const success = await downloadImage(downloadUrl, filepath);
+
+      let success = false;
+      let filename;
+      let filepath;
+
+      if (isGoogleDriveUrl(imageUrl)) {
+        // Google Drive URL の場合（既存の方法）
+        const fileId = getFileIdFromUrl(imageUrl);
+        if (!fileId) {
+          console.warn(`  Could not extract file ID from URL: ${imageUrl}`);
+          continue;
+        }
+
+        filename = `${imageId}.png`;
+        filepath = path.join(imageDir, filename);
+        const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+        success = await downloadImage(downloadUrl, filepath);
+      } else {
+        // Firebase/Imgur URL の場合（新しい方法）
+        const extension = getFileExtensionFromUrl(imageUrl);
+        filename = `${imageId}${extension}`;
+        filepath = path.join(imageDir, filename);
+        success = await downloadImageDirect(imageUrl, filepath);
+      }
+
       if (success) {
         console.log(`  Successfully downloaded: ${filename}`);
       } else {

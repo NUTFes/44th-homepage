@@ -1,13 +1,29 @@
 'use client';
 
-import TagModal from '@/src/components/common/tag';
+import BackFrame from '@/src/components/common/back_frame';
+import IdFrame from '@/src/components/common/id_frame';
+import Line from '@/src/components/common/line';
+import ReturnEventButton from '@/src/components/common/return_event_button';
+import SponsorCarousel from '@/src/components/common/sponser-carousel';
+import Tag from '@/src/components/common/tag';
+import TagModal from '@/src/components/common/tag_modal';
+import TextStyle from '@/src/components/common/text_style';
 import CellContent from '@/src/components/event/exh_exp/CellContent';
 import { getAllExhExpData } from '@/src/lib/exh_exp';
 import { ExhExpItem } from '@/src/types/exh_exp';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-const allTags = ['子供向け', '企業出店', '学生出店', '展示', '体験'];
+const allTags = ['子供向け', '企業出店', '学生出店', '展示', '体験', '研究室'];
+
+// 🔧 配列をチャンクに分割する関数
+function chunkArray<T>(array: T[], size: number): T[][] {
+  const result: T[][] = [];
+  for (let i = 0; i < array.length; i += size) {
+    result.push(array.slice(i, i + size));
+  }
+  return result;
+}
 
 export default function ExhExpPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -35,46 +51,67 @@ export default function ExhExpPage() {
 
   return (
     <>
-      <div className="bg-[#F8F5E9] min-h-screen font-serif text-[#432F2F]">
-        <div className="container mx-auto px-4 py-8">
-          <Link
-            href="/event"
-            className="inline-block bg-gray-400 text-white px-4 py-2 rounded mb-4"
-          >
-            {'<< 戻る'}
-          </Link>
+      <div>
+        <BackFrame>
+          <ReturnEventButton href="/event" />
+          <div className="container px-4">
+            <div className="text-center py-8">
+              <TextStyle styleType="title">展示・体験</TextStyle>
+            </div>
 
-          <h1 className="text-4xl text-center font-bold my-8">展示・体験</h1>
+            <Tag
+              selectedTags={selectedTags}
+              onSearchClick={() => setIsModalOpen(true)}
+              onResetClick={() => setSelectedTags([])}
+            />
+            <div className="py-4">
+              <Line className="accenat" />
+            </div>
 
-          <div className="text-center mb-8">
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="border-2 border-red-500 text-red-500 px-8 py-2 rounded-md"
+            <main
+              className="grid grid-cols-2 gap-8"
+              style={{
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                backgroundSize: 'contain',
+              }}
             >
-              タグ検索
-            </button>
+              {chunkArray(filteredData, 8).map((chunk, chunkIndex) => (
+                <div key={`chunk-${chunkIndex}`} className="contents">
+                  {chunk.map((item, index) => {
+                    const itemId =
+                      item.番号 || `missing-${chunkIndex}-${index}`;
+                    return (
+                      <div key={itemId} className="text-center">
+                        <IdFrame>
+                          <Link
+                            href={`/event/exh_exp/${encodeURIComponent(
+                              itemId
+                            )}`}
+                          >
+                            <TextStyle styleType="body2">
+                              <CellContent
+                                imageId={item.番号}
+                                title={item.出店タイトル}
+                              />
+                            </TextStyle>
+                          </Link>
+                        </IdFrame>
+                      </div>
+                    );
+                  })}
+                  <div className="col-span-2 flex flex-col gap-y-8">
+                    <Line />
+                    <SponsorCarousel />
+                    <Line />
+                  </div>
+                </div>
+              ))}
+            </main>
+
+            <ReturnEventButton size="large_event" href="/event" />
           </div>
-
-          <hr className="border-t-2 border-red-400 mb-8" />
-
-          <main
-            className="grid grid-cols-2 gap-8"
-            style={{
-              backgroundImage: "url('/assets/illust_people_1.svg')",
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'center',
-              backgroundSize: 'contain',
-            }}
-          >
-            {filteredData.map((item) => (
-              <div key={item.番号} className="text-center">
-                <Link href={`/event/exh_exp/${item.番号 || ''}`}>
-                  <CellContent imageId={item.番号} title={item.出店タイトル} />
-                </Link>
-              </div>
-            ))}
-          </main>
-        </div>
+        </BackFrame>
       </div>
 
       <TagModal

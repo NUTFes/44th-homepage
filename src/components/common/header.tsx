@@ -10,6 +10,11 @@ import { useState } from 'react';
 // 後で有効にする場合は、これをfalseに変更するだけ
 const DISABLE_LINKS_TEMPORARILY = true;
 
+// 特定のリンクを個別に無効化するためのフラグ
+const DISABLE_GREETING = true; // 代表者挨拶を無効化
+const DISABLE_MAP = true; // マップを無効化
+const DISABLE_SPONSORS = true; // 協賛企業一覧を無効化
+
 export default function Header() {
   // メニューの開閉状態を管理するための状態
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,12 +28,22 @@ export default function Header() {
     <header className="fixed top-0 left-0 w-full flex justify-between pb-4 pt-4 pl-[3%] pr-[3%] bg-gradient-to-b from-header_grad bg-blend-darken z-50">
       <div className="flex">
         <Link href={'/'}>
-          <Image src="/icon/44thlogo_shadow.png" alt="44th_icon" width={40} height={40} />
+          <Image
+            src="/icon/44thlogo_shadow.png"
+            alt="44th_icon"
+            width={40}
+            height={40}
+          />
         </Link>
       </div>
       <div className="flex">
         <button onClick={toggleMenu} aria-label="メニューを開く">
-          <Image src="/icon/BiMenu_shadow.png" alt="menu" width={32} height={32} />
+          <Image
+            src="/icon/BiMenu_shadow.png"
+            alt="menu"
+            width={32}
+            height={32}
+          />
         </button>
       </div>
 
@@ -66,17 +81,25 @@ export default function Header() {
 
           {/* 他のメニュー項目は条件によって有効/無効を切り替え */}
           {!DISABLE_LINKS_TEMPORARILY ? (
-            // 通常時の完全なメニュー（すべてのリンクが有効）
+            // 通常時のメニュー（個別制御あり）
             <>
-              <Link href="/greeting" onClick={toggleMenu} className="text-lg">
-                代表者挨拶
-              </Link>
+              {DISABLE_GREETING ? (
+                <div className="text-lg text-gray">代表者挨拶</div>
+              ) : (
+                <Link href="/greeting" onClick={toggleMenu} className="text-lg">
+                  代表者挨拶
+                </Link>
+              )}
               <Link href="/access" onClick={toggleMenu} className="text-lg">
                 アクセス
               </Link>
-              <Link href="/map" onClick={toggleMenu} className="text-lg">
-                マップ
-              </Link>
+              {DISABLE_MAP ? (
+                <div className="text-lg text-gray">マップ</div>
+              ) : (
+                <Link href="/map" onClick={toggleMenu} className="text-lg">
+                  マップ
+                </Link>
+              )}
 
               <div className="space-y-3">
                 <div className="text-lg">
@@ -111,7 +134,7 @@ export default function Header() {
                     <span className="mr-2">◆</span> 展示・体験
                   </Link>
                   <Link
-                    href="#"
+                    href="/event#timeschedule"
                     onClick={toggleMenu}
                     className="flex items-center"
                   >
@@ -121,7 +144,7 @@ export default function Header() {
               </div>
 
               <Link href="/food" onClick={toggleMenu} className="text-lg">
-                飲食
+                食品販売
               </Link>
               <Link href="/sale" onClick={toggleMenu} className="text-lg">
                 物品販売
@@ -133,16 +156,19 @@ export default function Header() {
               >
                 企業ブース
               </Link>
-              <Link
-                href="/sponsoring_corpolate"
-                onClick={toggleMenu}
-                className="text-lg"
-              >
-                協賛企業一覧
-              </Link>
+              {DISABLE_SPONSORS ? (
+                <div className="text-lg text-gray">協賛企業一覧</div>
+              ) : (
+                <Link
+                  href="/sponsoring_corpolate"
+                  onClick={toggleMenu}
+                  className="text-lg"
+                >
+                  協賛企業一覧
+                </Link>
+              )}
             </>
           ) : (
-            // 5月時点公開用の制限されたメニュー（リンクが無効で灰色表示）
             <>
               <div className="text-lg text-gray">代表者挨拶</div>
               <div className="text-lg text-gray">アクセス</div>
@@ -166,7 +192,7 @@ export default function Header() {
                 </div>
               </div>
 
-              <div className="text-lg text-gray">飲食</div>
+              <div className="text-lg text-gray">食品販売</div>
               <div className="text-lg text-gray">物品販売</div>
               <div className="text-lg text-gray">企業ブース</div>
               <div className="text-lg text-gray">協賛企業一覧</div>

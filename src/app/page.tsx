@@ -6,6 +6,9 @@ import RecruitmentSponsors from '@/src/components/top/recruitment_sponsors';
 import TopAttentions from '@/src/components/top/top_attentions';
 import TopCarousel from '@/src/components/top/top_carousel';
 import Image from 'next/image';
+import TimeSchedule from '../components/common/time_schedule';
+import SponsorCarousel from '../components/common/sponser-carousel';
+import Youchien from '../components/top/youchien';
 // const TitleDate = '/logo/title_date.svg';
 // const TitleLogo = '/logo/title_logo.svg';
 export const runtime = 'edge';
@@ -16,12 +19,24 @@ export default function TopPage() {
       <div style={{ paddingBottom: '308px' }} className="space-y-6 pt-4">
         <div className="flex justify-center">
           <div className="relative aspect-[344/552] w-[20%] max-md:w-[55%]">
-            <Image src="/logo/title_logo.png" alt="44th_logo" fill={true} />
+            <Image
+              src="/logo/title_logo.png"
+              alt="44th_logo"
+              fill={true}
+              priority
+              sizes="(max-width: 768px) 55vw, 20vw"
+            />
           </div>
         </div>
         <div className="flex justify-center">
           <div className="relative aspect-[175/103] w-[20%] max-md:w-[55%]">
-            <Image src="/logo/title_date.png" alt="44th_date" fill={true} />
+            <Image
+              src="/logo/title_date.png"
+              alt="44th_date"
+              fill={true}
+              priority
+              sizes="(max-width: 768px) 55vw, 20vw"
+            />
           </div>
         </div>
       </div>
@@ -30,16 +45,18 @@ export default function TopPage() {
           <TopCarousel />
           <RecruitmentSponsors />
           <Infos />
+                    <Line/>
+          <SponsorCarousel/>
+          <Line/>
           <TopAttentions />
+          <Youchien/>
           <Line />
 
           <div className="text-center">
             <TextStyle styleType="section_title">タイムスケジュール</TextStyle>
           </div>
 
-          <div className="text-center">
-            <TextStyle styleType="body2">Coming soon</TextStyle>
-          </div>
+          <TimeSchedule />
 
           <Line />
           <div className="text-center">
@@ -50,6 +67,8 @@ export default function TopPage() {
           <div className="text-center">
             <TextStyle styleType="body2">Coming soon</TextStyle>
           </div>
+          <Line/>
+          <SponsorCarousel/>
         </div>
       </BackFrame>
     </div>

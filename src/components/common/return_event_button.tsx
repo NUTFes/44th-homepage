@@ -4,7 +4,7 @@ import React from 'react';
 
 interface ReturnEventButtonProps {
   className?: string;
-  size?: 'small' | 'large';
+  size?: 'small' | 'large' | 'large_event';
   children?: React.ReactNode;
   href: string;
 }
@@ -13,7 +13,18 @@ const ReturnEventButton: React.FC<ReturnEventButtonProps> = ({
   href,
   className,
 }) => {
-  const label = size === 'small' ? '<<戻る' : '<<一覧へ戻る';
+  const label = (() => {
+    switch (size) {
+      case 'small':
+        return '<<戻る';
+      case 'large':
+        return '<<一覧へ戻る';
+      case 'large_event':
+        return '<<イベントページへ戻る';
+      default:
+        return '<<戻る';
+    }
+  })();
 
   return (
     <div
