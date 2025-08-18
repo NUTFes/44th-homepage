@@ -3,7 +3,7 @@
     "番号": "講義棟207 G7",
     "出店タイトル": "七宝焼作製体験",
     "PR文": "七宝焼のストラップやアクセサリーの作製や既製品購入ができます。七つの宝の如き美しさをあなたの手に。",
-    "画像": "https://firebasestorage.googleapis.com/v0/b/group-manager-2.appspot.com/o/%E3%82%BB%E3%83%A9%E3%83%9F%E3%83%83%E3%82%AF_%E7%94%BB%E5%83%8F.jpg?alt=media&token=7177a29a-8130-4ca2-be5c-388aeeb37c24",
+    "画像": "https://drive.google.com/file/d/1B2mN6eu9jbWqBq86iDHhv4DFqmNPfstc/view?usp=drive_link",
     "開催場所": "講義棟エリア",
     "タグ": "学生出店, 子供向け",
     "メニュー": "七宝焼"
@@ -30,7 +30,7 @@
     "番号": "講義棟208 G8",
     "出店タイトル": "ぼっち・ざ・ふぉと！！",
     "PR文": "普段は“ぼっち”で撮ってる面々が展示会を開催！  今年からポストカードの販売も始めました！",
-    "画像": "https://i.imgur.com/6VrxdvF.jpeg",
+    "画像": "https://drive.google.com/file/d/15bTQnv3mJpoO05mdGBubSaZ_pDHsw22y/view?usp=drive_link",
     "開催場所": "講義棟エリア",
     "タグ": "学生出店",
     "メニュー": "写真ポストカード"
@@ -39,7 +39,7 @@
     "番号": "A6",
     "出店タイトル": "出張、長岡大学",
     "PR文": "MOCHIMOGUさんのヒンヤリモチっとが特徴の冷やし大判焼きを販売します！気になった方はぜひ！",
-    "画像": "https://firebasestorage.googleapis.com/v0/b/group-manager-2.appspot.com/o/物販_悠久祭実行委員.jpeg?alt=media",
+    "画像": "https://drive.google.com/file/d/1f74AzB8unv-Fnp-ASuX07iVmwm-73atc/view?usp=drive_link",
     "開催場所": "事務棟エリア",
     "タグ": "学生出店",
     "メニュー": "MUCHIMOGU(冷やし大判焼き)"
@@ -54,12 +54,21 @@
     "メニュー": "飲み物"
   },
   {
-    "番号": "",
-    "出店タイトル": "コーヒーサークル(物販)",
+    "番号": "B8",
+    "出店タイトル": "NUT CAFE 物販の部",
     "PR文": "コーヒー豆やコーヒーかすを使用した消臭剤などを販売しております。ぜひお立ち寄りください。",
-    "画像": "https://firebasestorage.googleapis.com/v0/b/group-manager-2.appspot.com/o/%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB_%E7%89%A9%E8%B2%A9.png?alt=media&token=ca7136f4-6ccf-450c-830b-c0aec675ae2e",
-    "開催場所": "",
-    "タグ": "",
+    "画像": "https://drive.google.com/file/d/11DZsZzX_eZVIaeRAhVw9VPrXX8RBOmxH/view?usp=drive_link",
+    "開催場所": "図書館エリア",
+    "タグ": "学生出店",
+    "メニュー": ""
+  },
+  {
+    "番号": "B6",
+    "出店タイトル": "光る！スーパーボールすくい",
+    "PR文": "キラキラのスーパーボウルをゲットしよう！",
+    "画像": "https://drive.google.com/file/d/15xX3iq3_RLakY6apH05qCVny_UOKsmH-/view?usp=drive_link",
+    "開催場所": "図書館エリア",
+    "タグ": "学生出店, 子供向け",
     "メニュー": ""
   }
 ]

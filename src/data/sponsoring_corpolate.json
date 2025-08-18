@@ -1,38 +1,74 @@
 [
   {
     "番号": "1",
-    "企業名": "企業名1",
-    "広告画像": "https://drive.google.com/file/d/1fT0NXdwpNQ6iBTPlyavpAhQyKdUsLLNn/view?usp=drive_link",
-    "企業HPのURL": ""
+    "企業名": "株式会社イートラスト",
+    "広告画像": "https://drive.google.com/file/d/1bcsRpXjRK5aurvWh7kHOhIMcnouTJCHP/view?usp=sharing",
+    "企業HPのURL": "https://www.etrust.ne.jp/"
   },
   {
     "番号": "2",
-    "企業名": "企業名2",
-    "広告画像": "https://drive.google.com/file/d/1xaeH24u-r5ZDVqaQ4qEnF5RsFavj-PKA/view?usp=drive_link",
-    "企業HPのURL": "https://drive.google.com/drive/u/0/folders/1N6tzLxb0Fja-OmQcKBfAvBbTlBntKDPd"
+    "企業名": "株式会社竹内製作所",
+    "広告画像": "",
+    "企業HPのURL": "https://www.takeuchi-mfg.co.jp/"
   },
   {
     "番号": "3",
-    "企業名": "鷹の爪",
-    "広告画像": "https://drive.google.com/file/d/13YGVqussbl1XpKWzZ297uHFrNMztR2w2/view?usp=drive_link",
-    "企業HPのURL": ""
+    "企業名": "JAMP 除雪足場メタバースプロジェクト",
+    "広告画像": "",
+    "企業HPのURL": "https://jamp.nagaokaut.ac.jp/"
   },
   {
     "番号": "4",
-    "企業名": "秘密結社",
-    "広告画像": "https://drive.google.com/file/d/1sIjUYZfwLNcnJ19dm2I8S0pUDy4QSjtG/view?usp=drive_link",
-    "企業HPのURL": ""
+    "企業名": "アルプスアルパイン株式会社",
+    "広告画像": "https://drive.google.com/file/d/1IQf4JgSgeldT9ktpu1oL-Vn-ZwkUR7am/view?usp=sharing",
+    "企業HPのURL": "https://www.alpsalpine.com"
   },
   {
     "番号": "5",
-    "企業名": "企業名5",
+    "企業名": "近藤産業株式会社",
+    "広告画像": "https://drive.google.com/file/d/157pC7NJmHyUcjiIn_jR3RP-W1b5Jq6Y3/view?usp=sharing",
+    "企業HPのURL": "http://kondo-sangyo.co.jp"
+  },
+  {
+    "番号": "6",
+    "企業名": "株式会社宮下電設",
+    "広告画像": "",
+    "企業HPのURL": "https://miyashita-densetsu.co.jp/"
+  },
+  {
+    "番号": "7",
+    "企業名": "学習塾 Polaris長岡",
+    "広告画像": "",
+    "企業HPのURL": "https://polaris-nagaoka.jp/"
+  },
+  {
+    "番号": "8",
+    "企業名": "株式会社レインボーブライト",
+    "広告画像": "https://drive.google.com/file/d/18acGWzKLVFs0r3yDYbwMOFRaazrDAQQm/view?usp=sharing",
+    "企業HPのURL": "https://www.rainbowbright.co.jp/"
+  },
+  {
+    "番号": "9",
+    "企業名": "株式会社七里商店",
+    "広告画像": "https://drive.google.com/file/d/1y78MKQrmgdHJ2xzFzDmn0OMlKTtyKqxL/view?usp=drive_link",
+    "企業HPのURL": "https://www.shichiri.co.jp/"
+  },
+  {
+    "番号": "10",
+    "企業名": "株式会社長岡新聞社",
     "広告画像": "",
     "企業HPのURL": ""
   },
   {
-    "番号": "6",
-    "企業名": "企業名6",
-    "広告画像": "https://drive.google.com/file/d/1GFlaRtJvNZ8N_OdaFE3OZ4kJubZxbuIg/view?usp=drive_link",
+    "番号": "11",
+    "企業名": "株式会社まるごとメディア新潟",
+    "広告画像": "",
+    "企業HPのURL": ""
+  },
+  {
+    "番号": "12",
+    "企業名": "株式会社文化",
+    "広告画像": "",
     "企業HPのURL": ""
   }
 ]
