@@ -1,25 +1,19 @@
 'use client';
 
 import BackFrame from '@/src/components/common/back_frame';
+import IdFrame from '@/src/components/common/id_frame';
 import Line from '@/src/components/common/line';
+import SponsorCarousel from '@/src/components/common/sponser-carousel'; // 追加
 import Tag from '@/src/components/common/tag';
 import TagModal from '@/src/components/common/tag_modal';
 import TextStyle from '@/src/components/common/text_style';
 import CellContent from '@/src/components/sale/CellContent';
-import SponsorCarousel from '@/src/components/common/sponser-carousel'; // 追加
 import { getAllSaleData } from '@/src/lib/sale';
 import { SaleItem } from '@/src/types/sale';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import IdFrame from '@/src/components/common/id_frame';
 
-const allTags = [
-  '子供向け',
-  '技大グッズ',
-  '学生出店',
-  '企業出店',
-  'フリマ',
-];
+const allTags = ['子供向け', '技大グッズ', '学生出店', '企業出店', 'フリマ'];
 
 // 🔧 配列をチャンクに分割する関数
 function chunkArray<T>(array: T[], size: number): T[][] {
@@ -82,7 +76,15 @@ export default function SalePage() {
               {chunkArray(filteredData, 8).map((chunk, chunkIndex) => (
                 <div key={`chunk-${chunkIndex}`} className="contents">
                   {chunk.map((item, index) => {
-                    const itemId = item.番号 || `missing-${chunkIndex}-${index}`;
+                    const itemId =
+                      item.番号 || `missing-${chunkIndex}-${index}`;
+                    // 元のデータでのインデックスを計算
+                    const originalIndex = allData.findIndex(
+                      (data) => data === item
+                    );
+                    const sequenceNumber =
+                      originalIndex >= 0 ? originalIndex + 1 : undefined;
+
                     return (
                       <div key={itemId} className="text-center">
                         <IdFrame>
@@ -90,6 +92,7 @@ export default function SalePage() {
                             <CellContent
                               imageId={item.番号}
                               title={item.出店タイトル}
+                              sequenceNumber={sequenceNumber}
                             />
                           </Link>
                         </IdFrame>

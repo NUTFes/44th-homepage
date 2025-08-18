@@ -88,6 +88,16 @@ const parseTsvToJSON = (tsvText) => {
   });
 };
 
+// カテゴリ別の頭文字マッピング
+const CATEGORY_PREFIXES = {
+  exh_exp: 'E',
+  sale: 'S',
+  food: 'F',
+  corpolate_booth: 'C',
+  plan: 'P',
+  sponsoring_corpolate: 'SP',
+};
+
 // メイン処理
 async function main() {
   console.log('Starting data synchronization script...');
@@ -117,18 +127,19 @@ async function main() {
       console.log(`  Created directory: ${imageDir}`);
     }
 
+    // カテゴリの頭文字を取得
+    const prefix = CATEGORY_PREFIXES[source.name] || 'X';
+
     for (const [index, item] of items.entries()) {
       const imageUrl = item[source.image_url_column];
-      let imageId = item[source.id_column];
-
-      // 番号が欠損している場合は代替IDを生成
-      if (!imageId || imageId.trim() === '') {
-        imageId = `missing-${index}`;
-      }
 
       if (!imageUrl) continue; // 画像URLがない場合のみスキップ
 
-      console.log(`  Downloading image for item ${imageId}...`);
+      // 新しい命名規則: 頭文字 + 順番（1から開始）
+      const sequenceNumber = index + 1;
+      const newImageId = `${prefix}${sequenceNumber}`;
+
+      console.log(`  Downloading image ${sequenceNumber} as ${newImageId}...`);
 
       let success = false;
       let filename;
@@ -142,14 +153,14 @@ async function main() {
           continue;
         }
 
-        filename = `${imageId}.png`;
+        filename = `${newImageId}.png`;
         filepath = path.join(imageDir, filename);
         const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
         success = await downloadImage(downloadUrl, filepath);
       } else {
         // Firebase/Imgur URL の場合（新しい方法）
         const extension = getFileExtensionFromUrl(imageUrl);
-        filename = `${imageId}${extension}`;
+        filename = `${newImageId}${extension}`;
         filepath = path.join(imageDir, filename);
         success = await downloadImageDirect(imageUrl, filepath);
       }
