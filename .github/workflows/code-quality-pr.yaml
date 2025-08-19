@@ -12,7 +12,7 @@ on:
 
 jobs:
   code-quality:
-    uses: NUTFes/.github/.github/workflows/ci-code-quality.yaml@v1
+    uses: NUTFes/.github/.github/workflows/npm-code-quality-pr.yaml@v1
     with:
       workdir: .
       node_version: '20'
