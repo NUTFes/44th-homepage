@@ -20,6 +20,4 @@ jobs:
       lint_script: 'lint-fix'
       typecheck_script: 'type-check'
       run_auto_commit: true
-    secrets:
-      APP_ID:  ${{ secrets.APP_ID }}
-      APP_KEY: ${{ secrets.APP_KEY }}
+    secrets: inherit
