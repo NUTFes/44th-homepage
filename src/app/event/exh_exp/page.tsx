@@ -81,6 +81,13 @@ export default function ExhExpPage() {
                   {chunk.map((item, index) => {
                     const itemId =
                       item.番号 || `missing-${chunkIndex}-${index}`;
+                    // 元のデータでのインデックスを計算
+                    const originalIndex = allData.findIndex(
+                      (data) => data === item
+                    );
+                    const sequenceNumber =
+                      originalIndex >= 0 ? originalIndex + 1 : undefined;
+
                     return (
                       <div key={itemId} className="text-center">
                         <IdFrame>
@@ -93,6 +100,7 @@ export default function ExhExpPage() {
                               <CellContent
                                 imageId={item.番号}
                                 title={item.出店タイトル}
+                                sequenceNumber={sequenceNumber}
                               />
                             </TextStyle>
                           </Link>

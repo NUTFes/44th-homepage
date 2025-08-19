@@ -18,13 +18,20 @@ export default async function SaleDetailPage({ params }: SaleDetailProps) {
   const decodedId = decodeURIComponent(params.id);
 
   let item: SaleItem | undefined;
+  let itemIndex = 0;
+
   if (decodedId.startsWith('missing-')) {
     // missing-${index} 形式の場合、インデックスから取得
-    const index = parseInt(decodedId.split('-')[1]);
+    itemIndex = parseInt(decodedId.split('-')[1]);
     const allData = getAllSaleData();
-    item = allData[index];
+    item = allData[itemIndex];
   } else {
+    // 通常のIDの場合、全データから該当アイテムのインデックスを取得
+    const allData = getAllSaleData();
     item = getSaleDataById(decodedId);
+    if (item) {
+      itemIndex = allData.findIndex((data) => data.番号 === item?.番号);
+    }
   }
 
   if (!item) {
@@ -45,7 +52,8 @@ export default async function SaleDetailPage({ params }: SaleDetailProps) {
           <div className="w-[70%] aspect-square flex items-center justify-center relative max-w-lg mx-auto">
             <FallbackImage
               imageDir="sale"
-              imageId={item.番号}
+              category="sale"
+              sequenceNumber={itemIndex + 1}
               alt={item.出店タイトル || 'image'}
               fill
               className="object-contain"

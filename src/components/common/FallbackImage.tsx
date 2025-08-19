@@ -10,6 +10,9 @@ import { useState } from 'react';
 interface FallbackImageProps {
   imageDir: string;
   imageId?: string;
+  // 新しい命名規則用のプロパティ
+  category?: string;
+  sequenceNumber?: number;
   alt: string;
   fill?: boolean;
   width?: number;
@@ -18,9 +21,21 @@ interface FallbackImageProps {
   unoptimized?: boolean;
 }
 
+// カテゴリ別の頭文字マッピング
+const CATEGORY_PREFIXES: Record<string, string> = {
+  exh_exp: 'E',
+  sale: 'S',
+  food: 'F',
+  corpolate_booth: 'C',
+  plan: 'P',
+  sponsoring_corpolate: 'SP',
+};
+
 export default function FallbackImage({
   imageDir,
   imageId,
+  category,
+  sequenceNumber,
   alt,
   fill,
   width,
@@ -31,7 +46,17 @@ export default function FallbackImage({
   const [currentSrcIndex, setCurrentSrcIndex] = useState(0);
   const [hasError, setHasError] = useState(false);
 
-  if (!imageId) {
+  // 新しい命名規則を使用するかどうかを判定
+  const useNewNaming = category && sequenceNumber !== undefined;
+
+  // 実際に使用するimageIdを決定
+  let actualImageId = imageId;
+  if (useNewNaming) {
+    const prefix = CATEGORY_PREFIXES[category] || 'X';
+    actualImageId = `${prefix}${sequenceNumber}`;
+  }
+
+  if (!actualImageId) {
     // imageIdがない場合のフォールバック
     return (
       <div className="w-full h-full flex flex-col items-center justify-center text-white">
@@ -47,9 +72,9 @@ export default function FallbackImage({
     );
   }
 
-  const fallbacks = generateImageFallbacks(imageDir, imageId);
+  const fallbacks = generateImageFallbacks(imageDir, actualImageId);
   const currentSrc =
-    fallbacks[currentSrcIndex] || getInitialImageSrc(imageDir, imageId);
+    fallbacks[currentSrcIndex] || getInitialImageSrc(imageDir, actualImageId);
 
   const handleError = () => {
     if (currentSrcIndex < fallbacks.length - 1) {

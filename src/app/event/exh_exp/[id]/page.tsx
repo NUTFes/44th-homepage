@@ -18,13 +18,20 @@ export default async function ExhExpDetailPage({ params }: ExhExpDetailProps) {
   const decodedId = decodeURIComponent(params.id);
 
   let item: ExhExpItem | undefined;
+  let itemIndex = 0;
+
   if (decodedId.startsWith('missing-')) {
     // missing-${index} 形式の場合、インデックスから取得
-    const index = parseInt(decodedId.split('-')[1]);
+    itemIndex = parseInt(decodedId.split('-')[1]);
     const allData = getAllExhExpData();
-    item = allData[index];
+    item = allData[itemIndex];
   } else {
+    // 通常のIDの場合、全データから該当アイテムのインデックスを取得
+    const allData = getAllExhExpData();
     item = getExhExpDataById(decodedId);
+    if (item) {
+      itemIndex = allData.findIndex((data) => data.番号 === item?.番号);
+    }
   }
 
   if (!item) {
@@ -47,7 +54,8 @@ export default async function ExhExpDetailPage({ params }: ExhExpDetailProps) {
           <div className="w-[70%] aspect-square flex items-center justify-center relative max-w-lg mx-auto">
             <FallbackImage
               imageDir="exh_exp"
-              imageId={item.番号}
+              category="exh_exp"
+              sequenceNumber={itemIndex + 1}
               alt={item.出店タイトル || 'image'}
               fill
               className="object-contain"
