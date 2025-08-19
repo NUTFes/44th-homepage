@@ -9,6 +9,8 @@ on:
     branches:
       - develop
 
+workflow_dispatch:
+
 jobs:
   code-quality:
     uses: NUTFes/.github/.github/workflows/ci-code-quality.yaml@v1
