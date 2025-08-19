@@ -8,8 +8,7 @@ on:
     # 対象のブランチを指定
     branches:
       - develop
-
-workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   code-quality:
