@@ -4,11 +4,11 @@ import BackFrame from '@/src/components/common/back_frame';
 import IdFrame from '@/src/components/common/id_frame';
 import Line from '@/src/components/common/line';
 import ReturnEventButton from '@/src/components/common/return_event_button';
+import SponsorCarousel from '@/src/components/common/sponser-carousel'; // 追加
 import Tag from '@/src/components/common/tag';
 import TagModal from '@/src/components/common/tag_modal';
 import TextStyle from '@/src/components/common/text_style';
 import CellContent from '@/src/components/event/plan/CellContent';
-import SponsorCarousel from '@/src/components/common/sponser-carousel'; // 追加
 import { getAllPlanData } from '@/src/lib/plan';
 import { PlanItem } from '@/src/types/plan';
 import Link from 'next/link';
@@ -92,13 +92,27 @@ export default function PlanPage() {
               {chunkArray(filteredData, 8).map((chunk, chunkIndex) => (
                 <div key={`chunk-${chunkIndex}`} className="contents">
                   {chunk.map((item, index) => {
-                    const itemId = item.番号 || `missing-${chunkIndex}-${index}`;
+                    const itemId =
+                      item.番号 || `missing-${chunkIndex}-${index}`;
+                    // 元のデータでのインデックスを計算
+                    const originalIndex = allData.findIndex(
+                      (data) => data === item
+                    );
+                    const sequenceNumber =
+                      originalIndex >= 0 ? originalIndex + 1 : undefined;
+
                     return (
                       <div key={itemId} className="text-center">
                         <IdFrame>
-                          <Link href={`/event/plan/${encodeURIComponent(itemId)}`}>
+                          <Link
+                            href={`/event/plan/${encodeURIComponent(itemId)}`}
+                          >
                             <TextStyle styleType="body2">
-                              <CellContent imageId={item.番号} title={item.企画名} />
+                              <CellContent
+                                imageId={item.番号}
+                                title={item.企画名}
+                                sequenceNumber={sequenceNumber}
+                              />
                             </TextStyle>
                           </Link>
                         </IdFrame>
@@ -106,9 +120,9 @@ export default function PlanPage() {
                     );
                   })}
                   <div className="col-span-2 flex flex-col gap-y-8">
-                    <Line/>
+                    <Line />
                     <SponsorCarousel />
-                    <Line/>
+                    <Line />
                   </div>
                 </div>
               ))}

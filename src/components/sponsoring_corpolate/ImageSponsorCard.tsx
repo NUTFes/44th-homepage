@@ -6,22 +6,24 @@ import Link from 'next/link';
 
 interface ImageSponsorCardProps {
   sponsor: SponsoringCorpolateItem;
+  sequenceNumber?: number;
 }
 
-export default function ImageSponsorCard({ sponsor }: ImageSponsorCardProps) {
+export default function ImageSponsorCard({
+  sponsor,
+  sequenceNumber,
+}: ImageSponsorCardProps) {
   const CardContent = () => (
     <div className=" p-2 text-center">
-      <h3 className="body1 text-font_khaki pb-2">
-        {sponsor.企業名}
-      </h3>
+      <h3 className="body1 text-font_khaki pb-2">{sponsor.企業名}</h3>
       <div className="w-full aspect-[3/2] flex items-center justify-center relative">
         <FallbackImage
           imageDir="sponsoring_corpolate"
-          imageId={sponsor.番号}
+          category="sponsoring_corpolate"
+          sequenceNumber={sequenceNumber || Number(sponsor.番号)}
           alt={sponsor.企業名}
           fill
           className="object-contain w-full h-full"
-
         />
       </div>
     </div>
