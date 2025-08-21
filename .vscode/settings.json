@@ -5,7 +5,7 @@
   "editor.formatOnSave": true,
   // Prettierをデフォルトのフォーマッタに設定
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-    // Prettierの設定ファイルを指定
+  // Prettierの設定ファイルを指定
   "prettier.configPath": ".prettierrc.json",
 
   // 自動保存時に実行するアクションを設定

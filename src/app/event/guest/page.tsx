@@ -1,13 +1,13 @@
+import Image from 'next/image';
 import BackFrame from '@/src/components/common/back_frame';
 import Line from '@/src/components/common/line';
 import ReturnEventButton from '@/src/components/common/return_event_button';
+import SponsorCarousel from '@/src/components/common/sponser-carousel';
 import TextStyle from '@/src/components/common/text_style';
 import Cast from '@/src/components/event/guest/cast';
 import GuestAttentions from '@/src/components/event/guest/guest_attentions';
 import GuestInfos from '@/src/components/event/guest/guest_info';
 import TicketInfos from '@/src/components/event/guest/ticket_infos';
-import Image from 'next/image';
-import SponsorCarousel from '@/src/components/common/sponser-carousel';
 
 export default function GuestPage() {
   return (
@@ -19,14 +19,14 @@ export default function GuestPage() {
             ゲスト
           </TextStyle>
           <div className="px-4">
-                    <Image
-                      src="/images/guest/cast_tate.png"
-                      alt="トム・ブラウン"
-                      width={216}
-                      height={149}
-                      className="object-cover h-auto w-full justifuy-center flex border-2 border-main rounded-sm shadow_button"
-                    ></Image>
-                    </div>
+            <Image
+              src="/images/guest/cast_tate.png"
+              alt="トム・ブラウン"
+              width={216}
+              height={149}
+              className="object-cover h-auto w-full justifuy-center flex border-2 border-main rounded-sm shadow_button"
+            ></Image>
+          </div>
           <div className="body1 font-bold">
             今年の技大祭に大人気お笑いコンビ
             <span className="text-font_khaki">「トム・ブラウン」</span>
@@ -44,12 +44,12 @@ export default function GuestPage() {
           </div>
           <Line />
           <GuestInfos />
-          <TicketInfos/>
+          <TicketInfos />
           <GuestAttentions />
-          <Cast/>
-          <ReturnEventButton size="large_event" href="/event"/>
-                    <Line/>
-          <SponsorCarousel/>
+          <Cast />
+          <ReturnEventButton size="large_event" href="/event" />
+          <Line />
+          <SponsorCarousel />
         </div>
       </BackFrame>
     </div>

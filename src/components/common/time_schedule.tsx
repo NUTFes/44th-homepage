@@ -1,7 +1,9 @@
 'use client';
+
 import Carousel from './carousel';
 import ImageModal from './image_modal';
 import ZoomableImage from './zoomable_image';
+
 const TimeSchedule: React.FC = () => {
   return (
     <div className="text-center flex flex-col gap-y-4">
@@ -57,13 +59,12 @@ const TimeSchedule: React.FC = () => {
               height={1942}
             />
           </ZoomableImage>
-
         </div>
       </Carousel>
-                <div className="body2 text-font_khaki">
-            <p>ピンチ操作で画像を拡大／縮小、</p>
-            <p>タップで全画面表示に切り替わります</p>
-          </div>
+      <div className="body2 text-font_khaki">
+        <p>ピンチ操作で画像を拡大／縮小、</p>
+        <p>タップで全画面表示に切り替わります</p>
+      </div>
     </div>
   );
 };

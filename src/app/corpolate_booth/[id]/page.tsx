@@ -1,14 +1,15 @@
-export const runtime = 'edge';
 import BackFrame from '@/src/components/common/back_frame';
 import DetailMap from '@/src/components/common/detail_map';
 import FallbackImage from '@/src/components/common/FallbackImage';
+//import Link from 'next/link';
+import Frame from '@/src/components/common/frame';
 import Line from '@/src/components/common/line';
 import ReturnEventButton from '@/src/components/common/return_event_button';
 import TextStyle from '@/src/components/common/text_style';
 import { getCorpolateBoothDataById } from '@/src/lib/corpolate_booth';
 import { CorpolateBoothItem } from '@/src/types/corpolate_booth';
-//import Link from 'next/link';
-import Frame from '@/src/components/common/frame';
+
+export const runtime = 'edge';
 
 type CorpolateBoothDetailProps = {
   params: {

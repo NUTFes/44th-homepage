@@ -1,4 +1,3 @@
-export const runtime = 'edge';
 import BackFrame from '@/src/components/common/back_frame';
 import DetailMap from '@/src/components/common/detail_map';
 import FallbackImage from '@/src/components/common/FallbackImage';
@@ -8,6 +7,9 @@ import ReturnEventButton from '@/src/components/common/return_event_button';
 import TextStyle from '@/src/components/common/text_style';
 import { getAllSaleData, getSaleDataById } from '@/src/lib/sale';
 import { SaleItem } from '@/src/types/sale';
+
+export const runtime = 'edge';
+
 type SaleDetailProps = {
   params: {
     id: string;

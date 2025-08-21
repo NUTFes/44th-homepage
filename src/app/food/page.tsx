@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import BackFrame from '@/src/components/common/back_frame';
 import IdFrame from '@/src/components/common/id_frame';
 import Line from '@/src/components/common/line';
@@ -10,8 +12,6 @@ import TextStyle from '@/src/components/common/text_style';
 import CellContent from '@/src/components/food/CellContent';
 import { getAllFoodData } from '@/src/lib/food';
 import { FoodItem } from '@/src/types/food';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
 
 const allTags = [
   '子供向け',
