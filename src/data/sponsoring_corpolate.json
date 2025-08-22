@@ -62,13 +62,19 @@
   {
     "番号": "11",
     "企業名": "株式会社まるごとメディア新潟",
-    "広告画像": "",
-    "企業HPのURL": ""
+    "広告画像": "https://drive.google.com/file/d/1PjVPoJKXvoGMyg14xGdty18m25NDITVV/view?usp=drive_link",
+    "企業HPのURL": "https://s-joho.com/life/"
   },
   {
     "番号": "12",
     "企業名": "株式会社文化",
-    "広告画像": "",
-    "企業HPのURL": ""
+    "広告画像": "https://drive.google.com/file/d/1gKpdkQDCpazdtYTYRl3qjslVDiXJeJzN/view?usp=drive_link",
+    "企業HPのURL": "https://bunka-net.co.jp/"
+  },
+  {
+    "番号": "13",
+    "企業名": "サイボウズ株式会社",
+    "広告画像": "https://drive.google.com/file/d/1JWZfItO00Z-lZzD4Vgj50OASGUmzE5uQ/view?usp=drive_link",
+    "企業HPのURL": "https://cybozu.github.io/summer-blog-fes-2025/"
   }
 ]
