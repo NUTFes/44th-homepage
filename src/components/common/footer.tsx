@@ -78,6 +78,9 @@ export default function Footer() {
           <div>新潟県長岡市上富岡町1603-1 長岡技術科学大学</div>
         </div>
       </div>
+      <div className="pt-12 text-base body3 text-center">
+        このサイトでは、一部のアイコンにFontoAwesome5、FontAwesome6、MaterialDesignIcons、RemixIcon、TablerIconsを使用しています。
+      </div>
     </footer>
   );
 }
