@@ -1,7 +1,7 @@
 "use client";
 import Frame from "@/src/components/common/frame";
 import TextStyle from "@/src/components/common/text_style";
-import { FaBusAlt } from "react-icons/fa";
+import { IoBusSharp } from "react-icons/io5";
 import { FaCircleInfo } from "react-icons/fa6";
 import { MdNoMeals } from "react-icons/md";
 import { RiBeerFill } from "react-icons/ri";
@@ -37,7 +37,7 @@ const attentionDetails = [
     bodyBoldClass: "text-logo_color",
   },
   {
-    icon: <FaBusAlt size={32} className="text-main" />,
+    icon: <IoBusSharp size={32} className="text-main" />,
     title: "公共交通機関をご利用ください",
     bodyBold: "駐車場の台数には限りがございます。",
     body: "当日は大変混雑が予想されますので、できるだけ公共交通機関をご利用くださいますようお願いいたします。\nまた近隣住民の皆様にご迷惑をおかけする恐れがありますので、",
