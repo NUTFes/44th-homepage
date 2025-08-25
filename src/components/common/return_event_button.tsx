@@ -38,7 +38,7 @@ const ReturnEventButton: React.FC<ReturnEventButtonProps> = ({
       <div className="flex justify-center">
         <Link
           href={href}
-          className={`px-6  py-2 text-white bg-gray rounded-sm text-body2 shadow_button text-center ${className}`}
+          className={`hover:bg-opacity-70 px-6  py-2 text-white bg-gray rounded-sm text-body2 shadow_button text-center ${className}`}
         >
           {label}
         </Link>
