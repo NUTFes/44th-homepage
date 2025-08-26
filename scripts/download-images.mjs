@@ -1,4 +1,4 @@
-import axios from 'axios';
+// import axios from 'axios';
 import { execSync } from 'child_process';
 import 'dotenv/config';
 import fs from 'fs';
@@ -108,10 +108,18 @@ async function main() {
     console.log(`\nProcessing source: ${source.name}`);
 
     // --- データ取得と保存 ---
-    const tsvUrl = process.env[source.tsv_url] || source.tsv_url;
-    console.log(`  Fetching TSV data from: ${tsvUrl}`);
-    const response = await axios.get(tsvUrl);
-    const items = parseTsvToJSON(response.data);
+    // const tsvUrl = process.env[source.tsv_url] || source.tsv_url;
+    // console.log(`  Fetching TSV data from: ${tsvUrl}`);
+    // const response = await axios.get(tsvUrl);
+    // const items = parseTsvToJSON(response.data);
+    
+    // tsvファイルからデータを取得
+    const tsvPath = path.join(process.cwd(), 'public', source.tsv_file); // source.tsv_urlの代わりにsource.tsv_fileを使用
+    console.log(`  Reading TSV data from: ${tsvPath}`);
+    
+    // axiosの代わりにfs.readFileSyncを使用
+    const tsvData = fs.readFileSync(tsvPath, 'utf-8');
+    const items = parseTsvToJSON(tsvData);
 
     const dataDir = path.dirname(source.json_path);
     if (!fs.existsSync(dataDir)) {

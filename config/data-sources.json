@@ -1,7 +1,7 @@
 [
   {
     "name": "exh_exp",
-    "tsv_url": "EXH_EXP_TSV_URL",
+    "tsv_file": "tsv_files/exh_exp.tsv",
     "json_path": "src/data/exh_exp.json",
     "image_dir": "public/images/exh_exp",
     "id_column": "番号",
@@ -9,7 +9,7 @@
   },
   {
     "name": "sale",
-    "tsv_url": "SALE_TSV_URL",
+    "tsv_file": "tsv_files/sale.tsv",
     "json_path": "src/data/sale.json",
     "image_dir": "public/images/sale",
     "id_column": "番号",
@@ -17,7 +17,7 @@
   },
   {
     "name": "food",
-    "tsv_url": "FOOD_TSV_URL",
+    "tsv_file": "tsv_files/food.tsv",
     "json_path": "src/data/food.json",
     "image_dir": "public/images/food",
     "id_column": "番号",
@@ -25,7 +25,7 @@
   },
   {
     "name": "corpolate_booth",
-    "tsv_url": "CORPOLATE_BOOTH_TSV_URL",
+    "tsv_file": "tsv_files/corpolate_booth.tsv",
     "json_path": "src/data/corpolate_booth.json",
     "image_dir": "public/images/corpolate_booth",
     "id_column": "番号",
@@ -33,7 +33,7 @@
   },
   {
     "name": "plan",
-    "tsv_url": "PLAN_TSV_URL",
+    "tsv_file": "tsv_files/plan.tsv",
     "json_path": "src/data/plan.json",
     "image_dir": "public/images/plan",
     "id_column": "番号",
@@ -41,7 +41,7 @@
   },
   {
     "name": "sponsoring_corpolate",
-    "tsv_url": "SPONSORING_CORPOLATE_TSV_URL",
+    "tsv_file": "tsv_files/sponsoring_corpolate.tsv",
     "json_path": "src/data/sponsoring_corpolate.json",
     "image_dir": "public/images/sponsoring_corpolate",
     "id_column": "番号",
