@@ -6,11 +6,13 @@ import TextStyle from '@/src/components/common/text_style';
 import ImageSponsorCard from '@/src/components/sponsoring_corpolate/ImageSponsorCard';
 import TextSponsorList from '@/src/components/sponsoring_corpolate/TextSponsorList';
 import {
+  getAllSponsoringCorpolateData,
   getSponsoringCorpolateDataWithImages,
   getSponsoringCorpolateDataWithoutImages,
 } from '@/src/lib/sponsoring_corpolate';
 
 export default function SponsoringCorpolatePage() {
+  const allData = getAllSponsoringCorpolateData();
   const imageSponsors = getSponsoringCorpolateDataWithImages();
   const textSponsors = getSponsoringCorpolateDataWithoutImages();
 
@@ -30,9 +32,18 @@ export default function SponsoringCorpolatePage() {
         {imageSponsors.length > 0 && (
           <div className="mb-12">
             <div className="flex flex-col gap-6 max-w-md mx-auto">
-              {imageSponsors.map((sponsor, index) => (
-                <ImageSponsorCard key={index} sponsor={sponsor} />
-              ))}
+              {imageSponsors.map((sponsor, index) => {
+                const originalIndex = allData.findIndex(
+                  (item) => item.番号 === sponsor.番号
+                );
+                return (
+                  <ImageSponsorCard
+                    key={index}
+                    sponsor={sponsor}
+                    sequenceNumber={originalIndex + 1}
+                  />
+                );
+              })}
             </div>
           </div>
         )}

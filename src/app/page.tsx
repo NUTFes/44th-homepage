@@ -6,8 +6,8 @@ import RecruitmentSponsors from '@/src/components/top/recruitment_sponsors';
 import TopAttentions from '@/src/components/top/top_attentions';
 import TopCarousel from '@/src/components/top/top_carousel';
 import Image from 'next/image';
-import TimeSchedule from '../components/common/time_schedule';
 import SponsorCarousel from '../components/common/sponser-carousel';
+import TimeSchedule from '../components/common/time_schedule';
 import Youchien from '../components/top/youchien';
 // const TitleDate = '/logo/title_date.svg';
 // const TitleLogo = '/logo/title_logo.svg';
@@ -43,13 +43,13 @@ export default function TopPage() {
       <BackFrame>
         <div className="py-4 space-y-8">
           <TopCarousel />
-          <RecruitmentSponsors />
+
           <Infos />
-                    <Line/>
-          <SponsorCarousel/>
-          <Line/>
+          <Line />
+          <SponsorCarousel />
+          <Line />
           <TopAttentions />
-          <Youchien/>
+          <Youchien />
           <Line />
 
           <div className="text-center">
@@ -59,6 +59,7 @@ export default function TopPage() {
           <TimeSchedule />
 
           <Line />
+          <RecruitmentSponsors />
           <div className="text-center">
             {' '}
             <TextStyle styleType="section_title">関連アプリ・サイト</TextStyle>
@@ -67,8 +68,8 @@ export default function TopPage() {
           <div className="text-center">
             <TextStyle styleType="body2">Coming soon</TextStyle>
           </div>
-          <Line/>
-          <SponsorCarousel/>
+          <Line />
+          <SponsorCarousel />
         </div>
       </BackFrame>
     </div>

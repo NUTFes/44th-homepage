@@ -17,12 +17,22 @@ export default function SponsorCarousel({
   autoSlide = true,
   autoSlideInterval = 5000,
 }: SponsorCarouselProps) {
-  const [imageSponsors, setImageSponsors] = useState<SponsoringCorpolateItem[]>(
-    []
-  );
+  const [imageSponsors, setImageSponsors] = useState<SponsoringCorpolateItem[]>([]);
 
   useEffect(() => {
-    setImageSponsors(getSponsoringCorpolateDataWithImages());
+    const data = getSponsoringCorpolateDataWithImages();
+
+    // 配列をランダムにシャッフルする関数（Fisher–Yatesアルゴリズム）
+    const shuffleArray = <T,>(array: T[]): T[] => {
+      const result = [...array];
+      for (let i = result.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [result[i], result[j]] = [result[j], result[i]];
+      }
+      return result;
+    };
+
+    setImageSponsors(shuffleArray(data));
   }, []);
 
   if (imageSponsors.length === 0) {
@@ -35,33 +45,26 @@ export default function SponsorCarousel({
 
   return (
     <div className="flex justify-center">
-      <div
-        className={`p-0.5 w-[90%] min-w-[200px] max-w-[300px] border-2 border-second bg-base_back rounded-sm`}
-      >
-        <div
-          className="w-full border border-second rounded-sm
-                  py-2"
-        >
+      <div className="p-0.5 w-[90%] min-w-[200px] max-w-[300px] border-2 border-second bg-base_back rounded-sm">
+        <div className="w-full border border-second rounded-sm py-2">
           <div className="flex flex-col gap-4">
-            <div className="w-hull px-2 h-auto">
-              <SimpleCarousel
-                autoSlide={autoSlide}
-                autoSlideInterval={autoSlideInterval}
-              >
+            <div className="w-full px-2 h-auto">
+              <SimpleCarousel autoSlide={autoSlide} autoSlideInterval={autoSlideInterval}>
                 {imageSponsors.map((sponsor, index) => (
                   <ImageSponsorCard key={index} sponsor={sponsor} />
                 ))}
               </SimpleCarousel>
+
               {/* ↓協賛ページ公開時に有効にする */}
               {/* <div className="flex justify-center">
-              <a
-                className="bg-base text-body2 text-main border border-main w-full py-4 rounded-sm text-body2 shadow_button text-center hover:bg-second hover:text-base transition-colors"
-                href="/sponsoring_corpolate"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ご協賛いただいた企業様＞＞
-              </a>
+                <a
+                  className="bg-base text-body2 text-main border border-main w-full py-4 rounded-sm text-body2 shadow_button text-center hover:bg-second hover:text-base transition-colors"
+                  href="/sponsoring_corpolate"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  ご協賛いただいた企業様＞＞
+                </a>
               </div> */}
             </div>
           </div>

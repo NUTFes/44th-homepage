@@ -4,6 +4,13 @@ import Image from 'next/image';
 const TopCarousel: React.FC = () => {
   return (
     <Carousel autoSlide={true}>
+            <Image
+        src="/carousel_top/youchien_top.png"
+        alt="幼稚園WARSとのコラボ決定！"
+        width={1266} // 必要に応じて画像の幅を指定
+        height={988} // 必要に応じて画像の高さを指定
+        className="w-full h-full shadow_dark object-cover"
+      />
       <Image
         src="/carousel_top/top_5_1.jpg"
         alt="昨年度の様子_1"

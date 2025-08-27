@@ -10,7 +10,7 @@ import { TbSmokingNo } from "react-icons/tb";
 const attentionDetails = [
   {
     icon: <FaCircleInfo size={32} className="text-main" />,
-    title: "ご来場の際お困りの際は案内所まで",
+    title: "ご来場にあたりお困りの際は案内所まで",
     bodyBold: "技大祭のパンフレットを案内所にて配布しております。いくつかのイベントに必須なので忘れずにお受け取りください。",
     body: "体調不良や落とし物などお困りの際にもお立ち寄りください。",
     bodyBoldClass: "",
@@ -25,14 +25,14 @@ const attentionDetails = [
   {
     icon: <MdNoMeals size={32} className="text-main" />,
     title: "屋内での食事禁止",
-    bodyBold: "講義棟内部など大学構内の屋内では食事禁止です。",
+    bodyBold: "講義棟内など大学の屋内では食事禁止です。",
     body: "水分補給に制限はありませんのでご自由にお取りください。屋外では飲食に関する制限はございません。\n設営されている休憩所をご活用ください。",
     bodyBoldClass: "text-logo_color",
   },
   {
     icon: <TbSmokingNo size={32} className="text-main" />,
     title: "大学構内は全面禁煙",
-    bodyBold: "大学構内は全面禁煙です。",
+    bodyBold: "大学内は屋内、屋外全面禁煙です。",
     body: "ご協力お願いいたします。",
     bodyBoldClass: "text-logo_color",
   },

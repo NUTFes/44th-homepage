@@ -21,13 +21,20 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
   const decodedId = decodeURIComponent(params.id);
 
   let item: PlanItem | undefined;
+  let itemIndex = 0;
+
   if (decodedId.startsWith('missing-')) {
     // missing-${index} 形式の場合、インデックスから取得
-    const index = parseInt(decodedId.split('-')[1]);
+    itemIndex = parseInt(decodedId.split('-')[1]);
     const allData = getAllPlanData();
-    item = allData[index];
+    item = allData[itemIndex];
   } else {
+    // 通常のIDの場合、全データから該当アイテムのインデックスを取得
+    const allData = getAllPlanData();
     item = getPlanDataById(decodedId);
+    if (item) {
+      itemIndex = allData.findIndex((data) => data.番号 === item?.番号);
+    }
   }
 
   if (!item) {
@@ -48,7 +55,8 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
         <div className="w-[70%] aspect-square flex items-center justify-center relative max-w-lg mx-auto">
           <FallbackImage
             imageDir="plan"
-            imageId={item.番号}
+            category="plan"
+            sequenceNumber={itemIndex + 1}
             alt={item.企画名 || 'image'}
             fill
             className="object-contain"
@@ -71,11 +79,11 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
 
         <p className="text-center text-body1">{item.PR文}</p>
 
-        <div className="flex justify-center gap-4 ">
+        <div className="flex  flex-wrap justify-center gap-2 my-8">
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="border-2 border-accent text-accent px-4 py-1 rounded-sm bg-base"
+              className="border-2 border-accent text-accent px-4 py-1 rounded-sm bg-base whitespace-nowrap"
             >
               {tag}
             </span>
@@ -129,7 +137,9 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
           )}
         </Frame>
         <Frame>
-          <TextStyle styleType="section_title" className="text-center">タイムスケジュール</TextStyle>
+          <TextStyle styleType="section_title" className="text-center">
+            タイムスケジュール
+          </TextStyle>
           <TimeSchedule />
         </Frame>
 

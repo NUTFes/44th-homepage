@@ -19,9 +19,29 @@ type CorpolateBoothDetailProps = {
 export default async function CorpolateBoothDetailPage({
   params,
 }: CorpolateBoothDetailProps) {
-  const item: CorpolateBoothItem | undefined = getCorpolateBoothDataById(
-    params.id
-  );
+  const decodedId = decodeURIComponent(params.id);
+
+  let item: CorpolateBoothItem | undefined;
+  let itemIndex = 0;
+
+  if (decodedId.startsWith('missing-')) {
+    // missing-${index} 形式の場合、インデックスから取得
+    itemIndex = parseInt(decodedId.split('-')[1]);
+    const { getAllCorpolateBoothData } = await import(
+      '@/src/lib/corpolate_booth'
+    );
+    const allData = getAllCorpolateBoothData();
+    item = allData[itemIndex];
+  } else {
+    item = getCorpolateBoothDataById(decodedId);
+    if (item) {
+      const { getAllCorpolateBoothData } = await import(
+        '@/src/lib/corpolate_booth'
+      );
+      const allData = getAllCorpolateBoothData();
+      itemIndex = allData.findIndex((data) => data.番号 === item?.番号);
+    }
+  }
 
   if (!item) {
     return <div>データが見つかりません。</div>;
@@ -39,7 +59,8 @@ export default async function CorpolateBoothDetailPage({
           <div className="w-[70%] aspect-square flex items-center justify-center relative max-w-lg mx-auto">
             <FallbackImage
               imageDir="corpolate_booth"
-              imageId={item.番号}
+              category="corpolate_booth"
+              sequenceNumber={itemIndex + 1}
               alt={item.出店タイトル || 'image'}
               fill
               className="object-contain"
