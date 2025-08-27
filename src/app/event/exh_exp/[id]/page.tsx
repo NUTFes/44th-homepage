@@ -67,11 +67,11 @@ export default async function ExhExpDetailPage({ params }: ExhExpDetailProps) {
           {item.PR文}
         </p>
 
-        <div className="flex justify-center gap-4 my-8">
+        <div className="flex  flex-wrap justify-center gap-2 my-8">
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="border-2 border-accent text-accent px-4 py-1 rounded-sm bg-base"
+              className="border-2 border-accent text-accent px-4 py-1 rounded-sm bg-base whitespace-nowrap"
             >
               {tag}
             </span>
