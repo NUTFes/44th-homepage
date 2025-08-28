@@ -2,6 +2,7 @@
 
 import { SponsoringCorpolateItem } from '@/src/types/sponsoring_corpolate';
 import Link from 'next/link';
+import Frame from '../common/frame';
 
 interface TextSponsorListProps {
   sponsors: SponsoringCorpolateItem[];
@@ -13,7 +14,7 @@ export default function TextSponsorList({ sponsors }: TextSponsorListProps) {
   }
 
   return (
-    <div className="bg-white border-4 border-yellow-400 p-6 text-center">
+    <Frame>
       <div className="space-y-2">
         {sponsors.map((sponsor, index) => {
           const SponsorText = () => (
@@ -41,6 +42,6 @@ export default function TextSponsorList({ sponsors }: TextSponsorListProps) {
           );
         })}
       </div>
-    </div>
+    </Frame>
   );
 }
