@@ -1,6 +1,7 @@
 'use client';
 
 import BackFrame from '@/src/components/common/back_frame';
+import Frame from '@/src/components/common/frame';
 import ReturnEventButton from '@/src/components/common/return_event_button';
 import TextStyle from '@/src/components/common/text_style';
 import ImageSponsorCard from '@/src/components/sponsoring_corpolate/ImageSponsorCard';
@@ -18,35 +19,38 @@ export default function SponsoringCorpolatePage() {
 
   return (
     <BackFrame>
-      <div className="container mx-auto py-8 px-4 text-[#432F2F]">
+      <div className="container mx-auto py-8 px-4 text-font_main">
         <ReturnEventButton href="/" />
 
         <div className="text-center py-8">
           <TextStyle styleType="title">協賛企業一覧</TextStyle>
-          <p className="text-body1 mt-4 text-[#432F2F]">
+          <p className="text-body1 mt-4 text-font_main">
             ご協賛いただいた企業様（順不同、敬称略）
           </p>
         </div>
-
-        {/* 画像付き協賛企業セクション */}
-        {imageSponsors.length > 0 && (
-          <div className="mb-12">
-            <div className="flex flex-col gap-6 max-w-md mx-auto">
-              {imageSponsors.map((sponsor, index) => {
-                const originalIndex = allData.findIndex(
-                  (item) => item.番号 === sponsor.番号
-                );
-                return (
-                  <ImageSponsorCard
-                    key={index}
-                    sponsor={sponsor}
-                    sequenceNumber={originalIndex + 1}
-                  />
-                );
-              })}
+        <div className="mb-8">
+        <Frame>
+          {/* 画像付き協賛企業セクション */}
+          {imageSponsors.length > 0 && (
+            <div className="mb-12">
+              <div className="flex flex-col gap-6 max-w-md mx-auto">
+                {imageSponsors.map((sponsor, index) => {
+                  const originalIndex = allData.findIndex(
+                    (item) => item.番号 === sponsor.番号
+                  );
+                  return (
+                    <ImageSponsorCard
+                      key={index}
+                      sponsor={sponsor}
+                      sequenceNumber={originalIndex + 1}
+                    />
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </Frame>
+        </div>
 
         {/* 文字のみ協賛企業セクション */}
         {textSponsors.length > 0 && (
