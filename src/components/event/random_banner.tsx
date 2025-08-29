@@ -25,22 +25,28 @@ export function RandomPlanItems() {
           backgroundSize: 'contain',
         }}
       >
-        {randomPlans.map((item) => (
-          <Link
-            key={item.番号}
-            href={`/event/plan/${encodeURIComponent(item.番号)}`}
-          >
-            <IdFrame>
-              <TextStyle styleType="body2">
-                <CellContent 
-                  imageId={`P${item.番号}`} 
-                  title={item.企画名} 
-                  sequenceNumber={parseInt(item.番号)}
-                />
-              </TextStyle>
-            </IdFrame>
-          </Link>
-        ))}
+        {randomPlans.map((item) => {
+          // 元のデータでのインデックスを取得
+          const originalIndex = plans.findIndex((data) => data === item);
+          const sequenceNumber = originalIndex + 1;
+          
+          return (
+            <Link
+              key={item.番号}
+              href={`/event/plan/${encodeURIComponent(item.番号)}`}
+            >
+              <IdFrame>
+                <TextStyle styleType="body2">
+                  <CellContent 
+                    imageId={`P${sequenceNumber}`} 
+                    title={item.企画名} 
+                    sequenceNumber={sequenceNumber}
+                  />
+                </TextStyle>
+              </IdFrame>
+            </Link>
+          );
+        })}
       </main>
     </div>
   );
