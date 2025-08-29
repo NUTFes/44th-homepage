@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import BackFrame from '@/src/components/common/back_frame';
 import IdFrame from '@/src/components/common/id_frame';
 import Line from '@/src/components/common/line';
@@ -7,7 +8,6 @@ import SponsorCarousel from '@/src/components/common/sponser-carousel'; // 追�
 import TextStyle from '@/src/components/common/text_style';
 import CellContent from '@/src/components/corpolate_booth/CellContent';
 import { getAllCorpolateBoothData } from '@/src/lib/corpolate_booth';
-import Link from 'next/link';
 
 // 🔧 配列をチャンクに分割する関数
 function chunkArray<T>(array: T[], size: number): T[][] {
@@ -58,25 +58,15 @@ export default function CorpolateBoothPage() {
                     {chunk.map((item, index) => {
                       const itemId =
                         item.番号 || `missing-${chunkIndex}-${index}`;
-                      // 元のデータでのインデックスを計算
-                      const originalIndex = allData.findIndex(
-                        (data) => data === item
-                      );
-                      const sequenceNumber =
-                        originalIndex >= 0 ? originalIndex + 1 : undefined;
-
                       return (
                         <div key={itemId} className="text-center">
                           <IdFrame>
                             <Link
-                              href={`/corpolate_booth/${encodeURIComponent(
-                                itemId
-                              )}`}
+                              href={`/corpolate_booth/${encodeURIComponent(itemId)}`}
                             >
                               <CellContent
                                 imageId={item.番号}
                                 title={item.出店タイトル}
-                                sequenceNumber={sequenceNumber}
                               />
                             </Link>
                           </IdFrame>

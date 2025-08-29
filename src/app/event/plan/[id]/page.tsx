@@ -1,4 +1,4 @@
-export const runtime = 'edge';
+import Link from 'next/link';
 import BackFrame from '@/src/components/common/back_frame';
 import DetailMap from '@/src/components/common/detail_map';
 import FallbackImage from '@/src/components/common/FallbackImage';
@@ -9,7 +9,8 @@ import TextStyle from '@/src/components/common/text_style';
 import TimeSchedule from '@/src/components/common/time_schedule';
 import { getAllPlanData, getPlanDataById } from '@/src/lib/plan';
 import { PlanItem } from '@/src/types/plan';
-import Link from 'next/link';
+
+export const runtime = 'edge';
 
 type PlanDetailProps = {
   params: {

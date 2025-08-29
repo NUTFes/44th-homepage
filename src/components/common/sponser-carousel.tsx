@@ -1,10 +1,10 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import SimpleCarousel from '@/src/components/common/simple-carousel';
 import ImageSponsorCard from '@/src/components/sponsoring_corpolate/ImageSponsorCard';
 import { getSponsoringCorpolateDataWithImages } from '@/src/lib/sponsoring_corpolate';
 import { SponsoringCorpolateItem } from '@/src/types/sponsoring_corpolate';
-import { useEffect, useState } from 'react';
 
 interface SponsorCarouselProps {
   title?: string;

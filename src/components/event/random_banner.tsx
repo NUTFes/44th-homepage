@@ -1,9 +1,9 @@
+import Link from 'next/link';
 import TextStyle from '@/src/components/common/text_style';
 import ExhExpCellContent from '@/src/components/event/exh_exp/CellContent';
 import CellContent from '@/src/components/event/plan/CellContent';
 import { getAllExhExpData } from '@/src/lib/exh_exp';
 import { getAllPlanData } from '@/src/lib/plan';
-import Link from 'next/link';
 import IdFrame from '../common/id_frame';
 
 function getRandomItems<T>(array: T[], count: number): T[] {
@@ -25,27 +25,18 @@ export function RandomPlanItems() {
           backgroundSize: 'contain',
         }}
       >
-        {randomPlans.map((item) => {
-          const originalIndex = plans.findIndex(
-            (plan) => plan.番号 === item.番号
-          );
-          return (
-            <Link
-              key={item.番号}
-              href={`/event/plan/${encodeURIComponent(item.番号)}`}
-            >
-              <IdFrame>
-                <TextStyle styleType="body2">
-                  <CellContent
-                    imageId={item.番号}
-                    title={item.企画名}
-                    sequenceNumber={originalIndex + 1}
-                  />
-                </TextStyle>
-              </IdFrame>
-            </Link>
-          );
-        })}
+        {randomPlans.map((item) => (
+          <Link
+            key={item.番号}
+            href={`/event/plan/${encodeURIComponent(item.番号)}`}
+          >
+            <IdFrame>
+              <TextStyle styleType="body2">
+                <CellContent imageId={item.番号} title={item.企画名} />
+              </TextStyle>
+            </IdFrame>
+          </Link>
+        ))}
       </main>
     </div>
   );
@@ -65,25 +56,21 @@ export function RandomExhExpItems() {
           backgroundSize: 'contain',
         }}
       >
-        {randomExhs.map((item) => {
-          const originalIndex = exhs.findIndex((exh) => exh.番号 === item.番号);
-          return (
-            <Link
-              key={item.番号}
-              href={`/event/exh_exp/${encodeURIComponent(item.番号)}`}
-            >
-              <IdFrame>
-                <TextStyle styleType="body2">
-                  <ExhExpCellContent
-                    imageId={item.番号}
-                    title={item.出店タイトル}
-                    sequenceNumber={originalIndex + 1}
-                  />
-                </TextStyle>
-              </IdFrame>
-            </Link>
-          );
-        })}
+        {randomExhs.map((item) => (
+          <Link
+            key={item.番号}
+            href={`/event/exh_exp/${encodeURIComponent(item.番号)}`}
+          >
+            <IdFrame>
+              <TextStyle styleType="body2">
+                <ExhExpCellContent
+                  imageId={item.番号}
+                  title={item.出店タイトル}
+                />
+              </TextStyle>
+            </IdFrame>
+          </Link>
+        ))}
       </main>
     </div>
   );

@@ -1,0 +1,23 @@
+# workflowの名前
+name: CI - Code Quality
+
+# workflowのトリガー
+on:
+  # Pull Request時
+  pull_request:
+    # 対象のブランチを指定
+    branches:
+      - develop
+  workflow_dispatch:
+
+jobs:
+  code-quality:
+    uses: NUTFes/.github/.github/workflows/npm-code-quality-pr.yaml@v1
+    with:
+      workdir: .
+      node_version: '20'
+      format_script: 'fmt'
+      lint_script: 'lint-fix'
+      typecheck_script: 'type-check'
+      run_auto_commit: true
+    secrets: inherit
