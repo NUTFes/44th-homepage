@@ -65,8 +65,9 @@ export default function CorpolateBoothPage() {
                               href={`/corpolate_booth/${encodeURIComponent(itemId)}`}
                             >
                               <CellContent
-                                imageId={item.番号}
+                                imageId={`C${item.番号}`}
                                 title={item.出店タイトル}
+                                sequenceNumber={parseInt(item.番号)}
                               />
                             </Link>
                           </IdFrame>

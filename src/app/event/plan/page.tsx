@@ -102,8 +102,9 @@ export default function PlanPage() {
                           >
                             <TextStyle styleType="body2">
                               <CellContent
-                                imageId={item.番号}
+                                imageId={`P${item.番号}`}
                                 title={item.企画名}
+                                sequenceNumber={parseInt(item.番号)}
                               />
                             </TextStyle>
                           </Link>
