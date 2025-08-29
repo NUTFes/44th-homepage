@@ -29,7 +29,7 @@ export function RandomPlanItems() {
           // 元のデータでのインデックスを取得
           const originalIndex = plans.findIndex((data) => data === item);
           const sequenceNumber = originalIndex + 1;
-          
+
           return (
             <Link
               key={item.番号}
@@ -37,9 +37,9 @@ export function RandomPlanItems() {
             >
               <IdFrame>
                 <TextStyle styleType="body2">
-                  <CellContent 
-                    imageId={`P${sequenceNumber}`} 
-                    title={item.企画名} 
+                  <CellContent
+                    imageId={`P${sequenceNumber}`}
+                    title={item.企画名}
                     sequenceNumber={sequenceNumber}
                   />
                 </TextStyle>
@@ -70,7 +70,7 @@ export function RandomExhExpItems() {
           // 元のデータでのインデックスを取得
           const originalIndex = exhs.findIndex((data) => data === item);
           const sequenceNumber = originalIndex + 1;
-          
+
           return (
             <Link
               key={item.番号}
