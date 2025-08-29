@@ -1,9 +1,9 @@
 'use client';
 
+import React from 'react';
 import Frame from '@/src/components/common/frame';
 import Line from '@/src/components/common/line';
 import TextStyle from '@/src/components/common/text_style';
-import React from 'react';
 
 interface Info {
   番号: string;
@@ -17,8 +17,9 @@ interface Props {
 }
 
 const InfosClient: React.FC<Props> = ({ infos }) => {
-
-  const sortedInfos = [...infos].sort((a, b) => Number(b.番号) - Number(a.番号));
+  const sortedInfos = [...infos].sort(
+    (a, b) => Number(b.番号) - Number(a.番号)
+  );
 
   return (
     <div>

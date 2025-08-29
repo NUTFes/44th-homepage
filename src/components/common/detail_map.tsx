@@ -1,4 +1,5 @@
 'use client';
+
 import Frame from './frame';
 import TextStyle from './text_style';
 

@@ -2,6 +2,7 @@ import Image from 'next/image'; // Assuming you're using Next.js for image handl
 import Frame from '../../common/frame';
 import Line from '../../common/line';
 import TextStyle from '../../common/text_style';
+
 const Cast = () => {
   return (
     <Frame>

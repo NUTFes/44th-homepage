@@ -1,8 +1,7 @@
 'use client';
 
-import { SponsoringCorpolateItem } from '@/src/types/sponsoring_corpolate';
 import Link from 'next/link';
-import Frame from '../common/frame';
+import { SponsoringCorpolateItem } from '@/src/types/sponsoring_corpolate';
 
 interface TextSponsorListProps {
   sponsors: SponsoringCorpolateItem[];

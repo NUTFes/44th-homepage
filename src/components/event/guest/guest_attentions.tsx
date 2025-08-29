@@ -4,6 +4,7 @@ import { MdOutlineNoMeals } from 'react-icons/md';
 import Frame from '../../common/frame';
 import Line from '../../common/line';
 import TextStyle from '../../common/text_style';
+
 const GuestAttentions = () => {
   return (
     <div>

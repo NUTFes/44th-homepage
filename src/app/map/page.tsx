@@ -6,6 +6,8 @@ import AllMap from '@/src/components/map/all_map';
 import KougiMap from '@/src/components/map/kougi_map';
 import MapAttention from '@/src/components/map/map_attention';
 import Image from 'next/image';
+import React from 'react';
+
 
 export default function MapPage() {
   return (

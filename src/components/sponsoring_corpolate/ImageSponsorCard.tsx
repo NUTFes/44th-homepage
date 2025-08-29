@@ -1,8 +1,8 @@
 'use client';
 
+import Link from 'next/link';
 import FallbackImage from '@/src/components/common/FallbackImage';
 import { SponsoringCorpolateItem } from '@/src/types/sponsoring_corpolate';
-import Link from 'next/link';
 
 interface ImageSponsorCardProps {
   sponsor: SponsoringCorpolateItem;
