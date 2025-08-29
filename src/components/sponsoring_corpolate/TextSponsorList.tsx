@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { SponsoringCorpolateItem } from '@/src/types/sponsoring_corpolate';
+import Frame from '../common/frame';
 
 interface TextSponsorListProps {
   sponsors: SponsoringCorpolateItem[];

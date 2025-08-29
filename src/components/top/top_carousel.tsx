@@ -4,7 +4,7 @@ import Carousel from '@/src/components/common/carousel';
 const TopCarousel: React.FC = () => {
   return (
     <Carousel autoSlide={true}>
-            <Image
+      <Image
         src="/carousel_top/youchien_top.png"
         alt="幼稚園WARSとのコラボ決定！"
         width={1266} // 必要に応じて画像の幅を指定

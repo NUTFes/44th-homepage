@@ -29,27 +29,27 @@ export default function SponsoringCorpolatePage() {
           </p>
         </div>
         <div className="mb-8">
-        <Frame>
-          {/* 画像付き協賛企業セクション */}
-          {imageSponsors.length > 0 && (
-            <div className="mb-12">
-              <div className="flex flex-col gap-6 max-w-md mx-auto">
-                {imageSponsors.map((sponsor, index) => {
-                  const originalIndex = allData.findIndex(
-                    (item) => item.番号 === sponsor.番号
-                  );
-                  return (
-                    <ImageSponsorCard
-                      key={index}
-                      sponsor={sponsor}
-                      sequenceNumber={originalIndex + 1}
-                    />
-                  );
-                })}
+          <Frame>
+            {/* 画像付き協賛企業セクション */}
+            {imageSponsors.length > 0 && (
+              <div className="mb-12">
+                <div className="flex flex-col gap-6 max-w-md mx-auto">
+                  {imageSponsors.map((sponsor, index) => {
+                    const originalIndex = allData.findIndex(
+                      (item) => item.番号 === sponsor.番号
+                    );
+                    return (
+                      <ImageSponsorCard
+                        key={index}
+                        sponsor={sponsor}
+                        sequenceNumber={originalIndex + 1}
+                      />
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          )}
-        </Frame>
+            )}
+          </Frame>
         </div>
 
         {/* 文字のみ協賛企業セクション */}
