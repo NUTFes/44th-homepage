@@ -32,7 +32,11 @@ export function RandomPlanItems() {
           >
             <IdFrame>
               <TextStyle styleType="body2">
-                <CellContent imageId={item.番号} title={item.企画名} />
+                <CellContent 
+                  imageId={`P${item.番号}`} 
+                  title={item.企画名} 
+                  sequenceNumber={parseInt(item.番号)}
+                />
               </TextStyle>
             </IdFrame>
           </Link>
@@ -56,21 +60,28 @@ export function RandomExhExpItems() {
           backgroundSize: 'contain',
         }}
       >
-        {randomExhs.map((item) => (
-          <Link
-            key={item.番号}
-            href={`/event/exh_exp/${encodeURIComponent(item.番号)}`}
-          >
-            <IdFrame>
-              <TextStyle styleType="body2">
-                <ExhExpCellContent
-                  imageId={item.番号}
-                  title={item.出店タイトル}
-                />
-              </TextStyle>
-            </IdFrame>
-          </Link>
-        ))}
+        {randomExhs.map((item) => {
+          // 元のデータでのインデックスを取得
+          const originalIndex = exhs.findIndex((data) => data === item);
+          const sequenceNumber = originalIndex + 1;
+          
+          return (
+            <Link
+              key={item.番号}
+              href={`/event/exh_exp/${encodeURIComponent(item.番号)}`}
+            >
+              <IdFrame>
+                <TextStyle styleType="body2">
+                  <ExhExpCellContent
+                    imageId={`E${sequenceNumber}`}
+                    title={item.出店タイトル}
+                    sequenceNumber={sequenceNumber}
+                  />
+                </TextStyle>
+              </IdFrame>
+            </Link>
+          );
+        })}
       </main>
     </div>
   );

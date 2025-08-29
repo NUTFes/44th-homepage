@@ -98,7 +98,7 @@ export default function ExhExpPage() {
                           >
                             <TextStyle styleType="body2">
                               <CellContent
-                                imageId={item.番号}
+                                imageId={`E${item.番号}`}
                                 title={item.出店タイトル}
                                 sequenceNumber={sequenceNumber}
                               />
