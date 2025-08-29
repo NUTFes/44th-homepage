@@ -85,7 +85,9 @@ export default function Footer() {
         </div>
       </div>
       <div className="pt-12 font-body2 text-base text-center">
-        <p>このサイトでは、一部のアイコンにFontoAwesome5、FontAwesome6、MaterialDesignIcons、RemixIcon、TablerIconsを使用しています。 </p>
+        <p>
+          このサイトでは、一部のアイコンにFontoAwesome5、FontAwesome6、MaterialDesignIcons、RemixIcon、TablerIconsを使用しています。{' '}
+        </p>
       </div>
     </footer>
   );
