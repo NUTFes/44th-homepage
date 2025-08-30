@@ -11,7 +11,7 @@ import MapAttention from '@/src/components/map/map_attention';
 export default function MapPage() {
   return (
     <BackFrame>
-      <div className="flex flex-col items-center gap-y-8 pt-4 py-8">
+      <div className="flex flex-col items-center gap-y-8 pt-4 py-8 text-font_main">
         <TextStyle styleType="title">マップ</TextStyle>
         <p className="text-center">
           各マップは、案内所で配布されているパンフレットにも掲載されていますので、ぜひ併せてご利用ください。
