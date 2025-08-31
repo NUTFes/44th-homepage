@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import AreaMap from '../map/area_map';
 import KougiMap from '../map/kougi_map'; // ← 追加
 import Frame from './frame';
 import LinkButton from './link_button';
@@ -37,7 +36,6 @@ const defaultImage = '/images/map/all_common.png';
 const DetailMap = ({ location, roomNumber }: DetailMapProps) => {
   const imageSrc = locationImageMap[location] ?? defaultImage;
 
-  const isExactLectureArea = location === '講義棟エリア';
   const isLectureRelated = location.includes('講義棟');
 
   return (
@@ -56,9 +54,7 @@ const DetailMap = ({ location, roomNumber }: DetailMapProps) => {
         )}
 
         <div className="flex items-center justify-center mb-4 bg-gray-200">
-          {isExactLectureArea ? (
-            <AreaMap />
-          ) : isLectureRelated ? (
+          {isLectureRelated ? (
             <KougiMap />
           ) : (
             <Image
