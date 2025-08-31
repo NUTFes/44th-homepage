@@ -108,7 +108,7 @@ export default function FoodPage() {
                           <IdFrame>
                             <Link href={`/food/${encodeURIComponent(itemId)}`}>
                               <CellContent
-                                imageId={item.番号}
+                                imageId={`F${item.番号}`}
                                 title={item.出店タイトル}
                                 sequenceNumber={sequenceNumber}
                               />

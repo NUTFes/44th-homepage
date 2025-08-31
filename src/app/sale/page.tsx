@@ -90,7 +90,7 @@ export default function SalePage() {
                         <IdFrame>
                           <Link href={`/sale/${encodeURIComponent(itemId)}`}>
                             <CellContent
-                              imageId={item.番号}
+                              imageId={`S${item.番号}`}
                               title={item.出店タイトル}
                               sequenceNumber={sequenceNumber}
                             />
