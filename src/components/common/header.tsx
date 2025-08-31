@@ -172,7 +172,9 @@ export default function Header() {
           ) : (
             <>
               <div className="text-lg text-gray">代表者挨拶</div>
-              <div className="text-lg text-gray">アクセス</div>
+              <Link href="/access" onClick={toggleMenu} className="text-lg">
+                アクセス
+              </Link>
               <div className="text-lg text-gray">マップ</div>
 
               <div className="space-y-3">
@@ -195,8 +197,24 @@ export default function Header() {
 
               <div className="text-lg text-gray">食品販売</div>
               <div className="text-lg text-gray">物品販売</div>
-              <div className="text-lg text-gray">企業ブース</div>
-              <div className="text-lg text-gray">協賛企業一覧</div>
+              <Link
+                href="/corpolate_booth"
+                onClick={toggleMenu}
+                className="text-lg"
+              >
+                企業ブース
+              </Link>
+              {DISABLE_SPONSORS ? (
+                <div className="text-lg text-gray">協賛企業一覧</div>
+              ) : (
+                <Link
+                  href="/sponsoring_corpolate"
+                  onClick={toggleMenu}
+                  className="text-lg"
+                >
+                  協賛企業一覧
+                </Link>
+              )}
             </>
           )}
         </nav>
