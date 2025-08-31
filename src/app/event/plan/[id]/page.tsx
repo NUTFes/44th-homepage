@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import BackFrame from '@/src/components/common/back_frame';
-import DetailMap from '@/src/components/common/detail_map';
+import DetailMapPlan from '@/src/components/common/detail_map_plan';
 import FallbackImage from '@/src/components/common/FallbackImage';
 import Frame from '@/src/components/common/frame';
 import Line from '@/src/components/common/line';
@@ -144,7 +144,7 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
           <TimeSchedule />
         </Frame>
 
-        <DetailMap location={item['開催場所（晴れ）']} roomNumber={item.番号} />
+        <DetailMapPlan location={item['開催場所（晴れ）']} roomNumber={item.番号} />
 
         <ReturnEventButton size={'large'} href="/event/plan" />
       </div>
