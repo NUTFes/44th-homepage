@@ -16,16 +16,6 @@ export default function GreetingPage() {
           <TextStyle styleType="title" className=''>
             代表者挨拶
           </TextStyle>
-          
-          <div className="w-full flex justify-center">
-                  <Image
-                    src="/images/greeting/greeting2.png"
-                    alt="50周年記念"
-                    width={500}
-                    height={300}
-                    className="w-[90%] h-auton"
-                  />
-            </div>
           <div className='w-[90%] flex flex-col text-center gap-y-8 py-4 ml-auto mr-auto'>
             <TextStyle styleType="body1_khaki" >
               技大祭44thのテーマ
