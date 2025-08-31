@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import BackFrame from '@/src/components/common/back_frame';
 import Line from '@/src/components/common/line';
 import LinkButton from '@/src/components/common/link_button';
@@ -8,7 +9,7 @@ import {
   RandomExhExpItems,
   RandomPlanItems,
 } from '@/src/components/event/random_banner';
-import Image from 'next/image';
+
 export default function EventPage() {
   return (
     <div>

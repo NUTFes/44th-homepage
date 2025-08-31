@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import BackFrame from '@/src/components/common/back_frame';
 import IdFrame from '@/src/components/common/id_frame';
 import Line from '@/src/components/common/line';
@@ -11,8 +13,6 @@ import TextStyle from '@/src/components/common/text_style';
 import CellContent from '@/src/components/event/plan/CellContent';
 import { getAllPlanData } from '@/src/lib/plan';
 import { PlanItem } from '@/src/types/plan';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
 
 const allTags = [
   '子供向け',
@@ -94,13 +94,6 @@ export default function PlanPage() {
                   {chunk.map((item, index) => {
                     const itemId =
                       item.番号 || `missing-${chunkIndex}-${index}`;
-                    // 元のデータでのインデックスを計算
-                    const originalIndex = allData.findIndex(
-                      (data) => data === item
-                    );
-                    const sequenceNumber =
-                      originalIndex >= 0 ? originalIndex + 1 : undefined;
-
                     return (
                       <div key={itemId} className="text-center">
                         <IdFrame>
@@ -109,9 +102,9 @@ export default function PlanPage() {
                           >
                             <TextStyle styleType="body2">
                               <CellContent
-                                imageId={item.番号}
+                                imageId={`P${item.番号}`}
                                 title={item.企画名}
-                                sequenceNumber={sequenceNumber}
+                                sequenceNumber={parseInt(item.番号)}
                               />
                             </TextStyle>
                           </Link>

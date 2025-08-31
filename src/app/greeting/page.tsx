@@ -1,3 +1,4 @@
+
 import BackFrame from '@/src/components/common/back_frame';
 import TextStyle from '@/src/components/common/text_style';
 import Image from 'next/image';
@@ -8,10 +9,16 @@ import Taiko from "../../components/greeting/Taiko_greeting";
 import SponsorCarousel from '../../components/common/sponser-carousel';
 import GreetingCard from '../../components/greeting/greetingcard';
 
+import React from 'react';
+import BackFrame from '@/src/components/common/back_frame';
+import About50th from '../../components/greeting/about50th';
+
+
 export default function GreetingPage() {
   return (
     <div>
       <BackFrame>
+
         <div className="flex flex-col text-center gap-y-8 py-4">
           <TextStyle styleType="title" className=''>
             代表者挨拶
@@ -87,6 +94,11 @@ export default function GreetingPage() {
 />
           <SponsorCarousel/>
         </div>
+
+        <h1 className="text-center text-2xl font-bold">Greeting Page</h1>
+        <About50th />
+        <h1>Greeting Page</h1>
+
       </BackFrame>
     </div>
   );

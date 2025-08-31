@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import BackFrame from '@/src/components/common/back_frame';
 import Line from '@/src/components/common/line';
 import TextStyle from '@/src/components/common/text_style';
@@ -5,10 +6,10 @@ import Infos from '@/src/components/top/Infos';
 import RecruitmentSponsors from '@/src/components/top/recruitment_sponsors';
 import TopAttentions from '@/src/components/top/top_attentions';
 import TopCarousel from '@/src/components/top/top_carousel';
-import Image from 'next/image';
 import SponsorCarousel from '../components/common/sponser-carousel';
 import TimeSchedule from '../components/common/time_schedule';
 import Youchien from '../components/top/youchien';
+
 // const TitleDate = '/logo/title_date.svg';
 // const TitleLogo = '/logo/title_logo.svg';
 export const runtime = 'edge';

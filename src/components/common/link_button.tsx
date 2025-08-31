@@ -1,6 +1,7 @@
-"use client";
-import React, { ReactNode } from "react";
-import Link from "next/link";
+'use client';
+
+import React, { ReactNode } from 'react';
+import Link from 'next/link';
 
 interface LinkButtonProps {
   href: string;
@@ -35,7 +36,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({
           href={href}
           className={`px-12  py-4 text-white bg-main rounded-sm text-body2 shadow_button text-center ${className}`}
         >
-          {children}{" "}
+          {children}{' '}
         </Link>
       </div>
     );

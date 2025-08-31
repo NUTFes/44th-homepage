@@ -1,13 +1,10 @@
-
 type LineProps = {
-    className?: string;
+  className?: string;
 };
 
-const Line: React.FC<LineProps> = ({
-    className,
-}) => {
-    return(
-        <div className={`border-[1px] border-accent rounded-lg ${className}`}/>
-    );
-}
+const Line: React.FC<LineProps> = ({ className }) => {
+  return (
+    <div className={`border-[1px] border-accent rounded-lg ${className}`} />
+  );
+};
 export default Line;

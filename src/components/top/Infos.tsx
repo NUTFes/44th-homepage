@@ -29,10 +29,14 @@ const Infos = async () => {
     return (
       <div>
         <Frame>
-        <p className="text-center">
-          <TextStyle styleType="section_title">お知らせ</TextStyle>
-        </p>
-        <p><TextStyle styleType="body3">エラーが発生しました: {errorMessage}</TextStyle></p>
+          <p className="text-center">
+            <TextStyle styleType="section_title">お知らせ</TextStyle>
+          </p>
+          <p>
+            <TextStyle styleType="body3">
+              エラーが発生しました: {errorMessage}
+            </TextStyle>
+          </p>
         </Frame>
       </div>
     );

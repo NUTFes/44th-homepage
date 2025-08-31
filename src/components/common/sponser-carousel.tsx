@@ -1,10 +1,10 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import SimpleCarousel from '@/src/components/common/simple-carousel';
 import ImageSponsorCard from '@/src/components/sponsoring_corpolate/ImageSponsorCard';
 import { getSponsoringCorpolateDataWithImages } from '@/src/lib/sponsoring_corpolate';
 import { SponsoringCorpolateItem } from '@/src/types/sponsoring_corpolate';
-import { useEffect, useState } from 'react';
 
 interface SponsorCarouselProps {
   title?: string;
@@ -17,7 +17,9 @@ export default function SponsorCarousel({
   autoSlide = true,
   autoSlideInterval = 5000,
 }: SponsorCarouselProps) {
-  const [imageSponsors, setImageSponsors] = useState<SponsoringCorpolateItem[]>([]);
+  const [imageSponsors, setImageSponsors] = useState<SponsoringCorpolateItem[]>(
+    []
+  );
 
   useEffect(() => {
     const data = getSponsoringCorpolateDataWithImages();
@@ -49,7 +51,10 @@ export default function SponsorCarousel({
         <div className="w-full border border-second rounded-sm py-2">
           <div className="flex flex-col gap-4">
             <div className="w-full px-2 h-auto">
-              <SimpleCarousel autoSlide={autoSlide} autoSlideInterval={autoSlideInterval}>
+              <SimpleCarousel
+                autoSlide={autoSlide}
+                autoSlideInterval={autoSlideInterval}
+              >
                 {imageSponsors.map((sponsor, index) => (
                   <ImageSponsorCard key={index} sponsor={sponsor} />
                 ))}
