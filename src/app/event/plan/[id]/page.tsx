@@ -144,7 +144,10 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
           <TimeSchedule />
         </Frame>
 
-        <DetailMapPlan location={item['開催場所（晴れ）']} roomNumber={item.番号} />
+        <DetailMapPlan
+          location={item['開催場所（晴れ）']}
+          roomNumber={item.番号}
+        />
 
         <ReturnEventButton size={'large'} href="/event/plan" />
       </div>
