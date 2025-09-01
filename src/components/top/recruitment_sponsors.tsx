@@ -1,56 +1,70 @@
-'use client';
+// 'use client';
 
+// import React, { useState } from 'react';
+// import Link from 'next/link';
+import Image from 'next/image';
 import Frame from '@/src/components/common/frame';
 import Line from '@/src/components/common/line';
 import TextStyle from '@/src/components/common/text_style';
-import Link from 'next/link';
-import React, { useState } from 'react';
-import { FaFileAlt } from 'react-icons/fa';
-import { GoCopy } from 'react-icons/go';
+
+// import { FaFileAlt } from 'react-icons/fa';
+// import { GoCopy } from 'react-icons/go';
 
 const RecruitmentSponsors: React.FC = () => {
-  const [copied, setCopied] = useState(false);
+  //   const [copied, setCopied] = useState(false);
 
-  // メールアドレスのスパム対策
-  const emailName = 'nutfes_shogai_kyosan';
-  const emailDomain = 'googlegroups.com';
+  //   // メールアドレスのスパム対策
+  //   const emailName = 'nutfes_shogai_kyosan';
+  //   const emailDomain = 'googlegroups.com';
 
-  const handleCopyEmail = () => {
-    // 直接メールアドレスを構築
-    const email = `${emailName}@${emailDomain}`;
+  //   const handleCopyEmail = () => {
+  //     // 直接メールアドレスを構築
+  //     const email = `${emailName}@${emailDomain}`;
 
-    // クリップボードにコピー
-    navigator.clipboard
-      .writeText(email)
-      .then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-      })
-      .catch((err) => {
-        console.error('メールアドレスのコピーに失敗しました', err);
-      });
-  };
+  //     // クリップボードにコピー
+  //     navigator.clipboard
+  //       .writeText(email)
+  //       .then(() => {
+  //         setCopied(true);
+  //         setTimeout(() => setCopied(false), 2000);
+  //       })
+  //       .catch((err) => {
+  //         console.error('メールアドレスのコピーに失敗しました', err);
+  //       });
+  //   };
 
   return (
     <Frame>
       <div className="text-center w-full">
-        <TextStyle styleType="section_title">企業協賛大募集！</TextStyle>
+        <TextStyle styleType="section_title">
+          たくさんのご協賛ありがとうございました！
+        </TextStyle>
       </div>
 
       <Line className="border-main w-full my-4" />
 
       <div className="flex flex-col gap-4">
-        <div className="text-font_main text-body3">
+        {/* <div className="text-font_main text-body3">
           <p>
             技大祭実行委員会では、活気あふれる大学祭の実現に向け、皆様からの力強いご支援を賜りたく、ご協賛のお願いをしております。
           </p>
           <p className="mt-2">
             ご関心をお持ちいただけましたら、こちらの資料をご覧いただき、ご検討いただけますと幸いです。
           </p>
+        </div> */}
+        <div className="text-font_main text-body3">
+          <b>第44回技大祭の協賛募集は終了いたしました。</b>
+          来年度もご協賛を募集する予定ですので、ぜひご検討いただけますと幸いです。
         </div>
-
-        {/* 資料を見るボタン */}
-        <Link
+        <div className="relative flex justify-center">
+          <Image
+            src="/images/illusts/illust_shadow_people_17.png"
+            alt="ご協賛ありがとうございました"
+            width={100}
+            height={100}
+          />
+        </div>
+        {/* <Link
           href="https://drive.google.com/drive/u/0/folders/15rxDMxk7GcWHYNMCwtlqw6kEP4-K2jKk"
           target="_blank"
           rel="noopener noreferrer"
@@ -64,17 +78,17 @@ const RecruitmentSponsors: React.FC = () => {
               <div className="text-white text-body1 font-noto">資料を見る</div>
             </div>
           </button>
-        </Link>
+        </Link> */}
 
-        <Line className="border-main w-full my-2" />
+        {/* <Line className="border-main w-full my-2" />
 
         <div className="flex flex-col gap-3">
           <p className="text-font_main text-body3">
             協賛のお問い合わせは、こちらのメールアドレスからご連絡ください。
-          </p>
+          </p> */}
 
-          {/* メールアドレスをコピーボタン*/}
-          <button
+        {/* メールアドレスをコピーボタン*/}
+        {/* <button
             onClick={handleCopyEmail}
             className="w-full bg-font_link hover:bg-opacity-80 text-white py-4 rounded flex items-center relative transition-colors shadow_button"
             aria-label="メールアドレスをコピー"
@@ -95,8 +109,7 @@ const RecruitmentSponsors: React.FC = () => {
             style={{ opacity: copied ? 1 : 0 }}
           >
             コピーしました
-          </div>
-        </div>
+          </div> */}
       </div>
     </Frame>
   );

@@ -1,11 +1,11 @@
 'use client';
 
+import { useState } from 'react';
+import Image from 'next/image';
 import {
   generateImageFallbacks,
   getInitialImageSrc,
 } from '@/src/utils/imageUtils';
-import Image from 'next/image';
-import { useState } from 'react';
 
 interface FallbackImageProps {
   imageDir: string;
@@ -111,8 +111,10 @@ export default function FallbackImage({
   };
 
   if (fill) {
-    return <Image {...imageProps} fill />;
+    return <Image {...imageProps} fill alt={alt ?? ''} />;
   }
 
-  return <Image {...imageProps} width={width} height={height} />;
+  return (
+    <Image {...imageProps} width={width} height={height} alt={alt ?? ''} />
+  );
 }

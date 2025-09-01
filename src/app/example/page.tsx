@@ -1,16 +1,15 @@
+import Image from 'next/image';
 import Icon from '@/public/icon/44thlogo.png';
 import BackFrame from '@/src/components/common/back_frame';
+import Carousel from '@/src/components/common/carousel';
 import Frame from '@/src/components/common/frame';
 import Line from '@/src/components/common/line';
+import LinkButton from '@/src/components/common/link_button';
 import TextStyle from '@/src/components/common/text_style';
 import Infos from '@/src/components/top/Infos';
-import Image from 'next/image';
 import Youchien from '@/src/components/top/youchien';
-
-import Carousel from '@/src/components/common/carousel';
-
-import LinkButton from '@/src/components/common/link_button';
 import { MdMailOutline } from 'react-icons/md';
+
 export const runtime = 'edge';
 
 export default function TopPage() {
@@ -54,7 +53,7 @@ export default function TopPage() {
               （サイト外リンク）
             </LinkButton>
           </Frame>
-                      <Youchien></Youchien>
+          <Youchien></Youchien>
           <Infos></Infos>
 
           <Frame />

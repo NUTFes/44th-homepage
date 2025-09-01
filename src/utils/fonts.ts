@@ -1,9 +1,9 @@
-import localFont from "next/font/local";
+import localFont from 'next/font/local';
 
 export const notoSansJP = localFont({
-  src: "../fonts/NotoSansJP-VariableFont_wght.ttf",
+  src: '../fonts/NotoSansJP-VariableFont_wght.ttf',
   display: 'swap',
-  variable: "--font-noto-sans-jp",
+  variable: '--font-noto-sans-jp',
 });
 
 export const newTegomin = localFont({

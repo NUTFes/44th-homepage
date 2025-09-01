@@ -1,8 +1,8 @@
-"use client";
-import React, { ReactNode, useEffect, useState } from "react";
-import { useSwipeable } from "react-swipeable";
-import { FaAngleRight } from "react-icons/fa6";
-import { FaAngleLeft } from "react-icons/fa6";
+'use client';
+
+import React, { ReactNode, useEffect, useState } from 'react';
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6';
+import { useSwipeable } from 'react-swipeable';
 
 interface CaroucelProps {
   children: ReactNode | ReactNode[]; //単一の要素|複数の要素
@@ -43,7 +43,7 @@ const Carousel: React.FC<CaroucelProps> = ({
       nextSlide();
     }, autoSlideInterval); //スライドする→指定された時間待つ
     return () => clearInterval(slideInterval);
-  }, [nextSlide,currentIndex, autoSlide, autoSlideInterval]);
+  }, [nextSlide, currentIndex, autoSlide, autoSlideInterval]);
   return (
     <div className={`relative overflow-hidden ${className}`} {...swipeHandlers}>
       <div
@@ -53,7 +53,9 @@ const Carousel: React.FC<CaroucelProps> = ({
         {childrenArray.map((child, index) => (
           <div key={index} className="w-full flex-shrink-0 relative z-10">
             <div className="flex items-center justify-center h-full w-full">
-              <div className="object-contain max-h-full max-w-full overflow-hidden">{child}</div>
+              <div className="object-contain max-h-full max-w-full overflow-hidden">
+                {child}
+              </div>
             </div>
           </div>
         ))}
@@ -77,7 +79,7 @@ const Carousel: React.FC<CaroucelProps> = ({
             key={index}
             onClick={() => goToSlide(index)}
             className={`w-2 h-2 rounded-full shadow_dark border border-main ${
-              currentIndex === index ? "bg-main" : "bg-white_back"
+              currentIndex === index ? 'bg-main' : 'bg-white_back'
             }`}
           />
         ))}

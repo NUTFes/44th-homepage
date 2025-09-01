@@ -1,6 +1,7 @@
 import Frame from '../../common/frame';
 import Line from '../../common/line';
 import TextStyle from '../../common/text_style';
+
 const TicketInfos = () => {
   return (
     <Frame>

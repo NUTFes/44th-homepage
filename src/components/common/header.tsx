@@ -1,8 +1,9 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+
 // const Logo44th = '/icon/44thlogo_shadow.svg';
 // const BiMenu = '/icon/BiMenu_shadow.svg';
 
@@ -13,7 +14,7 @@ const DISABLE_LINKS_TEMPORARILY = true;
 // 特定のリンクを個別に無効化するためのフラグ
 const DISABLE_GREETING = true; // 代表者挨拶を無効化
 const DISABLE_MAP = true; // マップを無効化
-const DISABLE_SPONSORS = true; // 協賛企業一覧を無効化
+const DISABLE_SPONSORS = false; // 協賛企業一覧を無効化
 
 export default function Header() {
   // メニューの開閉状態を管理するための状態
@@ -171,7 +172,9 @@ export default function Header() {
           ) : (
             <>
               <div className="text-lg text-gray">代表者挨拶</div>
-              <div className="text-lg text-gray">アクセス</div>
+              <Link href="/access" onClick={toggleMenu} className="text-lg">
+                アクセス
+              </Link>
               <div className="text-lg text-gray">マップ</div>
 
               <div className="space-y-3">
@@ -194,8 +197,24 @@ export default function Header() {
 
               <div className="text-lg text-gray">食品販売</div>
               <div className="text-lg text-gray">物品販売</div>
-              <div className="text-lg text-gray">企業ブース</div>
-              <div className="text-lg text-gray">協賛企業一覧</div>
+              <Link
+                href="/corpolate_booth"
+                onClick={toggleMenu}
+                className="text-lg"
+              >
+                企業ブース
+              </Link>
+              {DISABLE_SPONSORS ? (
+                <div className="text-lg text-gray">協賛企業一覧</div>
+              ) : (
+                <Link
+                  href="/sponsoring_corpolate"
+                  onClick={toggleMenu}
+                  className="text-lg"
+                >
+                  協賛企業一覧
+                </Link>
+              )}
             </>
           )}
         </nav>

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 const MoveClouds: React.FC = () => {
   return (
     <div>
