@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 // 5月時点の公開用に、一時的にリンクを無効化するためのフラグ
 // 後で有効にする場合は、これをfalseに変更するだけ
-const DISABLE_LINKS_TEMPORARILY = true;
+const DISABLE_LINKS_TEMPORARILY = false;
 
 // 特定のリンクを個別に無効化するためのフラグ
 const DISABLE_GREETING = false; // 代表者挨拶を無効化
