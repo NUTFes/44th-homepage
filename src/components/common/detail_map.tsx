@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import KougiMap from '../map/kougi_map'; // ← 追加
+import KougiMap from '../map/kougi_map';
 import Frame from './frame';
 import LinkButton from './link_button';
 import TextStyle from './text_style';
@@ -38,6 +38,22 @@ const DetailMap = ({ location, roomNumber }: DetailMapProps) => {
 
   const isLectureRelated = location.includes('講義棟');
 
+  // 階層画像の判定
+  const floorImageSrc =
+    roomNumber?.includes('講義棟1F')
+      ? '/images/map/kougi_1f.png'
+      : roomNumber?.includes('講義棟2F')
+      ? '/images/map/kougi_2f.png'
+      : roomNumber?.includes('講義棟3F')
+      ? '/images/map/kougi_3f.png'
+      : null;
+
+  // KougiMap を表示しない条件（階層指定がある場合）
+  const isFloorOnly =
+    roomNumber?.includes('講義棟1F') ||
+    roomNumber?.includes('講義棟2F') ||
+    roomNumber?.includes('講義棟3F');
+
   return (
     <div>
       <Frame>
@@ -53,9 +69,16 @@ const DetailMap = ({ location, roomNumber }: DetailMapProps) => {
           </TextStyle>
         )}
 
-        <div className="flex items-center justify-center mb-4 bg-gray-200">
-          {isLectureRelated ? (
+        <div className="flex flex-col items-center justify-center mb-4 bg-gray-200 gap-4">
+          {isLectureRelated && !isFloorOnly ? (
             <KougiMap />
+          ) : floorImageSrc ? (
+            <Image
+              src={floorImageSrc}
+              alt={`${roomNumber}のフロアマップ`}
+              width={1000}
+              height={1000}
+            />
           ) : (
             <Image
               src={imageSrc}
