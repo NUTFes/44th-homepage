@@ -29,7 +29,7 @@ export default function GreetingPage() {
               </TextStyle>
               <p></p>
               <TextStyle styleType="body1_khaki" className="">
-                千客万来の「来」を「彩」に置き換えることで、技大祭が多くのお客さんや学生で賑わい、
+                技大祭が多くのお客さんや学生で賑わい、
               </TextStyle>
               <TextStyle styleType="body1_bold_khaki" className="">
                 それぞれが色とりどりの個性を輝かせてほしい
