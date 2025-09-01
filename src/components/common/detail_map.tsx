@@ -88,7 +88,7 @@ const DetailMap = ({ location, roomNumber }: DetailMapProps) => {
           )}
         </div>
 
-        <LinkButton href="/map" className="bg-second">
+        <LinkButton href="/map" className="bg-second  hover:opacity-80">
           <TextStyle styleType="body1" className="text-white">
             マップページへ
           </TextStyle>

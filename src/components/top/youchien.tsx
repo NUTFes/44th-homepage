@@ -49,7 +49,7 @@ const Youchien: React.FC = () => {
         <LinkButton
           href="https://shonenjumpplus.com/episode/4855956445109234830"
           isExternal
-          className="w-full"
+          className="w-full hover:opacity-80"
         >
           第１話の試し読みはこちら
           <br />
