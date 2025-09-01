@@ -39,14 +39,13 @@ const DetailMap = ({ location, roomNumber }: DetailMapProps) => {
   const isLectureRelated = location.includes('講義棟');
 
   // 階層画像の判定
-  const floorImageSrc =
-    roomNumber?.includes('講義棟1F')
-      ? '/images/map/kougi_1f.png'
-      : roomNumber?.includes('講義棟2F')
+  const floorImageSrc = roomNumber?.includes('講義棟1F')
+    ? '/images/map/kougi_1f.png'
+    : roomNumber?.includes('講義棟2F')
       ? '/images/map/kougi_2f.png'
       : roomNumber?.includes('講義棟3F')
-      ? '/images/map/kougi_3f.png'
-      : null;
+        ? '/images/map/kougi_3f.png'
+        : null;
 
   // KougiMap を表示しない条件（階層指定がある場合）
   const isFloorOnly =
