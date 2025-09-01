@@ -2,8 +2,6 @@ import React from 'react';
 import BackFrame from '@/src/components/common/back_frame';
 import Line from '@/src/components/common/line';
 import TextStyle from '@/src/components/common/text_style';
-//import President from "../../components/greeting/president_greeting";
-//import Taiko from "../../components/greeting/Taiko_greeting";
 import SponsorCarousel from '../../components/common/sponser-carousel';
 import About50th from '../../components/greeting/about50th';
 import GreetingCard from '../../components/greeting/greetingcard';
@@ -27,7 +25,7 @@ export default function GreetingPage() {
                 今年の技大祭のテーマは
               </TextStyle>
               <TextStyle styleType="body1_bold_khaki" className="">
-                「先客万彩」
+                「千客万彩」
               </TextStyle>
               <p></p>
               <TextStyle styleType="body1_khaki" className="">
