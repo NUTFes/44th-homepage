@@ -11,14 +11,14 @@ const TopCarousel: React.FC = () => {
         height={988} // 必要に応じて画像の高さを指定
         className="w-full h-full shadow_dark object-cover"
       />
-      <a href="/event/guest" className='hover:opacity-80'>
-      <Image
-        src="/images/guest/cast_yoko.png"
-        alt="ゲストにトム・ブラウン登場！"
-        width={1080} // 必要に応じて画像の幅を指定
-        height={810} // 必要に応じて画像の高さを指定
-        className="w-full h-full shadow_dark object-cover"
-      />
+      <a href="/event/guest" className="hover:opacity-80">
+        <Image
+          src="/images/guest/cast_yoko.png"
+          alt="ゲストにトム・ブラウン登場！"
+          width={1080} // 必要に応じて画像の幅を指定
+          height={810} // 必要に応じて画像の高さを指定
+          className="w-full h-full shadow_dark object-cover"
+        />
       </a>
       <Image
         src="/carousel_top/top_5_1.jpg"
