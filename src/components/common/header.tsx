@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 // 5月時点の公開用に、一時的にリンクを無効化するためのフラグ
 // 後で有効にする場合は、これをfalseに変更するだけ
-const DISABLE_LINKS_TEMPORARILY = false;
+const DISABLE_LINKS_TEMPORARILY = true;
 
 // 特定のリンクを個別に無効化するためのフラグ
 const DISABLE_GREETING = true; // 代表者挨拶を無効化
@@ -172,7 +172,9 @@ export default function Header() {
           ) : (
             <>
               <div className="text-lg text-gray">代表者挨拶</div>
-              <div className="text-lg text-gray">アクセス</div>
+              <Link href="/access" onClick={toggleMenu} className="text-lg">
+                アクセス
+              </Link>
               <div className="text-lg text-gray">マップ</div>
 
               <div className="space-y-3">
@@ -195,8 +197,24 @@ export default function Header() {
 
               <div className="text-lg text-gray">食品販売</div>
               <div className="text-lg text-gray">物品販売</div>
-              <div className="text-lg text-gray">企業ブース</div>
-              <div className="text-lg text-gray">協賛企業一覧</div>
+              <Link
+                href="/corpolate_booth"
+                onClick={toggleMenu}
+                className="text-lg"
+              >
+                企業ブース
+              </Link>
+              {DISABLE_SPONSORS ? (
+                <div className="text-lg text-gray">協賛企業一覧</div>
+              ) : (
+                <Link
+                  href="/sponsoring_corpolate"
+                  onClick={toggleMenu}
+                  className="text-lg"
+                >
+                  協賛企業一覧
+                </Link>
+              )}
             </>
           )}
         </nav>
