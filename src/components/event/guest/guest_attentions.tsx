@@ -46,7 +46,7 @@ const GuestAttentions = () => {
         <Line />
         <div className="text-font_main flex flex-col gap-y-4 flex flex-col items-center">
           <TextStyle styleType="section_title_red" className="text-center">
-            会場での注意事項
+            会場の再入場について
           </TextStyle>
           <p>
             飲み物の購入などで会場から一時退場する場合、
