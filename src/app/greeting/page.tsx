@@ -50,7 +50,7 @@ export default function GreetingPage() {
           <Line />
           <div className="py-4">
             <GreetingCard
-              title="実行委員長挨拶"
+              title="学長挨拶"
               imageSrc="/images/greeting/president.svg"
               imageAlt="学長"
               name="鎌土　重晴"
