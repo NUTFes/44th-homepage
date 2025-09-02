@@ -66,17 +66,16 @@ export default function TopPage() {
             <TextStyle styleType="section_title">関連アプリ・サイト</TextStyle>
           </div>
 
-            <LinkButton
-              href="https://bingo.nutfes.net/"
-              isExternal
-              className="hover:opacity-80"
-            >
-              nutfes-Bingo/技大祭ビンゴアプリ
-            </LinkButton>
-            <Line />
-            <SponsorCarousel />
-          </div>
-
+          <LinkButton
+            href="https://bingo.nutfes.net/"
+            isExternal
+            className="hover:opacity-80"
+          >
+            nutfes-Bingo/技大祭ビンゴアプリ
+          </LinkButton>
+          <Line />
+          <SponsorCarousel />
+        </div>
       </BackFrame>
     </div>
   );
