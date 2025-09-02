@@ -49,7 +49,9 @@ export default function Footer() {
         </a>
       </div>
       <div className="flex flex-col justify-center p-4 text-body2 text-gray text-center whitespace-pre-wrap">
-        <div>協賛企業一覧</div>
+        <div className="text-white hover:underline hover:text-main">
+          <a href="/sponsoring_corpolate">協賛企業一覧</a>
+        </div>
         <div>アンケートリンク</div>
         <a
           href="https://www.nagaokaut.ac.jp/"
