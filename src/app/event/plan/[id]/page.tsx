@@ -103,37 +103,61 @@ export default async function PlanDetailPage({ params }: PlanDetailProps) {
           {(item['1日目(晴)開始時刻'] || item['1日目(雨)開始時刻']) && (
             <div className="text-center mb-2">
               <div className="font-bold">1日目</div>
-              {item['1日目(晴)開始時刻'] && item['1日目(晴)終了時刻'] && (
-                <div className="text-body1">
-                  晴れ: {item['1日目(晴)開始時刻']}～{item['1日目(晴)終了時刻']}
-                </div>
+
+              {/* 晴れの表示 */}
+              {item['1日目(晴)開始時刻'] === 'なし' ? (
+                <div className="text-body1">晴れ: 開催なし</div>
+              ) : (
+                item['1日目(晴)開始時刻'] &&
+                item['1日目(晴)終了時刻'] && (
+                  <div className="text-body1">
+                    晴れ: {item['1日目(晴)開始時刻']}～
+                    {item['1日目(晴)終了時刻']}
+                  </div>
+                )
               )}
-              {item['1日目(雨)開始時刻'] && item['1日目(雨)終了時刻'] && (
-                <div className="text-body1">
-                  雨: {item['1日目(雨)開始時刻']}～{item['1日目(雨)終了時刻']}
-                </div>
+
+              {/* 雨の表示 */}
+              {item['1日目(雨)開始時刻'] === 'なし' ? (
+                <div className="text-body1">雨: 開催なし</div>
+              ) : (
+                item['1日目(雨)開始時刻'] &&
+                item['1日目(雨)終了時刻'] && (
+                  <div className="text-body1">
+                    雨: {item['1日目(雨)開始時刻']}～{item['1日目(雨)終了時刻']}
+                  </div>
+                )
               )}
             </div>
           )}
-
           {(item['2日目(晴)開始時刻'] || item['2日目(雨)開始時刻']) && (
             <div className="text-center mb-4">
               <div className="font-bold">2日目</div>
-              {item['2日目(晴)開始時刻'] &&
-                item['2日目(晴)終了時刻'] &&
-                item['2日目(晴)開始時刻'] !== 'なし' && (
+
+              {/* 晴れの表示 */}
+              {item['2日目(晴)開始時刻'] === 'なし' ? (
+                <div className="text-body1">晴れ: 開催なし</div>
+              ) : (
+                item['2日目(晴)開始時刻'] &&
+                item['2日目(晴)終了時刻'] && (
                   <div className="text-body1">
                     晴れ: {item['2日目(晴)開始時刻']}～
                     {item['2日目(晴)終了時刻']}
                   </div>
-                )}
-              {item['2日目(雨)開始時刻'] &&
-                item['2日目(雨)終了時刻'] &&
-                item['2日目(雨)開始時刻'] !== 'なし' && (
+                )
+              )}
+
+              {/* 雨の表示 */}
+              {item['2日目(雨)開始時刻'] === 'なし' ? (
+                <div className="text-body1">雨: 開催なし</div>
+              ) : (
+                item['2日目(雨)開始時刻'] &&
+                item['2日目(雨)終了時刻'] && (
                   <div className="text-body1">
                     雨: {item['2日目(雨)開始時刻']}～{item['2日目(雨)終了時刻']}
                   </div>
-                )}
+                )
+              )}
             </div>
           )}
         </Frame>
