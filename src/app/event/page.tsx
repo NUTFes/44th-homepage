@@ -21,7 +21,10 @@ export default function EventPage() {
           <div className="flex flex-col gap-y-4">
             <div className="flex justify-between px-8 items-center">
               <TextStyle styleType="section_title">ゲスト</TextStyle>
-              <LinkButton href="/event/guest" className="px-4 py-2">
+              <LinkButton
+                href="/event/guest"
+                className="px-4 py-2 hover:opacity-80"
+              >
                 詳しく見る＞＞
               </LinkButton>
             </div>
@@ -40,7 +43,10 @@ export default function EventPage() {
 
           <div className="flex justify-between px-8 items-center">
             <TextStyle styleType="section_title">企画</TextStyle>
-            <LinkButton href="/event/plan" className="px-4 py-2">
+            <LinkButton
+              href="/event/plan"
+              className="px-4 py-2  hover:opacity-80"
+            >
               もっと見る＞＞
             </LinkButton>
           </div>
@@ -50,7 +56,10 @@ export default function EventPage() {
           </div>
           <div className="flex justify-between px-8 items-center">
             <TextStyle styleType="section_title">展示・体験</TextStyle>
-            <LinkButton href="/event/exh_exp" className="px-4 py-2">
+            <LinkButton
+              href="/event/exh_exp"
+              className="px-4 py-2  hover:opacity-80"
+            >
               もっと見る＞＞
             </LinkButton>
           </div>

@@ -1,12 +1,13 @@
 'use client';
 
 import Image from 'next/image';
-import KougiMap from '../map/kougi_map';
+import AreaMap from '../map/area_map';
+import KougiMap from '../map/kougi_map'; // ← 追加
 import Frame from './frame';
 import LinkButton from './link_button';
 import TextStyle from './text_style';
 
-type DetailMapProps = {
+type DetailMapPlanProps = {
   location: string;
   roomNumber?: string;
 };
@@ -33,25 +34,11 @@ const locationImageMap: Record<string, string> = {
 
 const defaultImage = '/images/map/all_common.png';
 
-const DetailMap = ({ location, roomNumber }: DetailMapProps) => {
+const DetailMapPlan = ({ location }: DetailMapPlanProps) => {
   const imageSrc = locationImageMap[location] ?? defaultImage;
 
+  const isExactLectureArea = location === '講義棟エリア';
   const isLectureRelated = location.includes('講義棟');
-
-  // 階層画像の判定
-  const floorImageSrc = roomNumber?.includes('講義棟1F')
-    ? '/images/map/kougi_1f.png'
-    : roomNumber?.includes('講義棟2F')
-      ? '/images/map/kougi_2f.png'
-      : roomNumber?.includes('講義棟3F')
-        ? '/images/map/kougi_3f.png'
-        : null;
-
-  // KougiMap を表示しない条件（階層指定がある場合）
-  const isFloorOnly =
-    roomNumber?.includes('講義棟1F') ||
-    roomNumber?.includes('講義棟2F') ||
-    roomNumber?.includes('講義棟3F');
 
   return (
     <div>
@@ -62,22 +49,12 @@ const DetailMap = ({ location, roomNumber }: DetailMapProps) => {
         <TextStyle styleType="body1" className="text-center">
           {location}
         </TextStyle>
-        {roomNumber && (
-          <TextStyle styleType="body1" className="text-center">
-            {roomNumber}
-          </TextStyle>
-        )}
 
-        <div className="flex flex-col items-center justify-center mb-4 bg-gray-200 gap-4">
-          {isLectureRelated && !isFloorOnly ? (
+        <div className="flex items-center justify-center mb-4 bg-gray-200">
+          {isExactLectureArea ? (
+            <AreaMap />
+          ) : isLectureRelated ? (
             <KougiMap />
-          ) : floorImageSrc ? (
-            <Image
-              src={floorImageSrc}
-              alt={`${roomNumber}のフロアマップ`}
-              width={1000}
-              height={1000}
-            />
           ) : (
             <Image
               src={imageSrc}
@@ -88,7 +65,7 @@ const DetailMap = ({ location, roomNumber }: DetailMapProps) => {
           )}
         </div>
 
-        <LinkButton href="/map" className="bg-second  hover:opacity-80">
+        <LinkButton href="/map" className="bg-second hover:opacity-80">
           <TextStyle styleType="body1" className="text-white">
             マップページへ
           </TextStyle>
@@ -98,4 +75,4 @@ const DetailMap = ({ location, roomNumber }: DetailMapProps) => {
   );
 };
 
-export default DetailMap;
+export default DetailMapPlan;
