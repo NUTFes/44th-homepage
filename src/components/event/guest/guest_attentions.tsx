@@ -1,6 +1,6 @@
-import { TbCameraOff } from "react-icons/tb";
 import { LuCupSoda } from 'react-icons/lu';
 import { MdOutlineNoMeals } from 'react-icons/md';
+import { TbCameraOff } from 'react-icons/tb';
 import Frame from '../../common/frame';
 import Line from '../../common/line';
 import TextStyle from '../../common/text_style';
