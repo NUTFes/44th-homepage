@@ -1,4 +1,4 @@
-import { BiCameraOff } from 'react-icons/bi';
+import { TbCameraOff } from "react-icons/tb";
 import { LuCupSoda } from 'react-icons/lu';
 import { MdOutlineNoMeals } from 'react-icons/md';
 import Frame from '../../common/frame';
@@ -16,7 +16,7 @@ const GuestAttentions = () => {
             </TextStyle>
             <div>
               <div className="flex justify-start text-accent items-center gap-x-2">
-                <BiCameraOff size={40} />
+                <TbCameraOff size={40} />
                 <p className="font-bold">イベント中の 録音・撮影は原則禁止</p>
               </div>
               <p className="text-accent">
