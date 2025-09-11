@@ -11,7 +11,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: '第44回技大祭ホームページ',
   description:
-    '第44回技大祭の公式ホームページです。技大祭の最新情報やイベント情報、参加方法などを掲載しています。9/13,14の2日間、技術大学祭を開催します！',
+    '第44回技大祭の公式ホームページです。技大祭の最新情報やイベント情報、参加方法などを掲載しています。9/13,14の2日間、技大祭を開催します！',
 };
 
 export default function RootLayout({
@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="ja">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/icon/44thlogo_shadow.svg" />
+        <link rel="icon" href="/icon/44thlogo_shadow.png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#ffffff" />
