@@ -24,13 +24,11 @@ const Youchien: React.FC = () => {
           <TextStyle styleType="body2">
             とのコラボレーションが決定しました！
             ぜひ、以下のリンクから作品をご覧いただき、技大祭にも足をお運びください！
-
           </TextStyle>
         </p>
         <div className="py-4">
           <Line className="border-main" />
         </div>
-
         <TextStyle styleType="section_title" className="text-center">
           コラボ企画紹介
         </TextStyle>
