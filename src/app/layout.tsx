@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import Footer from '../components/common/footer';
 import Header from '../components/common/header';
-import MoveCloudsS from '../components/common/move_clouds_s';
-import MoveCloudsM from '../components/common/move_clouds_m';
 import MoveCloudsL from '../components/common/move_clouds_l';
+import MoveCloudsM from '../components/common/move_clouds_m';
+import MoveCloudsS from '../components/common/move_clouds_s';
 import ReturnTopButton from '../components/common/return_top_button';
 import { newTegomin, notoSansJP } from '../utils/fonts';
 import './globals.css';

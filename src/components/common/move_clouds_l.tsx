@@ -5,14 +5,21 @@ type MoveCloudsSProps = {
   speed2nd?: number; // 2枚目の雲の秒数
 };
 
-const MoveCloudsL: React.FC<MoveCloudsSProps> = ({ speed = 30, speed2nd = 30 }) => {
+const MoveCloudsL: React.FC<MoveCloudsSProps> = ({
+  speed = 30,
+  speed2nd = 30,
+}) => {
   return (
     <div>
       {/* アニメーションする雲 */}
       <div className="h-full w-full translate-x-0 fixed overflow-hidden">
         <div
           className="absolute top-0 left-0 animate-move-clouds translate-x-0 opacity-80"
-          style={{ width: '1300px', height: '540px', animationDuration: `${speed}s` }}
+          style={{
+            width: '1300px',
+            height: '540px',
+            animationDuration: `${speed}s`,
+          }}
         >
           {/*重ねて表示させるために↑こちらのみabsoluteを設定*/}
           <Image
@@ -25,7 +32,11 @@ const MoveCloudsL: React.FC<MoveCloudsSProps> = ({ speed = 30, speed2nd = 30 }) 
         </div>
         <div
           className="top-0 left-0 animate-move-clouds-2nd translate-x-0 opacity-80"
-          style={{ width: '1300px', height: '540px',animationDuration: `${speed2nd}s` }}
+          style={{
+            width: '1300px',
+            height: '540px',
+            animationDuration: `${speed2nd}s`,
+          }}
         >
           <Image
             src="/hero_header/cloud_l.svg"
