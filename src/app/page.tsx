@@ -6,7 +6,6 @@ import Infos from '@/src/components/top/Infos';
 import RecruitmentSponsors from '@/src/components/top/recruitment_sponsors';
 import TopAttentions from '@/src/components/top/top_attentions';
 import TopCarousel from '@/src/components/top/top_carousel';
-import LinkButton from '../components/common/link_button';
 import SponsorCarousel from '../components/common/sponser-carousel';
 import TimeSchedule from '../components/common/time_schedule';
 import Youchien from '../components/top/youchien';
@@ -66,13 +65,19 @@ export default function TopPage() {
             <TextStyle styleType="section_title">関連アプリ・サイト</TextStyle>
           </div>
 
-          <LinkButton
-            href="https://bingo.nutfes.net/"
-            isExternal
-            className="hover:opacity-80"
-          >
-            <Image  src="/images/logo/bingo_logo_text.png" alt="ビンゴアプリはこちら" fill/>
-          </LinkButton>
+            <a
+              href="https://bingo.nutfes.net/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/images/logo/bingo_logo_text.png"
+                alt="ビンゴアプリはこちら"
+                width={4991}
+                height={1080}
+              />
+            </a>
+
           <Line />
           <SponsorCarousel />
         </div>
