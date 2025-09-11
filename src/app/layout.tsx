@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Footer from '../components/common/footer';
 import Header from '../components/common/header';
-import MoveClouds from '../components/common/move_clouds';
 import MoveCloudsS from '../components/common/move_clouds_s';
 import MoveCloudsM from '../components/common/move_clouds_m';
 import MoveCloudsL from '../components/common/move_clouds_l';
