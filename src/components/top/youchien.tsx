@@ -32,7 +32,9 @@ const Youchien: React.FC = () => {
         <TextStyle styleType="section_title" className="text-center">
           コラボ企画紹介
         </TextStyle>
-        内容の詳細については、技大祭公式Instagramもチェック！
+        <TextStyle styleType="body2">
+          内容の詳細については、技大祭公式Instagramもチェック！
+        </TextStyle>
         <YouchienCarousel />
         <div className="py-4">
           <Line className="border-main" />
