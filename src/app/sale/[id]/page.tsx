@@ -84,7 +84,7 @@ export default async function SaleDetailPage({ params }: SaleDetailProps) {
           {tags.map((tag, index) => (
             <span
               key={index}
-              className={`border-2 ${roomNumberBorderClass} ${roomNumberColorClass} px-4 py-1 rounded-sm bg-base whitespace-nowrap`}
+              className="border-2 border-accent text-accent px-4 py-1 rounded-sm bg-base whitespace-nowrap"
             >
               {tag}
             </span>
