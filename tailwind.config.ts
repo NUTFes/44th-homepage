@@ -8,10 +8,22 @@ const config: Config = {
   ],
   safelist: [
     // 動的に生成される番号系列用のカラークラス
-    'text-area-a', 'text-area-b', 'text-area-c', 'text-area-d', 'text-area-e',
-    'text-area-f', 'text-area-g', 'text-area-kitchen',
-    'border-area-a', 'border-area-b', 'border-area-c', 'border-area-d', 'border-area-e',
-    'border-area-f', 'border-area-g', 'border-area-kitchen',
+    'text-area-a',
+    'text-area-b',
+    'text-area-c',
+    'text-area-d',
+    'text-area-e',
+    'text-area-f',
+    'text-area-g',
+    'text-area-kitchen',
+    'border-area-a',
+    'border-area-b',
+    'border-area-c',
+    'border-area-d',
+    'border-area-e',
+    'border-area-f',
+    'border-area-g',
+    'border-area-kitchen',
   ],
   theme: {
     extend: {
