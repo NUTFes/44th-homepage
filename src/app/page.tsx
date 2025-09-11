@@ -58,26 +58,34 @@ export default function TopPage() {
           </div>
 
           <TimeSchedule />
-
           <Line />
-          <RecruitmentSponsors />
           <div className="text-center">
             <TextStyle styleType="section_title">関連アプリ・サイト</TextStyle>
           </div>
+          <div className="flex flex-col justify-center items-center gap-y-2 px-4">
+            <div className="body2 text-center text-font_khaki">
+              技大祭ビンゴアプリはこちらから！
+            </div>
 
-            <a
-              href="https://bingo.nutfes.net/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src="/images/logo/bingo_logo_text.png"
-                alt="ビンゴアプリはこちら"
-                width={4991}
-                height={1080}
-              />
-            </a>
+            <div className="w-[70%] flex-col items-center justify-center bg-white rounded-sm p-4 hover:bg-[#EA4E7F] transition-colors shadow_button">
+              <a
+                href="https://bingo.nutfes.net/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col justify-center items-center"
+              >
+                <Image
+                  src="/logo/bingo_logo_text.png"
+                  alt="ビンゴアプリはこちら"
+                  width={4991}
+                  height={1080}
+                />
+              </a>
+            </div>
+          </div>
 
+          <Line />
+          <RecruitmentSponsors />
           <Line />
           <SponsorCarousel />
         </div>
