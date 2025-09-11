@@ -11,7 +11,7 @@ export default function GreetingPage() {
     <div>
       <BackFrame>
         <div className="flex flex-col text-center gap-y-8 py-4">
-          <TextStyle styleType="title" className="">
+          <TextStyle styleType="title" className="pt-4">
             代表者挨拶
           </TextStyle>
           <div className="w-[90%] flex flex-col text-center gap-y-8 py-4 ml-auto mr-auto">
