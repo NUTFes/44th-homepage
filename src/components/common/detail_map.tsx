@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { getColorByRoomNumber } from '@/src/utils/colorUtils';
 import KougiMap from '../map/kougi_map';
 import Frame from './frame';
 import LinkButton from './link_button';
@@ -63,9 +64,11 @@ const DetailMap = ({ location, roomNumber }: DetailMapProps) => {
           {location}
         </TextStyle>
         {roomNumber && (
-          <TextStyle styleType="body1" className="text-center">
+          <div
+            className={`text-body1 font-bold text-center ${getColorByRoomNumber(roomNumber)}`}
+          >
             {roomNumber}
-          </TextStyle>
+          </div>
         )}
 
         <div className="flex flex-col items-center justify-center mb-4 bg-gray-200 gap-4">

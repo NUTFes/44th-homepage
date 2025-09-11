@@ -6,6 +6,13 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    // 動的に生成される番号系列用のカラークラス
+    'text-area-a', 'text-area-b', 'text-area-c', 'text-area-d', 'text-area-e',
+    'text-area-f', 'text-area-g', 'text-area-kitchen',
+    'border-area-a', 'border-area-b', 'border-area-c', 'border-area-d', 'border-area-e',
+    'border-area-f', 'border-area-g', 'border-area-kitchen',
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -40,6 +47,16 @@ const config: Config = {
         white_back: 'rgba(255,255,255,0.7)',
         base_back: 'rgba(255,249,229,0.5)',
         dark_back: 'rgba(76,42,0,0.8)',
+
+        // 新しいカラーパレット（番号系列用）
+        'area-a': '#C44C2B', // A系列（事務棟エリア）
+        'area-b': '#346482', // B系列（図書館エリア）
+        'area-c': '#4C7343', // C系列（電気棟エリア）
+        'area-d': '#A37C1C', // D系列（屋外ステージエリア）
+        'area-e': '#602976', // E系列（機械建設棟エリア）
+        'area-f': '#386A77', // F系列
+        'area-g': '#D33726', // G系列
+        'area-kitchen': '#2A3E76', // キッチンカー系列
       },
       animation: {
         'move-clouds': 'move-clouds 50s linear infinite', // アニメーション名と設定
