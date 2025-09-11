@@ -71,7 +71,7 @@ export default function TopPage() {
             isExternal
             className="hover:opacity-80"
           >
-            nutfes-Bingo/技大祭ビンゴアプリ
+            <Image  src="/images/logo/bingo_logo_text.png" alt="ビンゴアプリはこちら" fill/>
           </LinkButton>
           <Line />
           <SponsorCarousel />
