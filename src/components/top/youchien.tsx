@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Frame from '@/src/components/common/frame';
 import LinkButton from '@/src/components/common/link_button';
 import TextStyle from '@/src/components/common/text_style';
+import Line from '../common/line';
 
 const Youchien: React.FC = () => {
   return (
@@ -22,10 +23,39 @@ const Youchien: React.FC = () => {
           <TextStyle styleType="body2">
             とのコラボレーションが決定しました！
             ぜひ、以下のリンクから作品をご覧いただき、技大祭にも足をお運びください！
+            <br />
+            内容の詳細については、技大祭公式Instagramもチェック！
           </TextStyle>
         </p>
+        <div className="py-4">
+          <Line className="border-main" />
+        </div>
 
-        <TextStyle styleType="body1_bold_khaki" className="text-center">
+        <TextStyle styleType="section_title" className="text-center">
+          コラボ企画について
+        </TextStyle>
+        <div>
+          <p className="text-font_khaki font-bold text-center body1">
+            【等身大パネル＆巨大壁画】
+          </p>
+          <p>圧巻のスケールでキャラたちが技大祭に登場！</p>
+        </div>
+        <div>
+          <p className="text-font_khaki font-bold text-center body1">
+            【コラボブース】
+          </p>
+          <p>数量限定のポストカードや子供も楽しめる塗り絵体験！</p>
+        </div>
+        <div>
+          <p className="text-font_khaki font-bold text-center body1">
+            【SNSキャンペーン】
+          </p>
+          <p>会場に設置されたアートパネルを撮影！</p>
+        </div>
+        <div className="py-4">
+          <Line className="border-main" />
+        </div>
+        <TextStyle styleType="section_title" className="text-center">
           ストーリー
         </TextStyle>
         <p>

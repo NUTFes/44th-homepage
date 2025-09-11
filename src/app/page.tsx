@@ -51,7 +51,9 @@ export default function TopPage() {
           <SponsorCarousel />
           <Line />
           <TopAttentions />
-          <Youchien />
+          <div id="youchien">
+            <Youchien />
+          </div>
           <Line />
 
           <div className="text-center">

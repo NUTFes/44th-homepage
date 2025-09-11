@@ -4,6 +4,7 @@ import Carousel from '@/src/components/common/carousel';
 const TopCarousel: React.FC = () => {
   return (
     <Carousel autoSlide={true}>
+      <a href="#youchien" className="hover:opacity-80">
       <Image
         src="/carousel_top/youchien_top.png"
         alt="幼稚園WARSとのコラボ決定！"
@@ -11,6 +12,7 @@ const TopCarousel: React.FC = () => {
         height={988} // 必要に応じて画像の高さを指定
         className="w-full h-full shadow_dark object-cover"
       />
+      </a>
       <a href="/event/guest" className="hover:opacity-80">
         <Image
           src="/images/guest/cast_yoko.png"
