@@ -45,8 +45,8 @@ export default async function SaleDetailPage({ params }: SaleDetailProps) {
   }
 
   const tags = item.タグ ? item.タグ.split(',').map((tag) => tag.trim()) : [];
-  const roomNumberColorClass = getColorByRoomNumber(item.番号);
-  const roomNumberBorderClass = getBorderColorByRoomNumber(item.番号);
+  //const roomNumberColorClass = getColorByRoomNumber(item.番号);
+  //const roomNumberBorderClass = getBorderColorByRoomNumber(item.番号);
 
   return (
     <BackFrame>
