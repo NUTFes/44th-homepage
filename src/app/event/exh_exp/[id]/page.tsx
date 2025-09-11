@@ -6,6 +6,7 @@ import ReturnEventButton from '@/src/components/common/return_event_button';
 import TextStyle from '@/src/components/common/text_style';
 import { getAllExhExpData, getExhExpDataById } from '@/src/lib/exh_exp';
 import { ExhExpItem } from '@/src/types/exh_exp';
+import { getColorByRoomNumber, getBorderColorByRoomNumber } from '@/src/utils/colorUtils';
 
 export const runtime = 'edge';
 
@@ -40,6 +41,8 @@ export default async function ExhExpDetailPage({ params }: ExhExpDetailProps) {
   }
 
   const tags = item.タグ ? item.タグ.split(',').map((tag) => tag.trim()) : [];
+  const roomNumberColorClass = getColorByRoomNumber(item.番号);
+  const roomNumberBorderClass = getBorderColorByRoomNumber(item.番号);
 
   return (
     <BackFrame>
@@ -72,7 +75,7 @@ export default async function ExhExpDetailPage({ params }: ExhExpDetailProps) {
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="border-2 border-accent text-accent px-4 py-1 rounded-sm bg-base whitespace-nowrap"
+              className={`border-2 ${roomNumberBorderClass} ${roomNumberColorClass} px-4 py-1 rounded-sm bg-base whitespace-nowrap`}
             >
               {tag}
             </span>
