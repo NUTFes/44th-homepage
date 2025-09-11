@@ -1,8 +1,27 @@
+// 番号文字列からアルファベット部分を抽出する関数
+const extractAlphabetPrefix = (roomNumber: string): string => {
+  // 最後のアルファベット+数字の組み合わせ（例：G3, E8, F1など）を抽出
+  const match = roomNumber.match(/[A-Z]\d+(?:\s|$)/);
+  if (match) {
+    return match[0].charAt(0); // アルファベット部分のみを返す
+  }
+
+  // 上記でマッチしない場合は、単独のアルファベットを探す
+  const singleMatch = roomNumber.match(/\b[A-Z]\b/);
+  if (singleMatch) {
+    return singleMatch[0];
+  }
+
+  // それでもマッチしない場合は最初のアルファベットを返す
+  const firstMatch = roomNumber.match(/[A-Z]/);
+  return firstMatch ? firstMatch[0] : '';
+};
+
 // 番号からカラークラスを決定する関数
 export const getColorByRoomNumber = (roomNumber: string): string => {
   if (!roomNumber) return 'text-font_main';
 
-  const prefix = roomNumber.charAt(0).toUpperCase();
+  const prefix = extractAlphabetPrefix(roomNumber.toUpperCase());
 
   switch (prefix) {
     case 'A':
@@ -30,7 +49,7 @@ export const getColorByRoomNumber = (roomNumber: string): string => {
 export const getBorderColorByRoomNumber = (roomNumber: string): string => {
   if (!roomNumber) return 'border-accent';
 
-  const prefix = roomNumber.charAt(0).toUpperCase();
+  const prefix = extractAlphabetPrefix(roomNumber.toUpperCase());
 
   switch (prefix) {
     case 'A':
