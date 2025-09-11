@@ -11,7 +11,7 @@ export default function AccessPage() {
     <div>
       <BackFrame>
         <div className="flex flex-col text-center gap-y-8 py-4">
-          <TextStyle styleType="title">アクセス</TextStyle>
+          <TextStyle styleType="title" className="pt-4">アクセス</TextStyle>
           <TextStyle styleType="section_title">大学Googleマップ</TextStyle>
           <GoogleMap />
           <DateSection />

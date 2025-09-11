@@ -22,7 +22,7 @@ export default function SponsoringCorpolatePage() {
       <div className="container mx-auto py-8 px-4 text-font_main">
         <ReturnEventButton href="/" />
 
-        <div className="text-center py-8">
+        <div className="text-center pt-0 py-8">
           <TextStyle styleType="title">協賛企業一覧</TextStyle>
           <p className="text-body1 mt-4 text-font_main">
             ご協賛いただいた企業様（順不同、敬称略）

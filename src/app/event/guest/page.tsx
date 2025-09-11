@@ -11,8 +11,9 @@ import TicketInfos from '@/src/components/event/guest/ticket_infos';
 
 export default function GuestPage() {
   return (
-    <div className="text-font_main">
+    <div className="text-font_main ">
       <BackFrame>
+        <div className="container mx-auto py-8 px-4 text-font_main">
         <ReturnEventButton size="small" href="/event" />
         <div className="flex flex-col gap-y-8 pb-4">
           <TextStyle styleType="title" className="text-center">
@@ -50,6 +51,7 @@ export default function GuestPage() {
           <ReturnEventButton size="large_event" href="/event" />
           <Line />
           <SponsorCarousel />
+        </div>
         </div>
       </BackFrame>
     </div>
