@@ -12,7 +12,9 @@ export default function MapPage() {
   return (
     <BackFrame>
       <div className="flex flex-col items-center gap-y-8 pt-4 py-8 text-font_main">
-        <TextStyle styleType="title" className='pt-4'>マップ</TextStyle>
+        <TextStyle styleType="title" className="pt-4">
+          マップ
+        </TextStyle>
         <p className="text-center text-font_khaki">
           各マップは、案内所で配布されているパンフレットにも掲載されていますので、ぜひ併せてご利用ください。
         </p>
