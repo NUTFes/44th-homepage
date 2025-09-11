@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import Footer from '../components/common/footer';
 import Header from '../components/common/header';
-import MoveClouds from '../components/common/move_clouds';
+import MoveCloudsL from '../components/common/move_clouds_l';
+import MoveCloudsM from '../components/common/move_clouds_m';
+import MoveCloudsS from '../components/common/move_clouds_s';
 import ReturnTopButton from '../components/common/return_top_button';
 import { newTegomin, notoSansJP } from '../utils/fonts';
 import './globals.css';
@@ -31,7 +33,9 @@ export default function RootLayout({
       >
         <div className="fixed inset-0 bg-[url('/hero_header/hero_header.svg')] bg-cover bg-center z-[-100]"></div>
         <div className="absolute -z-10">
-          <MoveClouds />
+          <MoveCloudsS />
+          <MoveCloudsM />
+          <MoveCloudsL />
         </div>
 
         <Header />
