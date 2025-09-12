@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Frame from '@/src/components/common/frame';
 import LinkButton from '@/src/components/common/link_button';
 import TextStyle from '@/src/components/common/text_style';
+import Line from '../common/line';
+import YouchienCarousel from './youchien_carousel';
 
 const Youchien: React.FC = () => {
   return (
@@ -24,8 +26,20 @@ const Youchien: React.FC = () => {
             ぜひ、以下のリンクから作品をご覧いただき、技大祭にも足をお運びください！
           </TextStyle>
         </p>
-
-        <TextStyle styleType="body1_bold_khaki" className="text-center">
+        <div className="py-4">
+          <Line className="border-main" />
+        </div>
+        <TextStyle styleType="section_title" className="text-center">
+          コラボ企画紹介
+        </TextStyle>
+        <TextStyle styleType="body2">
+          内容の詳細については、技大祭公式Instagramもチェック！
+        </TextStyle>
+        <YouchienCarousel />
+        <div className="py-4">
+          <Line className="border-main" />
+        </div>
+        <TextStyle styleType="section_title" className="text-center">
           ストーリー
         </TextStyle>
         <p>
