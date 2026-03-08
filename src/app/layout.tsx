@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from "next/script"
 import Footer from '../components/common/footer';
 import Header from '../components/common/header';
 import MoveCloudsL from '../components/common/move_clouds_l';
@@ -46,6 +47,11 @@ export default function RootLayout({
           {children}
         </div>
         <Footer />
+        <Script
+          src="https://rybbit.nutfes.net/api/script.js"
+          data-site-id="645a94bc6de1"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
